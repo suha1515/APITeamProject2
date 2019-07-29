@@ -144,15 +144,19 @@
   <ItemGroup>
     <ClInclude Include="AbstractFactory.h" />
     <ClInclude Include="BackGround.h" />
+    <ClInclude Include="Bit.h" />
     <ClInclude Include="Bullet.h" />
+    <ClInclude Include="Center.h" />
     <ClInclude Include="CollsionMgr.h" />
     <ClInclude Include="Define.h" />
+    <ClInclude Include="EffectManager.h" />
     <ClInclude Include="Enum.h" />
     <ClInclude Include="Extern.h" />
     <ClInclude Include="Framework99C.h" />
     <ClInclude Include="Function.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="GuideBullet.h" />
+    <ClInclude Include="ImageManager.h" />
     <ClInclude Include="KeyMgr.h" />
     <ClInclude Include="Maingame.h" />
     <ClInclude Include="Monster.h" />
@@ -166,14 +170,19 @@
     <ClInclude Include="Struct.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Typedef.h" />
+    <ClInclude Include="UIManager.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BackGround.cpp" />
+    <ClCompile Include="Bit.cpp" />
     <ClCompile Include="Bullet.cpp" />
+    <ClCompile Include="Center.cpp" />
     <ClCompile Include="CollsionMgr.cpp" />
+    <ClCompile Include="EffectManager.cpp" />
     <ClCompile Include="Framework99C.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GuideBullet.cpp" />
+    <ClCompile Include="ImageManager.cpp" />
     <ClCompile Include="KeyMgr.cpp" />
     <ClCompile Include="Maingame.cpp" />
     <ClCompile Include="Monster.cpp" />
@@ -188,11 +197,13 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="UIManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Framework99C.rc" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="..\..\..\..\..\..\Desktop\190729_비트맵불러오기\Framework99C\Image\Logo\Logo.bmp" />
     <Image Include="Framework99C.ico" />
     <Image Include="small.ico" />
   </ItemGroup>

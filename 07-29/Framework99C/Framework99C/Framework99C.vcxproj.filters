@@ -52,6 +52,21 @@
     <Filter Include="97.Managers\04.ScrollMgr">
       <UniqueIdentifier>{f675c7f4-ec83-482c-bf3f-67b064a8cd00}</UniqueIdentifier>
     </Filter>
+    <Filter Include="97.ImageManager">
+      <UniqueIdentifier>{6f57dfcb-3792-46f3-ab0b-e12da26f1309}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="97.ImageManager\Bitmap">
+      <UniqueIdentifier>{474d9d60-4226-48d9-95a3-94599931ad56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="96.EffectManager">
+      <UniqueIdentifier>{137e514e-35db-47da-bb7d-a19cbba1b3a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="94.GameCenter">
+      <UniqueIdentifier>{1819deac-509d-4f3a-8765-a3151fd4488d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="95.UIManager">
+      <UniqueIdentifier>{813c6d12-1c1f-4cdf-b126-62c6a437e213}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Framework99C.h">
@@ -126,6 +141,21 @@
     <ClInclude Include="ScrollMgr.h">
       <Filter>97.Managers\04.ScrollMgr</Filter>
     </ClInclude>
+    <ClInclude Include="Bit.h">
+      <Filter>97.ImageManager\Bitmap</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageManager.h">
+      <Filter>97.ImageManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Center.h">
+      <Filter>94.GameCenter</Filter>
+    </ClInclude>
+    <ClInclude Include="EffectManager.h">
+      <Filter>96.EffectManager</Filter>
+    </ClInclude>
+    <ClInclude Include="UIManager.h">
+      <Filter>95.UIManager</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Framework99C.cpp">
@@ -173,6 +203,21 @@
     <ClCompile Include="ScrollMgr.cpp">
       <Filter>97.Managers\04.ScrollMgr</Filter>
     </ClCompile>
+    <ClCompile Include="Bit.cpp">
+      <Filter>97.ImageManager\Bitmap</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageManager.cpp">
+      <Filter>97.ImageManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Center.cpp">
+      <Filter>94.GameCenter</Filter>
+    </ClCompile>
+    <ClCompile Include="EffectManager.cpp">
+      <Filter>96.EffectManager</Filter>
+    </ClCompile>
+    <ClCompile Include="UIManager.cpp">
+      <Filter>95.UIManager</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Framework99C.ico">
@@ -181,6 +226,7 @@
     <Image Include="small.ico">
       <Filter>99.Default</Filter>
     </Image>
+    <Image Include="..\..\..\..\..\..\Desktop\190729_비트맵불러오기\Framework99C\Image\Logo\Logo.bmp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Framework99C.rc">

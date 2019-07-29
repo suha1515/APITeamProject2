@@ -1,3 +1,7 @@
-﻿  BackGround.cpp
-  Framework99C.vcxproj -> D:\김태윤\99C\3개월차\Framework99C\Debug\Framework99C.exe
-  Framework99C.vcxproj -> D:\김태윤\99C\3개월차\Framework99C\Debug\Framework99C.pdb (Full PDB)
+﻿  Maingame.cpp
+c:\users\administrator\documents\github\apiteamproject2\07-29\framework99c\framework99c\maingame.cpp(52): error C2065: 'IDB_BITMAP1': 선언되지 않은 식별자입니다.
+c:\users\administrator\documents\github\apiteamproject2\07-29\framework99c\framework99c\maingame.cpp(55): error C2660: 'ImageManager::PopM_Background': 함수는 3개의 매개 변수를 사용하지 않습니다.
+  코드를 생성하고 있습니다...
+  컴파일하고 있습니다...
+  Framework99C.cpp
+  코드를 생성하고 있습니다...

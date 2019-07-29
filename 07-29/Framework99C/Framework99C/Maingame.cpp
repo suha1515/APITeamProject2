@@ -5,6 +5,7 @@
 #include "Mouse.h"
 #include "BackGround.h"
 
+
 CMaingame::CMaingame()	
 {
 	
@@ -19,6 +20,7 @@ void CMaingame::Initialize()
 {
 	// GetDC: 출력 DC 생성 함수.
 	m_hDC = GetDC(g_hWnd);
+	BackDC = CreateCompatibleDC(m_hDC);
 
 	srand((unsigned)time(nullptr));
 
@@ -45,6 +47,13 @@ void CMaingame::Initialize()
 	// Mouse
 	//pGameObject = CAbstractFactory<CMouse>::CreateObject();
 	//CObjectMgr::GetInstance()->AddObject(OBJECT_MOUSE, pGameObject);	
+	/*m_hDC = GetDC(g_hWnd);
+	BackDC = CreateCompatibleDC(m_hDC);
+	m_back = LoadBitmap(hInst, MAKEINTRESOURCE(IDB_BITMAP1));
+	SelectObject(BackDC, m_back);
+	ImageManager::ROAD()->Init();
+	ImageManager::ROAD()->PopM_Background(0, 0, 0,0);*/
+
 }
 
 void CMaingame::Update()
@@ -55,8 +64,10 @@ void CMaingame::Update()
 
 void CMaingame::Render()
 {
-	Rectangle(m_hDC, 0, 0, WINCX, WINCY);
+	//Rectangle(m_hDC, 0, 0, WINCX, WINCY);
 	CObjectMgr::GetInstance()->Render(m_hDC);
+	/*ImageManager::ROAD()->PopS_Background(0, 100, 100);
+	BitBlt(m_hDC, 0, 0, WINCX, WINCY, BackDC, 0, 0, SRCCOPY);*/
 }	
 
 void CMaingame::Release()
