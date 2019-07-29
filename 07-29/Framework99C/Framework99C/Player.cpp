@@ -7,7 +7,7 @@
 
 CPlayer::CPlayer()
 	: m_fPosinX(0.f), m_fPosinY(0.f), m_bIsJump(false), m_fGroundY(0.f),
-	m_fJumpForce(0.f), m_fJumpAcc(0.f)
+	m_fJumpForce(0.f), m_fJumpAcc(0.f), m_iJumpCount(0)
 {
 }
 
@@ -23,12 +23,14 @@ void CPlayer::Initialize()
 	m_tInfo.fY = 400.f;
 	m_tInfo.fCX = 100.f;
 	m_tInfo.fCY = 100.f;
-
+	m_tInfo.iHealth = 50;
 	m_fSpeed = 10.f;
 	m_fAngle = 90.f;
 	m_fPosinLength = 100.f;
 
 	m_fJumpForce = 20.f;
+
+	m_iJumpCount = 2;
 }
 
 int CPlayer::Update()
@@ -42,6 +44,12 @@ int CPlayer::Update()
 void CPlayer::Render(HDC hDC)
 {
 	CGameObject::UpdateRect();
+
+	Rectangle(hDC, 50,
+		5,
+		10 * m_tInfo.iHealth,
+		50);
+
 	Rectangle(hDC, m_tRect.left - CScrollMgr::m_fScrollX, 
 		m_tRect.top, 
 		m_tRect.right - CScrollMgr::m_fScrollX,
@@ -88,8 +96,15 @@ void CPlayer::KeyInput()
 		m_tInfo.fX += m_fSpeed;
 		CScrollMgr::m_fScrollX += m_fSpeed;
 	}
-	if (CKeyMgr::GetInstance()->KeyDown(KEY_SPACE))
-		m_bIsJump = true;
+
+	if (m_iJumpCount > 0)
+	{
+		if (CKeyMgr::GetInstance()->KeyDown(KEY_SPACE))
+		{
+ 			m_bIsJump = true;
+			--m_iJumpCount; //점프 누를 때마다 점프 가능 횟수 감소
+		}
+	}
 }
 
 bool CPlayer::IsGround()
@@ -130,24 +145,38 @@ void CPlayer::IsJump()
 
 	if (m_bIsJump)
 	{
-		// 수직 낙하 공식
-		// y = 힘 * sin(90도) * 가속도 - 중력(9.8) * 가속도의 제곱 * 0.5
-		m_tInfo.fY -= m_fJumpForce * m_fJumpAcc - GRAVITY * powf(m_fJumpAcc, 2.f) * 0.5f;
-		m_fJumpAcc += 0.25f;
-
-		
-		if (bIsGround && m_tInfo.fY + m_tInfo.fCY * 0.5f > m_fGroundY)
+		if (m_iJumpCount >= 0) //점프 횟수가 0보다 같거나 크다면 점프 가능
 		{
-			m_tInfo.fY = m_fGroundY;
-			m_tInfo.fY -= m_tInfo.fCY * 0.5f;
+			// 수직 낙하 공식
+			// y = 힘 * sin(90도) * 가속도 - 중력(9.8) * 가속도의 제곱 * 0.5
+			m_tInfo.fY -= m_fJumpForce * m_fJumpAcc - GRAVITY * powf(m_fJumpAcc, 2.f) * 0.5f;
 
-			m_bIsJump = false;
-			m_fJumpAcc = 0.f;			
+			switch (m_iJumpCount) //점프 가능 횟수가 1이거나 0일 경우
+			{
+			case 1:
+				m_fJumpAcc += 0.15f;
+				break;
+
+			case 0:
+				m_fJumpAcc += 0.08f;
+				break;
+			}
+
+			if (bIsGround && m_tInfo.fY + m_tInfo.fCY * 0.5f > m_fGroundY) //땅에 닿으면
+			{
+				m_tInfo.fY = m_fGroundY;
+				m_tInfo.fY -= m_tInfo.fCY * 0.5f;
+
+				m_bIsJump = false;
+				m_iJumpCount = 2;
+				m_fJumpAcc = 0.f;
+			}
 		}
 	}
 	else
 	{
 		m_tInfo.fY = m_fGroundY;
 		m_tInfo.fY -= m_tInfo.fCY * 0.5f;
+		m_iJumpCount = 2;
 	}
 }

@@ -14,6 +14,13 @@ typedef struct tagInfo
 	float fY = 0.f;
 	float fCX = 0.f;
 	float fCY = 0.f;
+
+	int iHealth = 1;
+	int iDMG = 1;
+
+	bool bGraceChk = false;
+
+	DWORD CoolDownOld= 0;
 }INFO;
 
 #define __STRUCT_H__

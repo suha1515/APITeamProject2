@@ -40,6 +40,26 @@ void CGameObject::SetDead(bool bIsDead)
 	m_bIsDead = bIsDead;
 }
 
+void CGameObject::SetDamage(int dmg)
+{
+	m_tInfo.iHealth -= dmg;
+}
+
+void CGameObject::SetHealth(int iHealth)
+{
+	m_tInfo.iHealth = iHealth;
+}
+
+void CGameObject::SetGracePeriod(bool bChk)
+{
+	m_tInfo.bGraceChk = bChk;
+}
+
+void CGameObject::SetTimeCount(DWORD Time)
+{
+	Time = GetTickCount();
+}
+
 void CGameObject::UpdateRect()
 {
 	m_tRect.left = static_cast<LONG>(m_tInfo.fX - m_tInfo.fCX * 0.5f);

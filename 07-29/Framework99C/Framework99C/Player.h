@@ -37,6 +37,7 @@ private:
 
 	float		m_fJumpForce;	// 점프 힘(v)
 	float		m_fJumpAcc;		// 점프 가속도(t)
-	
+
+	int			m_iJumpCount; //점프 가능 횟수
 };
 

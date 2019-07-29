@@ -15,11 +15,12 @@ CMonster::~CMonster()
 
 void CMonster::Initialize()
 {
-	/*m_tInfo.fX = 400.f;
-	m_tInfo.fY = 200.f;*/
+	m_tInfo.fX = 400.f;
+	m_tInfo.fY = 200.f;
 	m_tInfo.fCX = 100.f;
 	m_tInfo.fCY = 100.f;
 
+	m_tInfo.iDMG = 1;
 	m_fSpeed = 5.f;
 }
 

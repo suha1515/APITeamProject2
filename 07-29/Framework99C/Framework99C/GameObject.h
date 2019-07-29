@@ -20,6 +20,11 @@ public:
 	virtual int Update() = 0;
 	virtual void Render(HDC hDC) = 0;
 
+	void SetDamage(int dmg);
+	void SetHealth(int iHealth);
+	void SetGracePeriod(bool bChk);
+	void SetTimeCount(DWORD Time);
+
 protected:
 	virtual void Release() = 0;
 
