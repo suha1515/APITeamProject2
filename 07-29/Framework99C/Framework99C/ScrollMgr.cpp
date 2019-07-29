@@ -5,6 +5,7 @@ float CScrollMgr::m_fScrollX = 0.f;
 
 CScrollMgr::CScrollMgr()
 {
+	//////////////////
 }
 
 
