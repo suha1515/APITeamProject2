@@ -10,5 +10,10 @@ public:
 
 private:
 	int m_FloorRate;
+	int m_FloorCount;
+
+	INFO m_PrevPos;
+	POSi m_PreFloorPos;
+	int* PrevFloorPos;
 };
 

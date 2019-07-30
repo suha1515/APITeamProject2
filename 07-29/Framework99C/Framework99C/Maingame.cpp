@@ -4,6 +4,8 @@
 #include "Monster.h"
 #include "Mouse.h"
 #include "BackGround.h"
+#include "Floor.h"
+#include "SpawnManager.h"
 
 
 CMaingame::CMaingame()	
@@ -47,6 +49,13 @@ void CMaingame::Initialize()
 	pGameObject = CAbstractFactory<CPlayer>::CreateObject();
 	CObjectMgr::GetInstance()->AddObject(OBJECT_PLAYER, pGameObject);	
 
+	//Floor
+	pGameObject = CAbstractFactory<CFloor>::CreateObject();
+	CObjectMgr::GetInstance()->AddObject(OBJECT_FLOOR, pGameObject);
+
+	m_SpawnManager = new CSpawnManager;
+	m_SpawnManager->Initialize();
+
 	////// Monster
 	//for (int i = 0; i < 5; ++i)
 	//{
@@ -60,26 +69,19 @@ void CMaingame::Initialize()
 	// Mouse
 	//pGameObject = CAbstractFactory<CMouse>::CreateObject();
 	//CObjectMgr::GetInstance()->AddObject(OBJECT_MOUSE, pGameObject);	
-	/*m_hDC = GetDC(g_hWnd);
-	BackDC = CreateCompatibleDC(m_hDC);
-	m_back = LoadBitmap(hInst, MAKEINTRESOURCE(IDB_BITMAP1));
-	SelectObject(BackDC, m_back);
-	ImageManager::ROAD()->Init();
-	ImageManager::ROAD()->PopM_Background(0, 0, 0,0);*/
-
 }
 
 void CMaingame::Update()
 {
 	CKeyMgr::GetInstance()->Update();
 	CObjectMgr::GetInstance()->Update();
+	m_SpawnManager->SpawnFloor();
 }
 
 void CMaingame::Render()
 {
 	Rectangle(BackDC, 0, 0, WINCX, WINCY);
 	CObjectMgr::GetInstance()->Render(BackDC);
-	//ImageManager::ROAD()->PopS_Background(1, 0, 0);
 	BitBlt(g_hDC, 0, 0, WINCX, WINCY, BackDC, 0, 0, SRCCOPY);
 }	
 

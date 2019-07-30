@@ -158,6 +158,8 @@
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="GuideBullet.h" />
     <ClInclude Include="ImageManager.h" />
+    <ClInclude Include="Item.h" />
+    <ClInclude Include="Jelly.h" />
     <ClInclude Include="KeyMgr.h" />
     <ClInclude Include="Maingame.h" />
     <ClInclude Include="Monster.h" />
@@ -186,6 +188,8 @@
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GuideBullet.cpp" />
     <ClCompile Include="ImageManager.cpp" />
+    <ClCompile Include="Item.cpp" />
+    <ClCompile Include="Jelly.cpp" />
     <ClCompile Include="KeyMgr.cpp" />
     <ClCompile Include="Maingame.cpp" />
     <ClCompile Include="Monster.cpp" />
@@ -208,8 +212,11 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\resource\bitmap3.bmp" />
+    <Image Include="..\Resource\Jelly_BlueBean.bmp" />
+    <Image Include="..\Resource\Stage1_Background1.bmp" />
     <Image Include="..\Resource\Stage1_Background2.bmp" />
     <Image Include="..\Resource\Stage1_Floor.bmp" />
+    <Image Include="..\Resource\Stage1_Floor.png" />
     <Image Include="..\Resource\Stage1_FloorLong.bmp" />
     <Image Include="Framework99C.ico" />
     <Image Include="small.ico" />

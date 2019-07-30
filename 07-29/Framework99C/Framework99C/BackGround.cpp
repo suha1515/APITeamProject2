@@ -28,6 +28,7 @@ void CBackGround::Initialize()
 	m_SecBackGScroll.x = 1600;
 	m_SecBackGScroll.y = 0;
 
+	
 	//스테이지_첫번째 바닥 벨트
 	m_FirFloorScroll.x = 0;
 	m_FirFloorScroll.y = WINCY - 120;
@@ -69,7 +70,7 @@ int CBackGround::Update()
 	//	m_LineLst.back()->fEndY = (float)pt.y;
 	//}
 
-	ScrollBackGround();
+
 
 	return NO_EVENT;
 }
@@ -88,12 +89,13 @@ void CBackGround::Render(HDC hDC)
 	//Rectangle(hDC, m_FirstScroll.x, m_FirstScroll.y, 350, 450);
 	//Rectangle(hDC, m_SecondScroll.x, m_SecondScroll.y, 350, 450);
 	//배경을 업데이트된 스크롤 위치에따라 렌더한다.
+	ScrollBackGround();
 	ImageManager::ROAD()->PopS_Background(0, m_FirBackGScroll.x, m_FirBackGScroll.y);
-	ImageManager::ROAD()->PopS_Background(1, m_SecBackGScroll.x, m_SecBackGScroll.y);
-
+	ImageManager::ROAD()->PopS_Background(0, m_SecBackGScroll.x, m_SecBackGScroll.y);
+	
 	//바닥을 업데이트된 스크롤 위치에 따라 렌더한다.
-	//ImageManager::ROAD()->PopS_Background(2, m_FirFloorScroll.x, m_FirFloorScroll.y);
-	//ImageManager::ROAD()->PopS_Background(3, m_SecFloorScroll.x, m_SecFloorScroll.y);
+	ImageManager::ROAD()->PopS_Background(2, m_FirFloorScroll.x, m_FirFloorScroll.y);
+	ImageManager::ROAD()->PopS_Background(2, m_SecFloorScroll.x, m_SecFloorScroll.y);
 }
 
 void CBackGround::Release()
@@ -104,28 +106,34 @@ void CBackGround::Release()
 
 void CBackGround::ScrollBackGround()
 {
-	//각 백그라운드가 화며상에서 완전히 사라졌을경우
+	
+	//각 백그라운드가 화면상에서 완전히 사라졌을경우
 	if (m_FirBackGScroll.x <= -1600)
-		m_FirBackGScroll.x = 1598;
+	{
+		m_FirBackGScroll.x = m_SecBackGScroll.x+1600;
+	}
+		
+		
 	if (m_SecBackGScroll.x <= -1600)
-		m_SecBackGScroll.x = 1596;
+	{
+		m_SecBackGScroll.x = m_FirBackGScroll.x +1600;
+	}
+		
 	//위치를 다시 오른쪽으로 옮긴다.
 
 	//각 바닥이 화면상에 완전히 사라졌을경우
-	if (m_FirFloorScroll.x <= -1488)
-		m_FirFloorScroll.x  = 1486;
-	if (m_SecFloorScroll.x <= -1488)
-		m_SecFloorScroll.x = 1484;
+	if (m_FirFloorScroll.x <= -1600)
+		m_FirFloorScroll.x  = m_SecFloorScroll.x + 1600;
+	if (m_SecFloorScroll.x <= -1600)
+		m_SecFloorScroll.x = m_FirFloorScroll.x  + 1600;
 
-	//위치를 다시 오른쪽으로 옮긴다.
-
-
-	m_FirBackGScroll.x  -= m_BackScrollSpeed*DELTA_TIME;
-	m_SecBackGScroll.x  -= m_BackScrollSpeed*DELTA_TIME;
+	
+	m_FirBackGScroll.x += CScrollMgr::m_fScrollX*0.5f;//m_BackScrollSpeed*DELTA_TIME;
+	m_SecBackGScroll.x += CScrollMgr::m_fScrollX*0.5f;//m_BackScrollSpeed*DELTA_TIME;
 
 
-	m_FirFloorScroll.x -= m_FloorScrollSpeed*DELTA_TIME;
-	m_SecFloorScroll.x -= m_FloorScrollSpeed*DELTA_TIME;
+	m_FirFloorScroll.x += CScrollMgr::m_fScrollX;//m_FloorScrollSpeed*DELTA_TIME;
+	m_SecFloorScroll.x += CScrollMgr::m_fScrollX;//m_FloorScrollSpeed*DELTA_TIME;
 
 
 }	

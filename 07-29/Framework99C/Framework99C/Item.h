@@ -1,26 +1,22 @@
 #pragma once
 #include "GameObject.h"
-class CFloor :
+class CItem :
 	public CGameObject
 {
 public:
-	CFloor();
-	~CFloor();
-
+	CItem();
+	~CItem();
 public:
 	virtual void Initialize();
 	virtual int Update();
 	virtual void Render(HDC hDC);
 
-public:
-	void Move();
-
 protected:
 	virtual void Release();
 
 private:
-	void IsOutofRange();
+	ITEM_TYPE	m_ItemType;
+	JELLY_TYPE	m_JellyType;
 
-	float		m_Speed;
 };
 

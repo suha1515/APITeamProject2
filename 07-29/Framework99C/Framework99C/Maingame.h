@@ -19,5 +19,6 @@ private:
 	HDC		m_hDC;	
 
 	HBITMAP m_back;
+	CSpawnManager* m_SpawnManager;
 };
 

@@ -23,8 +23,9 @@ private:
 
 private:
 	list<LINE_INFO*>	m_LineLst;
-	POSf				m_FirBackGScroll;
-	POSf				m_SecBackGScroll;
+	POSf			m_FirBackGScroll;
+	POSf			m_SecBackGScroll;
+
 
 	POSf				m_FirFloorScroll;
 	POSf				m_SecFloorScroll;

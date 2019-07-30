@@ -20,7 +20,7 @@ CPlayer::~CPlayer()
 void CPlayer::Initialize()
 {
 	m_tInfo.fX = 400.f;
-	m_tInfo.fY = 400.f;
+	m_tInfo.fY = 540.f;
 	m_tInfo.fCX = 100.f;
 	m_tInfo.fCY = 100.f;
 
@@ -34,7 +34,7 @@ void CPlayer::Initialize()
 int CPlayer::Update()
 {
 	KeyInput();
-	IsJump();
+	//IsJump();
 
 	return NO_EVENT;
 }
@@ -78,18 +78,20 @@ CGameObject* CPlayer::CreateGuideBullet()
 void CPlayer::KeyInput()
 {
 	// 플레이어가 움직인만큼 스크롤도 움직인다.
-	if (CKeyMgr::GetInstance()->KeyPressing(KEY_LEFT))
-	{
-		m_tInfo.fX -= m_fSpeed;
-		CScrollMgr::m_fScrollX -= m_fSpeed;
-	}
-	if (CKeyMgr::GetInstance()->KeyPressing(KEY_RIGHT))
+	if (CKeyMgr::GetInstance()->KeyDown(KEY_LEFT))
 	{
 		m_tInfo.fX += m_fSpeed;
 		CScrollMgr::m_fScrollX += m_fSpeed;
 	}
+	if (CKeyMgr::GetInstance()->KeyDown(KEY_RIGHT))
+	{
+		m_tInfo.fX -= m_fSpeed;
+		CScrollMgr::m_fScrollX -= m_fSpeed;
+	}
 	if (CKeyMgr::GetInstance()->KeyDown(KEY_SPACE))
 		m_bIsJump = true;
+
+	//CScrollMgr::m_fScrollX = m_fSpeed;
 }
 
 bool CPlayer::IsGround()

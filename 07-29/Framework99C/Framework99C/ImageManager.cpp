@@ -17,11 +17,15 @@ void ImageManager::Init()
 	//---스테이지1_오븐 백그라운드 2개
 	Push_Back(IDB_BITMAP1, 1600, 700); 
 	Push_Back(IDB_BITMAP2, 1600, 700);
+	Push_Back(IDB_BITMAP4, 1600, 120);
 	//---------------------------------
 
 	//---스테이지1_바닥 2개
 	Push_Object(IDB_BITMAP3, 124, 120);
 	//Push_Back(IDB_BITMAP4, 1488, 120);
+	//---------------------------------
+	//---젤리--------------------------
+	Push_Item(IDB_BITMAP5, 25, 34);
 	//---------------------------------
 }
 

@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "SpawnManager.h"
+#include "Floor.h"
 
 
 CSpawnManager::CSpawnManager()
@@ -12,11 +13,12 @@ CSpawnManager::~CSpawnManager()
 }
 void CSpawnManager::Initialize()
 {
-	m_FloorRate = 0;
+
 }
 void CSpawnManager::SpawnFloor()
-{
-
+{	
+	
+	//cout << m_FloorCount << endl;
 }
 
 

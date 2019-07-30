@@ -28,5 +28,6 @@ typedef struct tagIntPos
 	int y;
 }POSi;
 
+
 #define __STRUCT_H__
 #endif
