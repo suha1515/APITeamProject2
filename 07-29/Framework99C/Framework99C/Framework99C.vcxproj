@@ -22,13 +22,13 @@
     <ProjectGuid>{E79496AC-BE9D-47B0-A6F0-4A2DBA009181}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>Framework99C</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -154,10 +154,12 @@
     <ClInclude Include="EffectManager.h" />
     <ClInclude Include="Enum.h" />
     <ClInclude Include="Extern.h" />
+    <ClInclude Include="Floor.h" />
     <ClInclude Include="Framework99C.h" />
     <ClInclude Include="Function.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="GuideBullet.h" />
+    <ClInclude Include="Item.h" />
     <ClInclude Include="KeyMgr.h" />
     <ClInclude Include="Maingame.h" />
     <ClInclude Include="Monster.h" />
@@ -167,6 +169,7 @@
     <ClInclude Include="Resource.h" />
     <ClInclude Include="ScrollMgr.h" />
     <ClInclude Include="Shield.h" />
+    <ClInclude Include="SpawnManager.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Struct.h" />
     <ClInclude Include="targetver.h" />
@@ -181,9 +184,11 @@
     <ClCompile Include="Center.cpp" />
     <ClCompile Include="CollsionMgr.cpp" />
     <ClCompile Include="EffectManager.cpp" />
+    <ClCompile Include="Floor.cpp" />
     <ClCompile Include="Framework99C.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GuideBullet.cpp" />
+    <ClCompile Include="Item.cpp" />
     <ClCompile Include="KeyMgr.cpp" />
     <ClCompile Include="Maingame.cpp" />
     <ClCompile Include="Monster.cpp" />
@@ -192,6 +197,7 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="ScrollMgr.cpp" />
     <ClCompile Include="Shield.cpp" />
+    <ClCompile Include="SpawnManager.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

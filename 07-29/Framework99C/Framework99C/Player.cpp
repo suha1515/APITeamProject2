@@ -24,7 +24,7 @@ void CPlayer::Initialize()
 	m_tInfo.fCX = 100.f;
 	m_tInfo.fCY = 100.f;
 
-	m_fSpeed = 10.f;
+	m_fSpeed = 5.f;
 	m_fAngle = 90.f;
 	m_fPosinLength = 100.f;
 
@@ -48,6 +48,7 @@ void CPlayer::Render(HDC hDC)
 		m_tRect.bottom);
 */
 	BMP->PopA_BG(2, 0,60, this, 70);
+
 }
 
 void CPlayer::Release()
@@ -80,15 +81,15 @@ CGameObject* CPlayer::CreateGuideBullet()
 void CPlayer::KeyInput()
 {
 	// 플레이어가 움직인만큼 스크롤도 움직인다.
-	if (CKeyMgr::GetInstance()->KeyPressing(KEY_LEFT))
+	if (CKeyMgr::GetInstance()->KeyDown(KEY_LEFT))
 	{
 		m_tInfo.fX -= m_fSpeed;
-		CScrollMgr::m_fScrollX -= m_fSpeed;
-	}
-	if (CKeyMgr::GetInstance()->KeyPressing(KEY_RIGHT))
-	{
-		m_tInfo.fX += m_fSpeed;
 		CScrollMgr::m_fScrollX += m_fSpeed;
+	}
+	if (CKeyMgr::GetInstance()->KeyDown(KEY_RIGHT))
+	{
+		m_tInfo.fX +=m_fSpeed;
+		CScrollMgr::m_fScrollX -= m_fSpeed;
 	}
 	if (CKeyMgr::GetInstance()->KeyDown(KEY_SPACE))
 		m_bIsJump = true;
