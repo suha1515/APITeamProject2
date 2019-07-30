@@ -13,9 +13,16 @@ ImageManager * ImageManager::ROAD()
 
 void ImageManager::Init()
 {
-	Push_Back(IDB_BITMAP1, 800, 600);
-
 	//여기에 이미지 추가
+	//---스테이지1_오븐 백그라운드 2개
+	Push_Back(IDB_BITMAP1, 1600, 700); 
+	Push_Back(IDB_BITMAP2, 1600, 700);
+	//---------------------------------
+
+	//---스테이지1_바닥 2개
+	Push_Object(IDB_BITMAP3, 124, 120);
+	//Push_Back(IDB_BITMAP4, 1488, 120);
+	//---------------------------------
 }
 
 void ImageManager::Auto_BackGround()
@@ -32,26 +39,26 @@ void ImageManager::Push_Back(int ID, int Width, int Height)
 
 void ImageManager::Push_Eff(int ID, int Width, int Height)
 {
-	BackGround.push_back(new CBit);
-	BackGround.back()->SetUp(ID, Width, Height);
+	Effect.push_back(new CBit);
+	Effect.back()->SetUp(ID, Width, Height);
 }
 
 void ImageManager::Push_Player(int ID, int Width, int Height)
 {
-	BackGround.push_back(new CBit);
-	BackGround.back()->SetUp(ID, Width, Height);
+	Player.push_back(new CBit);
+	Player.back()->SetUp(ID, Width, Height);
 }
 
 void ImageManager::Push_Object(int ID, int Width, int Height)
 {
-	BackGround.push_back(new CBit);
-	BackGround.back()->SetUp(ID, Width, Height);
+	Object.push_back(new CBit);
+	Object.back()->SetUp(ID, Width, Height);
 }
 
 void ImageManager::Push_Item(int ID, int Width, int Height)
 {
-	BackGround.push_back(new CBit);
-	BackGround.back()->SetUp(ID, Width, Height);
+	Item.push_back(new CBit);
+	Item.back()->SetUp(ID, Width, Height);
 }
 
 vector<CBit*>& ImageManager::Pop_BackGround()

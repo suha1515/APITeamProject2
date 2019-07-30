@@ -152,6 +152,7 @@
     <ClInclude Include="EffectManager.h" />
     <ClInclude Include="Enum.h" />
     <ClInclude Include="Extern.h" />
+    <ClInclude Include="Floor.h" />
     <ClInclude Include="Framework99C.h" />
     <ClInclude Include="Function.h" />
     <ClInclude Include="GameObject.h" />
@@ -166,6 +167,7 @@
     <ClInclude Include="Resource.h" />
     <ClInclude Include="ScrollMgr.h" />
     <ClInclude Include="Shield.h" />
+    <ClInclude Include="SpawnManager.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Struct.h" />
     <ClInclude Include="targetver.h" />
@@ -179,6 +181,7 @@
     <ClCompile Include="Center.cpp" />
     <ClCompile Include="CollsionMgr.cpp" />
     <ClCompile Include="EffectManager.cpp" />
+    <ClCompile Include="Floor.cpp" />
     <ClCompile Include="Framework99C.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GuideBullet.cpp" />
@@ -191,6 +194,7 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="ScrollMgr.cpp" />
     <ClCompile Include="Shield.cpp" />
+    <ClCompile Include="SpawnManager.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -203,7 +207,10 @@
     <ResourceCompile Include="Framework99C.rc" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\..\..\..\..\Desktop\190729_비트맵불러오기\Framework99C\Image\Logo\Logo.bmp" />
+    <Image Include="..\resource\bitmap3.bmp" />
+    <Image Include="..\Resource\Stage1_Background2.bmp" />
+    <Image Include="..\Resource\Stage1_Floor.bmp" />
+    <Image Include="..\Resource\Stage1_FloorLong.bmp" />
     <Image Include="Framework99C.ico" />
     <Image Include="small.ico" />
   </ItemGroup>

@@ -16,5 +16,17 @@ typedef struct tagInfo
 	float fCY = 0.f;
 }INFO;
 
+typedef struct tagFloatPos
+{
+	float x;
+	float y;
+}POSf;
+
+typedef struct tagIntPos
+{
+	int x;
+	int y;
+}POSi;
+
 #define __STRUCT_H__
 #endif

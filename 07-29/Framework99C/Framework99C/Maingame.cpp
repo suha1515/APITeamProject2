@@ -20,7 +20,20 @@ void CMaingame::Initialize()
 {
 	// GetDC: 출력 DC 생성 함수.
 	m_hDC = GetDC(g_hWnd);
+	g_hDC = m_hDC;
+
+	//------------더블 버퍼링---------------------
+	//현재 클라이언트의 크기 구함
+	RECT clientRect;
+	GetClientRect(g_hWnd, &clientRect);
+
 	BackDC = CreateCompatibleDC(m_hDC);
+	g_hBitmap = CreateCompatibleBitmap(m_hDC, clientRect.right, clientRect.bottom);
+	g_hOldBit = (HBITMAP)SelectObject(BackDC, g_hBitmap);
+	//---------------------------------------------
+
+	//이미지 로더 초기화
+	ImageManager::ROAD()->Init();
 
 	srand((unsigned)time(nullptr));
 
@@ -64,16 +77,20 @@ void CMaingame::Update()
 
 void CMaingame::Render()
 {
-	//Rectangle(m_hDC, 0, 0, WINCX, WINCY);
-	CObjectMgr::GetInstance()->Render(m_hDC);
-	/*ImageManager::ROAD()->PopS_Background(0, 100, 100);
-	BitBlt(m_hDC, 0, 0, WINCX, WINCY, BackDC, 0, 0, SRCCOPY);*/
+	Rectangle(BackDC, 0, 0, WINCX, WINCY);
+	CObjectMgr::GetInstance()->Render(BackDC);
+	//ImageManager::ROAD()->PopS_Background(1, 0, 0);
+	BitBlt(g_hDC, 0, 0, WINCX, WINCY, BackDC, 0, 0, SRCCOPY);
 }	
 
 void CMaingame::Release()
 {
 	// GetDC함수로 할당받은 DC는 아래 함수로 해제해주어야 한다.
 	ReleaseDC(g_hWnd, m_hDC);	
+	
+	// 더블버퍼링 해제
+	SelectObject(BackDC, g_hOldBit);
+	DeleteDC(BackDC);
 
 	CKeyMgr::GetInstance()->DestroyInstance();
 	CObjectMgr::GetInstance()->DestroyInstance();

@@ -67,6 +67,15 @@
     <Filter Include="95.UIManager">
       <UniqueIdentifier>{813c6d12-1c1f-4cdf-b126-62c6a437e213}</UniqueIdentifier>
     </Filter>
+    <Filter Include="100.Resource">
+      <UniqueIdentifier>{b238b4f5-af68-471d-844f-fe6d561f8215}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.GameObject\07.Floor">
+      <UniqueIdentifier>{a30872da-11f3-459c-9661-205ffc51c210}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="97.Managers\05.SpawnManager">
+      <UniqueIdentifier>{939452e6-d406-4f26-853d-6fe1d36bf510}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Framework99C.h">
@@ -156,6 +165,12 @@
     <ClInclude Include="UIManager.h">
       <Filter>95.UIManager</Filter>
     </ClInclude>
+    <ClInclude Include="SpawnManager.h">
+      <Filter>97.Managers\05.SpawnManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Floor.h">
+      <Filter>01.GameObject\07.Floor</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Framework99C.cpp">
@@ -218,6 +233,12 @@
     <ClCompile Include="UIManager.cpp">
       <Filter>95.UIManager</Filter>
     </ClCompile>
+    <ClCompile Include="SpawnManager.cpp">
+      <Filter>97.Managers\05.SpawnManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Floor.cpp">
+      <Filter>01.GameObject\07.Floor</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Framework99C.ico">
@@ -226,7 +247,16 @@
     <Image Include="small.ico">
       <Filter>99.Default</Filter>
     </Image>
-    <Image Include="..\..\..\..\..\..\Desktop\190729_비트맵불러오기\Framework99C\Image\Logo\Logo.bmp" />
+    <Image Include="..\resource\bitmap3.bmp" />
+    <Image Include="..\Resource\Stage1_Background2.bmp">
+      <Filter>100.Resource</Filter>
+    </Image>
+    <Image Include="..\Resource\Stage1_Floor.bmp">
+      <Filter>100.Resource</Filter>
+    </Image>
+    <Image Include="..\Resource\Stage1_FloorLong.bmp">
+      <Filter>100.Resource</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Framework99C.rc">
