@@ -17,7 +17,11 @@ private:
 
 private:
 	HDC		m_hDC;	
-
+	
 	HBITMAP m_back;
+	CGameObject* m_pPlayer;
+	
+	int scr_x = 0;
+	int scr_y = 0;
 };
 

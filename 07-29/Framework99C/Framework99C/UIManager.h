@@ -1,6 +1,6 @@
 #pragma once
 #include "Center.h"
-#include "ImageManager.h"
+
 
 //체력바 등 UI
 class UIManager
