@@ -47,7 +47,7 @@ void CPlayer::Render(HDC hDC)
 		m_tRect.right - CScrollMgr::m_fScrollX,
 		m_tRect.bottom);
 */
-	BMP->PopA_Player(0, 0,0, this, 10);
+	BMP->PopA_BG(2, 0,60, this, 70);
 }
 
 void CPlayer::Release()

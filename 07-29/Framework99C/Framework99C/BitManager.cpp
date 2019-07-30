@@ -16,17 +16,22 @@ void BitManager::Initialize()
 
 	//Back 추가 
 	Push_BG(L"texture//background.bmp", 1000, 1000);  //처음 세팅
-	Push_BG(L"texture//연습용.bmp", 1000, 300);
+	Push_BG(L"texture//연습용.bmp", 2000, 500);
+	Push_BG(L"texture//연습용쿠키.bmp", 3192, 288, 11);
+	Push_BG(L"texture//연습용2.bmp", 2000, 500);
+	
 	
 	//Push_BG(L"texture//test1.bmp", 1000, 1000);
 	//Push_BG(L"texture//test2.bmp", 4000, 2000);
 	//Push_BG(L"texture//keroro.bmp", 140, 50, 3);
 
 	//플레이어 추가
-	Push_Player(L"texture//연습용쿠키.bmp", 3192, 288, 11);
+	
 	/*Push_Player(L"texture//keroro.bmp", 140, 50);
 	Push_Player(L"texture\\test1.bmp", 500, 500);*/
-	//총알 추가
+
+	// 이펙트 추가
+	// 아이템 추가
 	//이펙트 추가
 	//기타추가
 

@@ -5,8 +5,8 @@
 #define PI 3.141592f
 #define GRAVITY 9.8f
 
-#define WINCX 800
-#define WINCY 600
+#define WINCX 1000
+#define WINCY 500
 
 #define NO_EVENT 0
 #define DEAD_OBJ 1
