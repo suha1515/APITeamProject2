@@ -79,6 +79,7 @@ void CMaingame::Render()
 	// 배경 스크롤 (W = 가로, H = 세로)
 	BMP->Auto_BackGround_W(1, 3);
 
+
 	//키보드에 따라 배경 움직이기
 	/*if (GetAsyncKeyState(VK_RIGHT))
 		scr_x += 3;

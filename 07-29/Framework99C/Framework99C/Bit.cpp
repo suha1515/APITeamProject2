@@ -54,7 +54,7 @@ void CBit::Output(HDC hDC, int nX, int nY, int nFrame, int nFrameMax) // 모든 출
 	int  nWidth = m_nWidth / nFrameMax;
 	RECT  rcSour = { 0, 0, nWidth, m_nHeight };
 	OffsetRect(&rcSour, nWidth * nFrame, 0);
-	TransparentBlt(hDC, nX, nY, nWidth, m_nHeight, m_MemDC, rcSour.left, rcSour.top, nWidth, m_nHeight, RGB(R, G, B)); // 색지우기
+	GdiTransparentBlt(hDC, nX, nY, nWidth, m_nHeight, m_MemDC, rcSour.left, rcSour.top, nWidth, m_nHeight, RGB(R, G, B)); // 색지우기
 
 }
 

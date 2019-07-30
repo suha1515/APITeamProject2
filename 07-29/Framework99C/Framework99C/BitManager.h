@@ -78,6 +78,9 @@ public:
 	void PopA_Item(int index, int x, int y, CGameObject* co, clock_t time = 150);
 	void PopA_Effect(int index, int x, int y, CGameObject* co, clock_t time = 150);
 	void PopA_Player(int index, int x, int y, CGameObject* co, clock_t time = 150);
+	void PopA_Once(int index, int x, int y, CGameObject* co, clock_t time = 150);
+
+	
 private:
 	vector<CBit*> BG;
 	vector<CBit*> Obj;

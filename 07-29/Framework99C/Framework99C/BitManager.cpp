@@ -17,8 +17,11 @@ void BitManager::Initialize()
 	//Back 추가 
 	Push_BG(L"texture//background.bmp", 1000, 1000);  //처음 세팅
 	Push_BG(L"texture//연습용.bmp", 2000, 500);
-	Push_BG(L"texture//연습용쿠키.bmp", 3192, 288, 11);
+	
 	Push_BG(L"texture//연습용2.bmp", 2000, 500);
+
+	Push_Obj(L"texture//연습용쿠키.bmp", 3192, 288, 11);
+	
 	
 	
 	//Push_BG(L"texture//test1.bmp", 1000, 1000);
@@ -185,26 +188,32 @@ void BitManager::PopA_BG(int index, int x, int y, CGameObject *co, clock_t time)
 
 void BitManager::PopA_Obj(int index, int x, int y, CGameObject * co, clock_t time)
 {
-	int frame = co->IndexTimer(BG.at(index)->GetFrame(), time);
-	Obj.at(index)->Output(BackDC, x, y, frame, BG.at(index)->GetFrame());
+	int frame = co->IndexTimer(Obj.at(index)->GetFrame(), time);
+	Obj.at(index)->Output(BackDC, x, y, frame, Obj.at(index)->GetFrame());
 }
 
 void BitManager::PopA_Item(int index, int x, int y, CGameObject * co, clock_t time)
 {
-	int frame = co->IndexTimer(BG.at(index)->GetFrame(), time);
-	Item.at(index)->Output(BackDC, x, y, frame, BG.at(index)->GetFrame());
+	int frame = co->IndexTimer(Item.at(index)->GetFrame(), time);
+	Item.at(index)->Output(BackDC, x, y, frame, Item.at(index)->GetFrame());
 }
 
 void BitManager::PopA_Effect(int index, int x, int y, CGameObject * co, clock_t time)
 {
-	int frame = co->IndexTimer(BG.at(index)->GetFrame(), time);
-	Effect.at(index)->Output(BackDC, x, y, frame, BG.at(index)->GetFrame());
+	int frame = co->IndexTimer(Effect.at(index)->GetFrame(), time);
+	Effect.at(index)->Output(BackDC, x, y, frame, Effect.at(index)->GetFrame());
 }
 
 void BitManager::PopA_Player(int index, int x, int y, CGameObject * co, clock_t time)
 {
-	int frame = co->IndexTimer(BG.at(index)->GetFrame(), time);
-	Player.at(index)->Output(BackDC, x, y, frame, BG.at(index)->GetFrame());
+	int frame = co->IndexTimer(Player.at(index)->GetFrame(), time);
+	Player.at(index)->Output(BackDC, x, y, frame, Player.at(index)->GetFrame());
+}
+
+void BitManager::PopA_Once(int index2, int x, int y, CGameObject * co, clock_t time)
+{
+	int frame = co->IndexTimerOnce(Obj.at(index2)->GetFrame(), time);
+	Obj.at(index2)->Output(BackDC, x, y, frame, Obj.at(index2)->GetFrame());
 }
 
 

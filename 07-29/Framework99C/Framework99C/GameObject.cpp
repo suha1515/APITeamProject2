@@ -57,6 +57,24 @@ int CGameObject::IndexTimer(int frame, clock_t time)
 	return m_index;
 }
 
+int CGameObject::IndexTimerOnce(int frame, clock_t time)
+{
+	if (clock() - m_oldtime2 > time)
+	{
+		if (m_index2 < frame - 1)
+		{
+			m_index2++;
+		}
+		else
+		{
+			frame = -1;
+			
+		}
+		m_oldtime2 = clock();
+	}
+	return m_index2;
+}
+
 void CGameObject::Set_index(int index)
 {
 	m_index = index;
@@ -67,7 +85,22 @@ void CGameObject::Set_oldtime()
 	m_oldtime = clock();
 }
 
+void CGameObject::Set_Index2(int index2)
+{
+	m_index2 = index2;
+}
+
+void CGameObject::Set_oldtime2()
+{
+	m_oldtime2 = clock();
+}
+
 clock_t CGameObject::Get_oldtime()
 {
 	return m_oldtime;
+}
+
+clock_t CGameObject::Get_oldtime2()
+{
+	return m_oldtime2;
 }
