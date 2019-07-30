@@ -20,9 +20,19 @@ void BitManager::Initialize()
 	
 	Push_BG(L"texture//연습용2.bmp", 2000, 500);
 
+<<<<<<< HEAD
 	Push_Obj(L"texture//연습용쿠키.bmp", 3192, 288, 11);
 	
 	
+=======
+	Push_Obj(L"texture//stage1//스테이지1_바닥.bmp", 100, 100);
+	Push_Obj(L"texture//stage1//장애물//가시.bmp", 63, 99);
+	Push_Obj(L"texture//stage1//장애물//포크.bmp", 80, 113);
+	Push_Obj(L"texture//stage1//장애물//애니메이션_가시.bmp", 324, 131,4);
+
+	//아이템&젤리
+	Push_Item(L"texture//stage1//젤리//파란_젤리.bmp", 20, 25);
+>>>>>>> b3337f37d91e616821a150ad25ecc6b99bd87560
 	
 	//Push_BG(L"texture//test1.bmp", 1000, 1000);
 	//Push_BG(L"texture//test2.bmp", 4000, 2000);

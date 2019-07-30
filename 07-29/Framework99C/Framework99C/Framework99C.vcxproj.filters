@@ -70,6 +70,15 @@
     <Filter Include="97.ImageManager\BitManager">
       <UniqueIdentifier>{11d9bde7-8bf0-49f3-b3a0-ada3e72a43f0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="01.GameObject\07.Item">
+      <UniqueIdentifier>{657adbef-4a92-491c-bfc4-2eacfc6b1595}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="97.Managers\05.SpawnManager">
+      <UniqueIdentifier>{e994460f-cc3b-48a2-a96e-88c51d101b4e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.GameObject\08.Floor">
+      <UniqueIdentifier>{d133c3f5-1bfa-40e1-b71f-e0c6a2da4109}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Framework99C.h">
@@ -159,6 +168,15 @@
     <ClInclude Include="BitManager.h">
       <Filter>97.ImageManager\BitManager</Filter>
     </ClInclude>
+    <ClInclude Include="SpawnManager.h">
+      <Filter>97.Managers\05.SpawnManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Item.h">
+      <Filter>01.GameObject\07.Item</Filter>
+    </ClInclude>
+    <ClInclude Include="Floor.h">
+      <Filter>01.GameObject\08.Floor</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Framework99C.cpp">
@@ -220,6 +238,15 @@
     </ClCompile>
     <ClCompile Include="BitManager.cpp">
       <Filter>97.ImageManager\BitManager</Filter>
+    </ClCompile>
+    <ClCompile Include="SpawnManager.cpp">
+      <Filter>97.Managers\05.SpawnManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Item.cpp">
+      <Filter>01.GameObject\07.Item</Filter>
+    </ClCompile>
+    <ClCompile Include="Floor.cpp">
+      <Filter>01.GameObject\08.Floor</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

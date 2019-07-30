@@ -6,6 +6,8 @@
 #include "BackGround.h"
 #include "BitManager.h"
 #include "GameObject.h"
+#include "SpawnManager.h"
+#include "Floor.h"
 
 CMaingame::CMaingame()	
 {
@@ -27,7 +29,7 @@ void CMaingame::Initialize()
 	SelectObject(BackDC, m_back);
 	BMP->Initialize();
 	
-
+	m_SpawnManager = new CSpawnManager;
 
 	srand((unsigned)time(nullptr));
 
@@ -41,6 +43,11 @@ void CMaingame::Initialize()
 	pGameObject = CAbstractFactory<CPlayer>::CreateObject();
 	CObjectMgr::GetInstance()->AddObject(OBJECT_PLAYER, pGameObject);	
 
+	//floor
+	/*pGameObject = CAbstractFactory<CFloor>::CreateObject();
+	CObjectMgr::GetInstance()->AddObject(OBJECT_FLOOR, pGameObject);
+	pGameObject->SetPos(62, 450);
+*/
 	////// Monster
 	//for (int i = 0; i < 5; ++i)
 	//{
@@ -65,6 +72,8 @@ void CMaingame::Initialize()
 
 void CMaingame::Update()
 {
+	m_SpawnManager->SpawnFloor();
+	m_SpawnManager->SpawnJelly();
 	CKeyMgr::GetInstance()->Update();
 	CObjectMgr::GetInstance()->Update();
 }
@@ -77,7 +86,6 @@ void CMaingame::Render()
 	BMP->PopS_BG(1, 0, 0);
 
 	// 배경 스크롤 (W = 가로, H = 세로)
-	BMP->Auto_BackGround_W(1, 3);
 
 
 	//키보드에 따라 배경 움직이기
@@ -87,15 +95,8 @@ void CMaingame::Render()
 
 	//모든 렌더는 BackDC에
 	CObjectMgr::GetInstance()->Render(BackDC);
-	m_pPlayer->Render(BackDC);
-
-
-
-
-
 	//더블버퍼링
 	BitBlt(m_hDC, 0, 0, WINCX, WINCY, BackDC, 0, 0, SRCCOPY);
-
 }	
 
 void CMaingame::Release()
@@ -106,3 +107,4 @@ void CMaingame::Release()
 	CKeyMgr::GetInstance()->DestroyInstance();
 	CObjectMgr::GetInstance()->DestroyInstance();
 }
+

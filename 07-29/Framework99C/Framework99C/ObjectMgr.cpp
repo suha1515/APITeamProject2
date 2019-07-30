@@ -68,6 +68,12 @@ CGameObject* CObjectMgr::GetNearTarget(CGameObject* pSrc, OBJECT_TYPE eType)
 	return pNearTarget;
 }
 
+const OBJLIST* CObjectMgr::GetObjectList(OBJECT_TYPE type)
+{
+	// TODO: 여기에 반환 구문을 삽입합니다.
+	return &m_ObjLst[type];
+}
+
 void CObjectMgr::AddObject(OBJECT_TYPE eType, CGameObject* pObject)
 {
 	NULL_CHECK(pObject);
