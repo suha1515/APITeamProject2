@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "CollsionMgr.h"
 #include "GameObject.h"
+#include "Player.h"
 
 CCollsionMgr::CCollsionMgr()
 {
@@ -25,8 +26,9 @@ void CCollsionMgr::CollisionImpe(const OBJLIST& dstLst, const OBJLIST& srcLst)
 			{
 				pSource->SetDamage(pDest->GetInfo().iDMG);
 
-				if (0 >= pSource->GetInfo().iHealth)
-					pSource->SetDead(true);
+				pSource->SetTime(GetTickCount()); //충돌확인 이전, 충돌되자마자 시간값 얻어오기
+
+				pSource->SetGraceChk(true); //충돌했다고 알려준다.
 			}
 		}
 	}

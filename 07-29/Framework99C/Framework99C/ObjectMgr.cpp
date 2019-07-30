@@ -95,17 +95,16 @@ void CObjectMgr::Update()
 		}
 	}
 
-	if (!m_ObjLst[OBJECT_PLAYER].front()->GetInfo().bGraceChk)
+	//플레이어 충돌 시 무적 2초!
+	if (m_ObjLst[OBJECT_PLAYER].empty())
+		return;
+	else
 	{
-		CCollsionMgr::CollisionImpe(m_ObjLst[OBJECT_MONSTER], m_ObjLst[OBJECT_PLAYER]);
+		if (!m_ObjLst[OBJECT_PLAYER].front()->GetInfo().bGraceChk)
+			CCollsionMgr::CollisionImpe(m_ObjLst[OBJECT_MONSTER], m_ObjLst[OBJECT_PLAYER]);
 
-		m_ObjLst[OBJECT_PLAYER].front()->SetGraceChk(true);
-
-		if (GetTickCount() - m_ObjLst[OBJECT_PLAYER].front()->GetTime() >= 2000)
-		{
+		if (GetTickCount() - m_ObjLst[OBJECT_PLAYER].front()->GetTime() >= 2000 && m_ObjLst[OBJECT_PLAYER].front()->GetInfo().bGraceChk)
 			m_ObjLst[OBJECT_PLAYER].front()->SetGraceChk(false);
-			m_ObjLst[OBJECT_PLAYER].front()->SetTime(GetTickCount());
-		}
 	}
 }
 

@@ -42,5 +42,6 @@ private:
 
 	DWORD TimeOld;
 	DWORD TimeCur;
+	vector<LINE_INFO> linevector;
 };
 

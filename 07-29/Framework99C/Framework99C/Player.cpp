@@ -36,12 +36,20 @@ void CPlayer::Initialize()
 	m_fJumpForce = 20.f;
 
 	m_iJumpCount = 2;
+
+
+	//테스트임니다
+	linevector.push_back({ 600,400,900,400 });
+	linevector.push_back({ 200,500,600,500 });
 }
 
 int CPlayer::Update()
 {
 	KeyInput();
 	IsJump();
+
+	if (m_tInfo.iHealth <= 0) //플레이어 피가 0이면 사망
+		m_bIsDead = true;
 
 	if (m_bIsDead)
 		return DEAD_OBJ;
@@ -52,7 +60,6 @@ int CPlayer::Update()
 		SetDamage(1);
 		TimeOld = TimeCur;
 	}
-
 	return NO_EVENT;
 }
 
@@ -61,16 +68,27 @@ void CPlayer::Render(HDC hDC)
 	CGameObject::UpdateRect();
 
 	//플레이어 체력바입니다.
-	Rectangle(hDC, 50,
-		5,
-		10 * m_tInfo.iHealth,
-		50);
+	if (m_tInfo.iHealth >= 0)
+	{
+		Rectangle(hDC, 50,
+			5,
+			10 * m_tInfo.iHealth,
+			50);
+	}
 
 	//플레이어 위치입니다.
 	Rectangle(hDC, m_tRect.left - CScrollMgr::m_fScrollX, 
 		m_tRect.top, 
 		m_tRect.right - CScrollMgr::m_fScrollX,
 		m_tRect.bottom);	
+
+	//테스트임니다
+	for (auto i : linevector)
+	{
+		MoveToEx(hDC, i.fStartX, i.fStartY, nullptr);
+		LineTo(hDC, i.fEndX, i.fEndY);
+	}
+
 }
 
 void CPlayer::Release()

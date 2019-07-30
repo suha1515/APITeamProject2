@@ -47,5 +47,5 @@ using namespace std;
 #include "ObjectMgr.h"
 #include "ScrollMgr.h"
 
-//#pragma comment(linker,"/entry:wWinMainCRTStartup /subsystem:console")
+#pragma comment(linker,"/entry:wWinMainCRTStartup /subsystem:console")
 //√‚√≥: https://alleysark.tistory.com/36 [æŸ∏ÆªÌ]
