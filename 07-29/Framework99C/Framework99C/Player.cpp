@@ -23,10 +23,15 @@ void CPlayer::Initialize()
 	m_tInfo.fY = 400.f;
 	m_tInfo.fCX = 100.f;
 	m_tInfo.fCY = 100.f;
-	m_tInfo.iHealth = 50;
+	m_tInfo.iHealth = 100;
 	m_fSpeed = 10.f;
 	m_fAngle = 90.f;
 	m_fPosinLength = 100.f;
+
+	m_tInfo.bGraceChk = false;
+
+	TimeOld = GetTickCount();
+	TimeCur = GetTickCount();
 
 	m_fJumpForce = 20.f;
 
@@ -38,6 +43,16 @@ int CPlayer::Update()
 	KeyInput();
 	IsJump();
 
+	if (m_bIsDead)
+		return DEAD_OBJ;
+
+	TimeCur = GetTickCount();
+	if (TimeCur - TimeOld >= 1000) //플레이어 체력이 1초에 1씩 깎입니다.
+	{
+		SetDamage(1);
+		TimeOld = TimeCur;
+	}
+
 	return NO_EVENT;
 }
 
@@ -45,11 +60,13 @@ void CPlayer::Render(HDC hDC)
 {
 	CGameObject::UpdateRect();
 
+	//플레이어 체력바입니다.
 	Rectangle(hDC, 50,
 		5,
 		10 * m_tInfo.iHealth,
 		50);
 
+	//플레이어 위치입니다.
 	Rectangle(hDC, m_tRect.left - CScrollMgr::m_fScrollX, 
 		m_tRect.top, 
 		m_tRect.right - CScrollMgr::m_fScrollX,

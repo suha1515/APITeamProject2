@@ -20,7 +20,7 @@ void CMonster::Initialize()
 	m_tInfo.fCX = 100.f;
 	m_tInfo.fCY = 100.f;
 
-	m_tInfo.iDMG = 1;
+	m_tInfo.iDMG = 5;
 	m_fSpeed = 5.f;
 }
 

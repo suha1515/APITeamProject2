@@ -17,6 +17,7 @@ public:
 	CGameObject* GetPlayer() const;
 	CGameObject* GetMouse() const;
 	CGameObject* GetBackGround() const;
+
 	CGameObject* GetNearTarget(CGameObject* pSrc, OBJECT_TYPE eType);
 
 public:

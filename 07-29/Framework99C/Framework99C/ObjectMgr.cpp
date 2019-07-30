@@ -94,7 +94,19 @@ void CObjectMgr::Update()
 				++iter_Begin;
 		}
 	}
-	CCollsionMgr::CollisionRect(m_ObjLst[OBJECT_MONSTER], m_ObjLst[OBJECT_PLAYER]);
+
+	if (!m_ObjLst[OBJECT_PLAYER].front()->GetInfo().bGraceChk)
+	{
+		CCollsionMgr::CollisionImpe(m_ObjLst[OBJECT_MONSTER], m_ObjLst[OBJECT_PLAYER]);
+
+		m_ObjLst[OBJECT_PLAYER].front()->SetGraceChk(true);
+
+		if (GetTickCount() - m_ObjLst[OBJECT_PLAYER].front()->GetTime() >= 2000)
+		{
+			m_ObjLst[OBJECT_PLAYER].front()->SetGraceChk(false);
+			m_ObjLst[OBJECT_PLAYER].front()->SetTime(GetTickCount());
+		}
+	}
 }
 
 void CObjectMgr::Render(HDC hDC)

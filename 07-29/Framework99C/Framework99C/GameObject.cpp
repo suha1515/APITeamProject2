@@ -50,14 +50,19 @@ void CGameObject::SetHealth(int iHealth)
 	m_tInfo.iHealth = iHealth;
 }
 
-void CGameObject::SetGracePeriod(bool bChk)
+void CGameObject::SetGraceChk(bool bCollision)
 {
-	m_tInfo.bGraceChk = bChk;
+	m_tInfo.bGraceChk = bCollision;
 }
 
-void CGameObject::SetTimeCount(DWORD Time)
+void CGameObject::SetTime(DWORD dwTime)
 {
-	Time = GetTickCount();
+	m_tInfo.dwOldTime = dwTime;
+}
+
+DWORD CGameObject::GetTime()
+{
+	return m_tInfo.dwOldTime;
 }
 
 void CGameObject::UpdateRect()

@@ -20,7 +20,8 @@ typedef struct tagInfo
 
 	bool bGraceChk = false;
 
-	DWORD CoolDownOld= 0;
+	DWORD dwOldTime = GetTickCount();
+	DWORD dwCurTime = GetTickCount();
 }INFO;
 
 #define __STRUCT_H__

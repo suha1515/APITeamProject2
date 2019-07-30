@@ -6,7 +6,7 @@ public:
 	~CCollsionMgr();
 
 public:
-	static void CollisionRect(const OBJLIST& dstLst, const OBJLIST& srcLst);
+	static void CollisionImpe(const OBJLIST& dstLst, const OBJLIST& srcLst);
 	static void CollisionRectEX(const OBJLIST& dstLst, const OBJLIST& srcLst);
 	static void CollisionSphere(const OBJLIST& dstLst, const OBJLIST& srcLst);
 

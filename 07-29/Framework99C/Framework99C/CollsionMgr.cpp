@@ -11,7 +11,7 @@ CCollsionMgr::~CCollsionMgr()
 {
 }
 
-void CCollsionMgr::CollisionRect(const OBJLIST& dstLst, const OBJLIST& srcLst)
+void CCollsionMgr::CollisionImpe(const OBJLIST& dstLst, const OBJLIST& srcLst)
 {
 	RECT rc = {};
 
@@ -21,22 +21,11 @@ void CCollsionMgr::CollisionRect(const OBJLIST& dstLst, const OBJLIST& srcLst)
 		{
 			// BOOL IntersectRect(RECT* pOut, const RECT* pIn1, const RECT* pIn2)
 			// 두 사각형의 충돌을 검사하는 API 함수
-			if (IntersectRect(&rc, &(pDest->GetRect()), &(pSource->GetRect()))
-				&& !pSource->GetInfo().bGraceChk)
+			if (IntersectRect(&rc, &(pDest->GetRect()), &(pSource->GetRect())))
 			{
 				pSource->SetDamage(pDest->GetInfo().iDMG);
-				pSource->SetGracePeriod(true);
-				
-				if (pSource->GetInfo().bGraceChk)
-				{
-					if (GetTickCount() - pSource->GetInfo().CoolDownOld >= 2000)
-					{
-						pSource->SetGracePeriod(false);
-						pSource->SetTimeCount(pSource->GetInfo().CoolDownOld);
-					}
-				}
 
-				if(0>=pSource->GetInfo().iHealth)
+				if (0 >= pSource->GetInfo().iHealth)
 					pSource->SetDead(true);
 			}
 		}

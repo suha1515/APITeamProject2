@@ -22,8 +22,10 @@ public:
 
 	void SetDamage(int dmg);
 	void SetHealth(int iHealth);
-	void SetGracePeriod(bool bChk);
-	void SetTimeCount(DWORD Time);
+	void SetGraceChk(bool bCollision);
+	void SetTime(DWORD dwTime);
+
+	DWORD GetTime();
 
 protected:
 	virtual void Release() = 0;
