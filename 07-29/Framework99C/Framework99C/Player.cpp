@@ -4,7 +4,7 @@
 #include "Shield.h"
 #include "GuideBullet.h"
 #include "BackGround.h"
-
+#include "BitManager.h"
 CPlayer::CPlayer()
 	: m_fPosinX(0.f), m_fPosinY(0.f), m_bIsJump(false), m_fGroundY(0.f),
 	m_fJumpForce(0.f), m_fJumpAcc(0.f)
@@ -42,10 +42,12 @@ int CPlayer::Update()
 void CPlayer::Render(HDC hDC)
 {
 	CGameObject::UpdateRect();
-	Rectangle(hDC, m_tRect.left - CScrollMgr::m_fScrollX, 
-		m_tRect.top, 
+	/*Rectangle(hDC, m_tRect.left - CScrollMgr::m_fScrollX,
+		m_tRect.top,
 		m_tRect.right - CScrollMgr::m_fScrollX,
-		m_tRect.bottom);	
+		m_tRect.bottom);
+*/
+	BMP->PopA_BG(2, 0,60, this, 70);
 }
 
 void CPlayer::Release()

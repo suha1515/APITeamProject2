@@ -2,7 +2,7 @@
 #include <time.h>
 #include "GameObject.h"
 #include"Bit.h"
-#include"ImageManager.h" 
+
 class EffectManager
 {
 	static EffectManager* ROAD() 

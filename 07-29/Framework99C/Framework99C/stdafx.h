@@ -46,7 +46,7 @@ using namespace std;
 #include "KeyMgr.h"
 #include "ObjectMgr.h"
 #include "ScrollMgr.h"
-#include "ImageManager.h"
+
 
 #pragma comment(linker,"/entry:wWinMainCRTStartup /subsystem:console")
 //√‚√≥: https://alleysark.tistory.com/36 [æŸ∏ÆªÌ]

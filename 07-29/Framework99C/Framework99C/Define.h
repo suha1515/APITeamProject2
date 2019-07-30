@@ -5,8 +5,9 @@
 #define PI 3.141592f
 #define GRAVITY 9.8f
 
-#define WINCX 1598
-#define WINCY 700
+
+#define WINCX 1000
+#define WINCY 500
 
 #define NO_EVENT 0
 #define DEAD_OBJ 1
@@ -20,6 +21,7 @@ if(nullptr == (ptr)) return;
 
 #define NULL_CHECK_RETURN(ptr, val)	\
 if(nullptr == (ptr)) return val;
+
 
 
 // ΩÃ±€≈Ê ∏≈≈©∑Œ
@@ -58,5 +60,7 @@ void T::DeleteInstance()\
 }
 
 
+
+#define BMP BitManager::GetInstance()
 #define __DEFINE_H__
 #endif

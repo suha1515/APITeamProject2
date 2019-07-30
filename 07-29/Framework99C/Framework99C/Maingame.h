@@ -17,8 +17,13 @@ private:
 
 private:
 	HDC		m_hDC;	
-
+	
 	HBITMAP m_back;
+
 	CSpawnManager* m_SpawnManager;
+	CGameObject* m_pPlayer;
+	
+	int scr_x = 0;
+	int scr_y = 0;
 };
 

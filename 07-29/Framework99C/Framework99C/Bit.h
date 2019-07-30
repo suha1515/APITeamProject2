@@ -1,33 +1,43 @@
 #pragma once
+
 class CBit
 {
 public:
 	CBit();
 	~CBit();
 
+
+
 public:
-	void SetUp(int ID, int Width, int Height);
-	inline HDC GetMemDC(void) { return m_MemDC; }
-	void Output(HDC hDest, int nX, int nY) {
-		//첫번째 인자는 백버퍼, 2,3번은 시작위치(크기아님)
-		BitBlt(hDest, nX, nY, m_nWidth, m_nHeight, m_MemDC, 0, 0, SRCCOPY);
-	}
-	void Output(HDC hDC, int nX, int nY, RECT rcSour);
-	void Output(HDC hDC, int nX, int nY, int nFrame, int nFrameMax);
+	void SetUp(int ID, int Width, int Height, int MaxFraim = 1);
+	void SetUp(const wstring& wstrFilePath, int Width, int Height, int MaxFraim = 1);
+	HDC GetMemDC(void);
+	int GetFrame();
+
+	void Output(HDC hDC, int nX, int nY, int nFrame = 0, int nFrameMax = 1);
 public:
 
-	void Out_BackGround1(int speed = 3);
-	void Out_BackGround2(int speed = 3);
+	void Out_BackGround_W(int speed = 3);
+	void Out_BackGround_H(int speed = 3);
+	void Out_BackGround(int x, int y);
 
 private:
 
+	//비트맵의 크기정보들
 	int m_nWidth;
 	int m_nHeight;
+	int m_MaxFraim;
+
+	//비트맵을 미리 그려놓을 DC와 
+	//비트맵의 정보를 가지고 있을 핸들
 	HDC m_MemDC;
 	HBITMAP m_bit;
 	HBITMAP m_obit;
-	int sp = 1;
+
+	//백그라운드 호출카운트값
 	int count = 1;
-	int minus;
+
+	//배경 지우는 RGB 값 
+	int R = 255, G = 0, B = 255;
 };
 

@@ -47,3 +47,27 @@ void CGameObject::UpdateRect()
 	m_tRect.right = static_cast<LONG>(m_tInfo.fX + m_tInfo.fCX * 0.5f);
 	m_tRect.bottom = static_cast<LONG>(m_tInfo.fY + m_tInfo.fCY * 0.5f);
 }
+int CGameObject::IndexTimer(int frame, clock_t time)
+{
+	if (clock() - m_oldtime > time)
+	{
+		m_index = (m_index + 1) % frame;
+		m_oldtime = clock();
+	}
+	return m_index;
+}
+
+void CGameObject::Set_index(int index)
+{
+	m_index = index;
+}
+
+void CGameObject::Set_oldtime()
+{
+	m_oldtime = clock();
+}
+
+clock_t CGameObject::Get_oldtime()
+{
+	return m_oldtime;
+}
