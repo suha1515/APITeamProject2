@@ -79,6 +79,18 @@ void CJelly::Release()
 void CJelly::Move()
 {
 	m_tInfo.fX += CScrollMgr::m_fScrollX;
+
+	CGameObject* pPlayer = CObjectMgr::GetInstance()->GetPlayer();
+	if (fabs(pPlayer->GetInfo().fX - m_tInfo.fX) <= 100.0f)
+	{
+		float dx = pPlayer->GetInfo().fX-m_tInfo.fX;
+		float dy = pPlayer->GetInfo().fY-m_tInfo.fY;
+
+		float angle = atan2f(dy, dx);
+
+		m_tInfo.fX += cosf(angle)*3.0f;
+		m_tInfo.fY += sinf(angle)*3.0f;
+	}
 }
 
 void CJelly::SetJellyType(JELLY_TYPE jellyType)

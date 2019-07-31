@@ -25,7 +25,7 @@ void CObstacle::Initialize()
 		m_tInfo.fCY = 99;
 		break;
 	case OBSTACLE_GIMLETS:
-		m_tInfo.fCX = 324;
+		m_tInfo.fCX = 81;
 		m_tInfo.fCY = 131;
 		break;
 	case OBSTACLE_GIMLETS2:
@@ -174,7 +174,7 @@ void CObstacle::CheckMove()
 	case FALLING:
 	case UPTODOWN:
 	case ANIMATION:
-		if (fabs(pPlayer->GetInfo().fX - m_tInfo.fX) <= 300.0f && !m_IsFall)
+		if (fabs(pPlayer->GetInfo().fX - m_tInfo.fX) <= 500.0f && !m_IsFall)
 		{
 			m_IsFall = true;
 			m_IsActive = true;

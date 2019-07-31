@@ -19,8 +19,6 @@ CPlayer::~CPlayer()
 
 void CPlayer::Initialize()
 {
-	m_tInfo.fX = 400.f;
-	m_tInfo.fY = 400.f;
 	m_tInfo.fCX = 100.f;
 	m_tInfo.fCY = 100.f;
 
@@ -34,22 +32,27 @@ void CPlayer::Initialize()
 int CPlayer::Update()
 {
 	KeyInput();
-	IsJump();
-
+	//IsJump();
+	CGameObject::UpdateRect();
 	return NO_EVENT;
 }
 
 void CPlayer::Render(HDC hDC)
 {
-	CGameObject::UpdateRect();
-	/*Rectangle(hDC, m_tRect.left - CScrollMgr::m_fScrollX,
-		m_tRect.top,
-		m_tRect.right - CScrollMgr::m_fScrollX,
-		m_tRect.bottom);
-*/
+	
+//	Rectangle(hDC, 100, 100, 300, 300);
 
-	BMP->PopA_Once(0, 0, 60, this, 150);
+	BMP->PopA_Once(0,0,60, this, 150);
+	HPEN hNewPen = CreatePen(PS_SOLID, 1, RGB(0, 255, 0));
+	HPEN hOldPen = (HPEN)SelectObject(hDC, hNewPen);
 
+	MoveToEx(hDC, m_tRect.left, m_tRect.top, nullptr);
+	LineTo(hDC, m_tRect.right, m_tRect.top);
+	LineTo(hDC, m_tRect.right, m_tRect.bottom);
+	LineTo(hDC, m_tRect.left, m_tRect.bottom);
+	LineTo(hDC, m_tRect.left, m_tRect.top);
+
+	DeleteObject(SelectObject(hDC, hOldPen));
 	//BMP->PopA_BG(2, 0,60, this, 70);
 }
 

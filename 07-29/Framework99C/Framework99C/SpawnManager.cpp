@@ -21,11 +21,11 @@ void CSpawnManager::Initialize()
 	//스테이지 1 장애물
 	m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, 365, 1000, OBSTACLE_TYPE::OBSTACLE_GIMLET2));
 	m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, 365, 1500, OBSTACLE_TYPE::OBSTACLE_GIMLET2));
-	m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, 315, 2000, OBSTACLE_TYPE::OBSTACLE_FORK2));
-	m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, 70, 2500, OBSTACLE_TYPE::OBSTACLE_FORK1));
-	m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, 365, 3000, OBSTACLE_TYPE::OBSTACLE_GIMLET));
+	m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, 315, 2010, OBSTACLE_TYPE::OBSTACLE_FORK2));
+	m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, 70,  2500, OBSTACLE_TYPE::OBSTACLE_FORK1));
+	m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, 365, 3010, OBSTACLE_TYPE::OBSTACLE_GIMLET));
 												 
-	m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, 315, 3500, OBSTACLE_TYPE::OBSTACLE_FORK2));
+	m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, 315, 3470, OBSTACLE_TYPE::OBSTACLE_FORK2));
 												 
 	m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, 70, 4000, OBSTACLE_TYPE::OBSTACLE_FORK1));
 	m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, 70, 4200, OBSTACLE_TYPE::OBSTACLE_FORK1));
@@ -37,8 +37,8 @@ void CSpawnManager::Initialize()
 												 
 	m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, -100, 6000, OBSTACLE_TYPE::OBSTACLE_FORK2,OBSTACLE_MOVETYPE::FALLING));
 	m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, -300, 6400, OBSTACLE_TYPE::OBSTACLE_FORK1, OBSTACLE_MOVETYPE::UPTODOWN));
-	m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200,  365, 6900, OBSTACLE_TYPE::OBSTACLE_GIMLET));
-	m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, -100, 7300, OBSTACLE_TYPE::OBSTACLE_FORK2, OBSTACLE_MOVETYPE::FALLING));
+	m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200,  365, 6880, OBSTACLE_TYPE::OBSTACLE_GIMLET));
+	m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, -100, 7290, OBSTACLE_TYPE::OBSTACLE_FORK2, OBSTACLE_MOVETYPE::FALLING));
 												
 	m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, -300, 7700, OBSTACLE_TYPE::OBSTACLE_FORK1, OBSTACLE_MOVETYPE::UPTODOWN));
 	m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, -300, 8000, OBSTACLE_TYPE::OBSTACLE_FORK1, OBSTACLE_MOVETYPE::UPTODOWN));
@@ -213,11 +213,314 @@ void CSpawnManager::Initialize()
 	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 4720, BLUE_BEAN));
 	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 4750, BLUE_BEAN));
 	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 4780, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 4810, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 4840, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 4870, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 4900, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 4930, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 4930, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 330, 4960, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 290, 4990, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 290, 5020, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 330, 5050, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 5080, BLUE_BEAN));
+
+	//선반위 젤리들..
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 150, 5130, YELLOW_BEAR));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 150, 5200, YELLOW_BEAR));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 150, 5270, YELLOW_BEAR));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 150, 5340, YELLOW_BEAR));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 150, 5410, YELLOW_BEAR));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 150, 5490, YELLOW_BEAR));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 150, 5560, YELLOW_BEAR));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 150, 5630, YELLOW_BEAR));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 150, 5700, YELLOW_BEAR));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 150, 5770, YELLOW_BEAR));
+	//
+
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 5110, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 5140, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 5170, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 5200, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 5230, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 5260, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 5290, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 5310, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 5340, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 5370, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 5400, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 340, 5430, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 290, 5460, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 290, 5490, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 290, 5520, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 340, 5550, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 5580, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 5610, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 5640, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 5670, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 5700, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 5730, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 5760, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 5790, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 330, 5820, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 290, 5850, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 250, 5880, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 210, 5910, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 170, 5950, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 170, 5980, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 170, 6010, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 210, 6040, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 250, 6070, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 290, 6100, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 330, 6130, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 6160, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 6190, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 6220, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 6250, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 6280, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 6310, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 6340, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 6370, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 6400, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 6430, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 6460, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 6490, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 6520, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 6550, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 6580, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 6610, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 6640, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 6670, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 6700, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 6730, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 6760, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 6790, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 330, 6820, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 290, 6850, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 290, 6880, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 290, 6910, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 330, 6940, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 6970, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 7000, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 7030, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 7060, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 7090, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 330, 7120, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 290, 7150, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 250, 7180, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 210, 7210, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 170, 7240, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 170, 7270, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 170, 7300, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 170, 7330, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 210, 7360, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 250, 7390, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 290, 7420, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 330, 7450, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 7480, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 7510, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 7540, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 7570, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 7600, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 7630, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 7660, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 7690, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 7720, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 7750, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 7780, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 7810, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 7840, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 7870, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 7900, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 7930, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 7960, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 7990, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 8020, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 8050, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 8080, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 8110, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 8140, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 8170, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 8200, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 8230, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 8260, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 8290, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 8320, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 8350, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 8380, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 8410, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 370, 8440, BLUE_BEAN));
 
 
+	//하트
+	
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 255, 8490, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 255, 8510, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 255, 8530, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 255, 8590, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 255, 8610, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 255, 8630, BLUE_BEAN));		//	 ㅇㅇㅇ  ㅇㅇㅇ
+	
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 275, 8470, BLUE_BEAN));     	// ㅇㅇㅇㅇㅇㅇㅇㅇㅇ
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 275, 8490, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 275, 8510, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 275, 8530, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 275, 8550, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 275, 8570, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 275, 8590, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 275, 8610, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 275, 8630, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 275, 8650, BLUE_BEAN));
 
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 295, 8490, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 295, 8510, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 295, 8530, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 295, 8550, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 295, 8570, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 295, 8590, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 295, 8610, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 295, 8630, BLUE_BEAN));
 
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 315, 8510, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 315, 8530, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 315, 8550, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 315, 8570, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 315, 8590, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 315, 8610, BLUE_BEAN));
+	
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 335, 8530, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 335, 8550, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 335, 8570, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 335, 8590, BLUE_BEAN));
 
+	
+
+	//쥬
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 125, 9320, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 125, 9340, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 125, 9360, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 125, 9380, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 125, 9400, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 125, 9420, BLUE_BEAN));
+
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 145, 9320, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 145, 9340, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 145, 9360, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 145, 9380, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 145, 9400, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 145, 9420, BLUE_BEAN));
+
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 165, 9360, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 165, 9380, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 185, 9360, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 185, 9380, BLUE_BEAN));
+
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 205, 9340, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 205, 9360, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 205, 9380, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 205, 9400, BLUE_BEAN));
+
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 225, 9320, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 225, 9340, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 245, 9320, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 245, 9340, BLUE_BEAN));
+
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 225, 9400, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 225, 9420, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 245, 9400, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 245, 9420, BLUE_BEAN));
+	
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 285, 9300, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 285, 9320, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 285, 9340, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 285, 9360, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 285, 9380, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 285, 9400, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 285, 9420, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 285, 9440, BLUE_BEAN));
+
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 305, 9300, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 305, 9320, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 305, 9340, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 305, 9360, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 305, 9380, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 305, 9400, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 305, 9420, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 305, 9440, BLUE_BEAN));
+
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 325, 9320, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 325, 9340, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 345, 9320, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 345, 9340, BLUE_BEAN));
+
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 325, 9400, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 325, 9420, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 345, 9400, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 345, 9420, BLUE_BEAN));
+
+	//신
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 165, 9780, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 165, 9800, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 165, 9880, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 165, 9900, BLUE_BEAN));
+
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 185, 9760, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 185, 9780, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 185, 9880, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 185, 9900, BLUE_BEAN));
+
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 205, 9740, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 205, 9760, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 205, 9780, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 205, 9800, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 205, 9880, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 205, 9900, BLUE_BEAN));
+
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 225, 9720, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 225, 9740, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 225, 9800, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 225, 9820, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 225, 9880, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 225, 9900, BLUE_BEAN));
+
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 245, 9700, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 245, 9720, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 245, 9820, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 245, 9840, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 245, 9880, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 245, 9900, BLUE_BEAN));
+
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 265, 9700, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 265, 9720, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 265, 9880, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 265, 9900, BLUE_BEAN));
+
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 285, 9700, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 285, 9720, BLUE_BEAN));
+
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 305, 9700, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 305, 9720, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 305, 9740, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 305, 9760, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 305, 9780, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 305, 9800, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 305, 9820, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 305, 9840, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 305, 9860, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 305, 9880, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 305, 9900, BLUE_BEAN));
+
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 325, 9700, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 325, 9720, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 325, 9740, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 325, 9760, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 325, 9780, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 325, 9800, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 325, 9820, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 325, 9840, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 325, 9860, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 325, 9880, BLUE_BEAN));
+	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 325, 9900, BLUE_BEAN));
 
 
 }
@@ -226,7 +529,7 @@ void CSpawnManager::SpawnFloor()
 	const OBJLIST* object = CObjectMgr::GetInstance()->GetObjectList(OBJECT_TYPE::OBJECT_FLOOR);
 	OBJLIST::const_iterator iter_begin = object->begin();
 	OBJLIST::const_iterator iter_end = object->end();
-	if (object->size() < 17)
+	if (object->size() < 20)
 	{
 		if (iter_begin == iter_end)
 		{
