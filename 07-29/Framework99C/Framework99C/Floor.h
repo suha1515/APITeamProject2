@@ -14,6 +14,7 @@ public:
 
 public:
 	void Move();
+	void SetType(FLOOR_TYPE type);
 private:
 	void IsOutofRange();
 protected:
@@ -22,5 +23,6 @@ protected:
 
 
 	float		m_Speed;
+	FLOOR_TYPE  m_FloorType;
 };
 

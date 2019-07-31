@@ -160,11 +160,13 @@
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="GuideBullet.h" />
     <ClInclude Include="Item.h" />
+    <ClInclude Include="Jelly.h" />
     <ClInclude Include="KeyMgr.h" />
     <ClInclude Include="Maingame.h" />
     <ClInclude Include="Monster.h" />
     <ClInclude Include="Mouse.h" />
     <ClInclude Include="ObjectMgr.h" />
+    <ClInclude Include="Obstacle.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="ScrollMgr.h" />
@@ -189,11 +191,13 @@
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GuideBullet.cpp" />
     <ClCompile Include="Item.cpp" />
+    <ClCompile Include="Jelly.cpp" />
     <ClCompile Include="KeyMgr.cpp" />
     <ClCompile Include="Maingame.cpp" />
     <ClCompile Include="Monster.cpp" />
     <ClCompile Include="Mouse.cpp" />
     <ClCompile Include="ObjectMgr.cpp" />
+    <ClCompile Include="Obstacle.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="ScrollMgr.cpp" />
     <ClCompile Include="Shield.cpp" />

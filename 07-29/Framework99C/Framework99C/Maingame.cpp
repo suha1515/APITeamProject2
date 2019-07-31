@@ -8,6 +8,8 @@
 #include "GameObject.h"
 #include "SpawnManager.h"
 #include "Floor.h"
+#include"Obstacle.h"
+#include "Jelly.h"
 
 CMaingame::CMaingame()	
 {
@@ -30,7 +32,7 @@ void CMaingame::Initialize()
 	BMP->Initialize();
 	
 	m_SpawnManager = new CSpawnManager;
-
+	m_SpawnManager->Initialize();
 	srand((unsigned)time(nullptr));
 
 	CGameObject* pGameObject = nullptr;
@@ -42,6 +44,16 @@ void CMaingame::Initialize()
 	// Player
 	pGameObject = CAbstractFactory<CPlayer>::CreateObject();
 	CObjectMgr::GetInstance()->AddObject(OBJECT_PLAYER, pGameObject);	
+	//6200
+	//pGameObject = CAbstractFactory<CFloor>::CreateObject();
+	//pGameObject->SetPos(900, 200);
+	//dynamic_cast<CFloor*>(pGameObject)->SetType(STAGE1_HANG);
+	//CObjectMgr::GetInstance()->AddObject(OBJECT_OBSTACLE, pGameObject);
+
+	//pGameObject = CAbstractFactory<CJelly>::CreateObject();
+	//pGameObject->SetPos(900, 370);
+	//dynamic_cast<CJelly*>(pGameObject)->SetJellyType(BLUE_BEAN);
+	//CObjectMgr::GetInstance()->AddObject(OBJECT_OBSTACLE, pGameObject);
 
 	//floor
 	/*pGameObject = CAbstractFactory<CFloor>::CreateObject();
@@ -73,7 +85,12 @@ void CMaingame::Initialize()
 void CMaingame::Update()
 {
 	m_SpawnManager->SpawnFloor();
+	m_SpawnManager->SpawnObstacle();
 	m_SpawnManager->SpawnJelly();
+	m_SpawnManager->SpwanHangFloor();
+	m_SpawnManager->m_StageDist += (-1*CScrollMgr::m_fScrollX);
+	cout << m_SpawnManager->m_StageDist << endl;
+	//m_SpawnManager->SpawnJelly();
 	CKeyMgr::GetInstance()->Update();
 	CObjectMgr::GetInstance()->Update();
 }
@@ -95,7 +112,9 @@ void CMaingame::Render()
 
 	//모든 렌더는 BackDC에
 	CObjectMgr::GetInstance()->Render(BackDC);
+	//BMP->PopS_Obj(6, 800, -190);
 	//더블버퍼링
+	
 	BitBlt(m_hDC, 0, 0, WINCX, WINCY, BackDC, 0, 0, SRCCOPY);
 }	
 

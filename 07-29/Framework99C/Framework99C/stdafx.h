@@ -49,5 +49,5 @@ using namespace std;
 #include "BitManager.h"
 
 
-//#pragma comment(linker,"/entry:wWinMainCRTStartup /subsystem:console")
+#pragma comment(linker,"/entry:wWinMainCRTStartup /subsystem:console")
 //√‚√≥: https://alleysark.tistory.com/36 [æŸ∏ÆªÌ]
