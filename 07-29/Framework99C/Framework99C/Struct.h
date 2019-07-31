@@ -14,6 +14,15 @@ typedef struct tagInfo
 	float fY = 0.f;
 	float fCX = 0.f;
 	float fCY = 0.f;
+
+	int iHealth = 1;
+	int iDMG = 1;
+	int iGetScore = 0;
+
+	bool bGraceChk = false;
+
+	DWORD dwOldTime = GetTickCount();
+	DWORD dwCurTime = GetTickCount();
 }INFO;
 
 typedef struct tagSpawn_Obstacle_Info

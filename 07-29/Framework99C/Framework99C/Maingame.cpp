@@ -89,7 +89,7 @@ void CMaingame::Update()
 	m_SpawnManager->SpawnJelly();
 	m_SpawnManager->SpwanHangFloor();
 	m_SpawnManager->m_StageDist += (-1*CScrollMgr::m_fScrollX);
-	cout << m_SpawnManager->m_StageDist << endl;
+	//cout << m_SpawnManager->m_StageDist << endl;
 	//m_SpawnManager->SpawnJelly();
 	CKeyMgr::GetInstance()->Update();
 	CObjectMgr::GetInstance()->Update();

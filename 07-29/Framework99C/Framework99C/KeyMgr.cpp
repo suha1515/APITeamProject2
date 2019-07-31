@@ -30,8 +30,8 @@ void CKeyMgr::Update()
 		m_dwKey |= KEY_RETURN;
 	if (GetAsyncKeyState(VK_SPACE) & 0x8000)
 		m_dwKey |= KEY_SPACE;
-	if (GetAsyncKeyState(VK_LBUTTON) & 0x8000)
-		m_dwKey |= KEY_LBUTTON;
+	if (GetAsyncKeyState(VK_CONTROL) & 0x8000)
+		m_dwKey |= KEY_CTRL;
 	if (GetAsyncKeyState(VK_RBUTTON) & 0x8000)
 		m_dwKey |= KEY_RBUTTON;
 	if (GetAsyncKeyState('W') & 0x8000)

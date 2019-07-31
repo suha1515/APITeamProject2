@@ -13,6 +13,7 @@ public:
 	void SetPos(float x, float y);
 	void SetAngle(float fAngle);
 	void SetDead(bool bIsDead);
+	void SetY(float fY);
 
 	// virtual
 public:
@@ -31,6 +32,13 @@ public://렌더의 편의를 돕는함수들
 
 	clock_t Get_oldtime();
 	clock_t Get_oldtime2();
+
+	void SetDamage(int dmg);
+	void SetHealth(int iHealth);
+	void SetGraceChk(bool bCollision);
+	void SetTime(DWORD dwTime);
+
+	DWORD GetTime();
 
 protected:
 	virtual void Release() = 0;
