@@ -32,10 +32,29 @@ void BitManager::Initialize()
 	Push_Obj(L"texture//stage1//장애물//애니메이션_가시.bmp", 324, 131,4);	//3
 
 	
+
+	Push_Obj(L"texture//연습용쿠키.bmp", 3192, 288, 11);
 	
+	
+	Push_Obj(L"texture//stage1//스테이지1_바닥.bmp", 100, 100);
+	Push_Obj(L"texture//stage1//장애물//송곳.bmp", 63, 99);			//Y값 365			2
+	Push_Obj(L"texture//stage1//장애물//송곳2.bmp", 63, 99);		//Y값 365			3
+	Push_Obj(L"texture//stage1//장애물//포크.bmp", 80, 113);		//Y값 355			4
+	Push_Obj(L"texture//stage1//장애물//포크1.bmp", 134, 482);		//Y값  70 , -300	5
+	Push_Obj(L"texture//stage1//장애물//포크2.bmp", 106, 193);		//Y값 315 ,	-100	6
+	Push_Obj(L"texture//stage1//장애물//포크3.bmp", 71, 216);		//Y값 300 ,	-120	7
+	Push_Obj(L"texture//stage1//장애물//포크4.bmp", 86, 482);		//Y값  70 , -300	8
+	Push_Obj(L"texture//stage1//장애물//긴포크.bmp", 59, 193);		//Y값 315 , -100	9
+	Push_Obj(L"texture//stage1//장애물//애니메이션_가시.bmp", 324, 131,4);//345			10
+	Push_Obj(L"texture//stage1//장애물//정지_가시.bmp", 81, 131);		  //345			11
+	Push_Obj(L"texture//stage1//장애물//애니메이션_가시2.bmp", 435, 190, 4);//			12	
+
+	Push_Obj(L"texture//stage1//스테이지1_접시.bmp", 129, 52);				//	y200	13
 
 	//아이템&젤리
-	Push_Item(L"texture//stage1//젤리//파란_젤리.bmp", 20, 25);
+	Push_Item(L"texture//stage1//젤리//파란_젤리.bmp", 20, 25);		//	370 y 기본값 	 0 
+	Push_Item(L"texture//stage1//젤리//노랑_곰.bmp", 55, 51);		//	370				 1
+	Push_Item(L"texture//stage1//젤리//분홍_곰.bmp", 55, 51);		//					 2
 
 	
 	//Push_BG(L"texture//test1.bmp", 1000, 1000);

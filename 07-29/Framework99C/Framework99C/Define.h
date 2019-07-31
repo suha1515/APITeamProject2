@@ -11,6 +11,7 @@
 #define NO_EVENT 0
 #define DEAD_OBJ 1
 
+#define OBSTACLE OBJECT_TYPE::OBJECT_OBSTACLE
 #define NULL_CHECK(ptr)	\
 if(nullptr == (ptr)) return;
 

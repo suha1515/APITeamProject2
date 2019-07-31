@@ -15,12 +15,12 @@ protected:
 	virtual void Release();
 public:
 	void Move();
-	void SetItemType(ITEM_TYPE itemType,JELLY_TYPE jellyType=JELLY_TYPE::JELLY_END);
+	void SetItemType(ITEM_TYPE itemType);
 private:
 	void IsOutofRange();
 private:
 	ITEM_TYPE	m_ItemType;
-	JELLY_TYPE	m_JellyType;
+
 
 };
 

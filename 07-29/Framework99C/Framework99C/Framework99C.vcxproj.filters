@@ -79,6 +79,12 @@
     <Filter Include="01.GameObject\08.Floor">
       <UniqueIdentifier>{d133c3f5-1bfa-40e1-b71f-e0c6a2da4109}</UniqueIdentifier>
     </Filter>
+    <Filter Include="01.GameObject\0.9.Obstacle">
+      <UniqueIdentifier>{7ba4d87b-3de3-45ae-8ed0-082f79fd3e00}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.GameObject\09.Jelly">
+      <UniqueIdentifier>{7cdb5d8f-6075-47d9-a7b0-b12577ba60e1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Framework99C.h">
@@ -177,6 +183,12 @@
     <ClInclude Include="Floor.h">
       <Filter>01.GameObject\08.Floor</Filter>
     </ClInclude>
+    <ClInclude Include="Obstacle.h">
+      <Filter>01.GameObject\0.9.Obstacle</Filter>
+    </ClInclude>
+    <ClInclude Include="Jelly.h">
+      <Filter>01.GameObject\09.Jelly</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Framework99C.cpp">
@@ -247,6 +259,12 @@
     </ClCompile>
     <ClCompile Include="Floor.cpp">
       <Filter>01.GameObject\08.Floor</Filter>
+    </ClCompile>
+    <ClCompile Include="Obstacle.cpp">
+      <Filter>01.GameObject\0.9.Obstacle</Filter>
+    </ClCompile>
+    <ClCompile Include="Jelly.cpp">
+      <Filter>01.GameObject\09.Jelly</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

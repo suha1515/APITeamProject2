@@ -48,6 +48,7 @@ void CPlayer::Render(HDC hDC)
 		m_tRect.bottom);
 */
 
+
 	BMP->PopA_Player(3, 0, 0, this, 0);
 
 	if (GetAsyncKeyState(VK_SPACE))
@@ -67,6 +68,9 @@ void CPlayer::Render(HDC hDC)
 
 	//BMP->PopA_BG(2, 0,60, this, 70);
 
+
+
+	BMP->PopA_Once(0, 0, 60, this, 150);
 
 }
 
