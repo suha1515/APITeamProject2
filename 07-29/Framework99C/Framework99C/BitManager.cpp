@@ -63,16 +63,10 @@ void BitManager::Initialize()
 	Push_Player(L"texture//2단점프.bmp", 890, 145, 7);	  //3
 	Push_Player(L"texture//충돌.bmp", 145, 145, 1);// 4
 
-	
-
-
 	// 이펙트 추가
 	// 아이템 추가
 	//이펙트 추가
 	//기타추가
-	
-
-
 }
 
 

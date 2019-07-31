@@ -23,7 +23,7 @@ void CPlayer::Initialize()
 	m_tInfo.fY = 360.f;
 	m_tInfo.fCX = 70.f;
 	m_tInfo.fCY = 100.f;
-	m_tInfo.iHealth = 9999; //플레이어 체력!!! 0이면 플레이어가 죽는걸로 체크돼 프로그램이 다운돼서 체력을 만땅 늘렸습니다.
+	m_tInfo.iHealth = 100; //플레이어 체력!!! 0이면 플레이어가 죽는걸로 체크돼 프로그램이 다운돼서 체력을 만땅 늘렸습니다.
 
 	m_fSpeed = 5.f;
 	m_fAngle = 90.f;
@@ -84,8 +84,16 @@ void CPlayer::Render(HDC hDC)
 
 	if (CKeyMgr::GetInstance()->KeyPressing(KEY_SPACE))
 	{
-		BMP->PopA_Player(1, m_tRect.left -20, m_tRect.top - 23, this, 90);
+		switch (m_iJumpCount) //점프 가능 횟수가 1이거나 0일 경우
+		{
+		case 1:
+			BMP->PopA_Player(1, m_tRect.left - 20, m_tRect.top - 23, this, 90);
+			break;
 
+		case 0:
+			BMP->PopA_Player(3, m_tRect.left - 20, m_tRect.top - 23, this, 90);
+			break;
+		}
 		m_tInfo.fCY = 100.f;
 	}
 	else if(CKeyMgr::GetInstance()->KeyPressing(KEY_CTRL))
@@ -95,6 +103,8 @@ void CPlayer::Render(HDC hDC)
 		m_tInfo.fCY = 50;
 
 	}
+	else if(m_tInfo.bGraceChk)
+			BMP->PopA_Player(4, m_tRect.left - 40, m_tRect.top - 45, this, 90);
 	else  //IDLE
 	{
 		BMP->PopA_Player(0, m_tRect.left - 30, m_tRect.top-23, this, 100);
@@ -106,13 +116,14 @@ void CPlayer::Render(HDC hDC)
 	// 체력바 테스트
 	// m_Hp 수정하면 체력 다는 정도 조절 가능
 	curtime = clock(); 
-	if (curtime - oldtime > 100)
+	if (curtime - oldtime > 1000)
 	{
-		m_Hp += 2;
+		m_tInfo.iHealth += 2;
 		oldtime = clock();
 	}
+
 	BMP->Manual_BackGround(4, 100, 21, 0, 0);
-	BMP->Manual_BackGround(3, 134, 30, m_Hp, 0);
+	BMP->Manual_BackGround(3, 134, 30, m_tInfo.iHealth, 0);
 
 	//BMP->PopA_Once(1, m_tRect.left + 5, m_tRect.top - 23, this, 90);
 }
