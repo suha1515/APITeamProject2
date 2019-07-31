@@ -15,24 +15,28 @@ void BitManager::Initialize()
 
 
 	//Back 추가 
-	Push_BG(L"texture//background.bmp", 1000, 1000);  //처음 세팅
-	Push_BG(L"texture//연습용.bmp", 2000, 500);
+	Push_BG(L"texture//background.bmp", 1000, 1000);  //처음 세팅	
+	Push_BG(L"texture//stage2배경2.bmp", 2000, 500);
+	Push_BG(L"texture//stage2배경1.bmp", 2000, 500);
 	
-	Push_BG(L"texture//연습용2.bmp", 2000, 500);
+	
 
-<<<<<<< HEAD
-	Push_Obj(L"texture//연습용쿠키.bmp", 3192, 288, 11);
+
 	
 	
-=======
-	Push_Obj(L"texture//stage1//스테이지1_바닥.bmp", 100, 100);
-	Push_Obj(L"texture//stage1//장애물//가시.bmp", 63, 99);
-	Push_Obj(L"texture//stage1//장애물//포크.bmp", 80, 113);
-	Push_Obj(L"texture//stage1//장애물//애니메이션_가시.bmp", 324, 131,4);
+	
+
+	Push_Obj(L"texture//stage1//스테이지1_바닥.bmp", 100, 100);					 //0
+	Push_Obj(L"texture//stage1//장애물//가시.bmp", 63, 99);						//1
+	Push_Obj(L"texture//stage1//장애물//포크.bmp", 80, 113);						//2
+	Push_Obj(L"texture//stage1//장애물//애니메이션_가시.bmp", 324, 131,4);	//3
+
+	
+	
 
 	//아이템&젤리
 	Push_Item(L"texture//stage1//젤리//파란_젤리.bmp", 20, 25);
->>>>>>> b3337f37d91e616821a150ad25ecc6b99bd87560
+
 	
 	//Push_BG(L"texture//test1.bmp", 1000, 1000);
 	//Push_BG(L"texture//test2.bmp", 4000, 2000);
@@ -40,8 +44,12 @@ void BitManager::Initialize()
 
 	//플레이어 추가
 	
-	/*Push_Player(L"texture//keroro.bmp", 140, 50);
-	Push_Player(L"texture\\test1.bmp", 500, 500);*/
+	Push_Player(L"texture//Run.bmp", 449, 125, 4);
+	Push_Player(L"texture//Jump.bmp", 762, 145, 6);
+	Push_Player(L"texture//Slide.bmp", 300, 107, 2);  // 플레이어 슬라이딩
+	Push_Player(L"texture//체력바.bmp", 760, 20,1);
+	
+
 
 	// 이펙트 추가
 	// 아이템 추가
@@ -53,9 +61,9 @@ void BitManager::Initialize()
 }
 
 
-void BitManager::Auto_BackGround_W(int index, int speed)
+void BitManager::Auto_BackGround_W(int index,int speed)
 {
-	BG.at(index)->Out_BackGround_W(speed);
+	BG.at(index)->Out_BackGround_W(BackDC,speed);
 }
 
 void BitManager::Auto_BackGround_H(int index, int speed)

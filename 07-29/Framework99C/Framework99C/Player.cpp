@@ -47,12 +47,27 @@ void CPlayer::Render(HDC hDC)
 		m_tRect.right - CScrollMgr::m_fScrollX,
 		m_tRect.bottom);
 */
-<<<<<<< HEAD
-	BMP->PopA_Once(0, 0, 60, this, 150);
-=======
-	BMP->PopA_BG(2, 0,60, this, 70);
 
->>>>>>> b3337f37d91e616821a150ad25ecc6b99bd87560
+	BMP->PopA_Player(3, 0, 0, this, 0);
+
+	if (GetAsyncKeyState(VK_SPACE))
+	{
+		BMP->PopA_Player(1, 20, 287, this, 90);
+	}
+	else if(GetAsyncKeyState(VK_CONTROL))
+	{
+		BMP->PopA_Player(2, 20, 305, this, 200);
+	}
+	else  
+	{
+		BMP->PopA_Player(0, 20, 287, this, 100);
+	}
+
+		
+
+	//BMP->PopA_BG(2, 0,60, this, 70);
+
+
 }
 
 void CPlayer::Release()
@@ -95,8 +110,7 @@ void CPlayer::KeyInput()
 		m_tInfo.fX +=m_fSpeed;
 		CScrollMgr::m_fScrollX -= m_fSpeed;
 	}
-	if (CKeyMgr::GetInstance()->KeyDown(KEY_SPACE))
-		m_bIsJump = true;
+	
 }
 
 bool CPlayer::IsGround()

@@ -31,7 +31,10 @@ int CBackGround::Update()
 
 void CBackGround::Render(HDC hDC)
 {
-	BMP->Auto_BackGround_W(1, 3);
+	
+	BMP->Auto_BackGround_W(1,1);
+	BMP->Auto_BackGround_W(2, 3);
+
 }
 
 void CBackGround::Release()
