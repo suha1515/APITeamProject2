@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "CollsionMgr.h"
 #include "GameObject.h"
+#include "Player.h"
 
 CCollsionMgr::CCollsionMgr()
 {
@@ -11,7 +12,7 @@ CCollsionMgr::~CCollsionMgr()
 {
 }
 
-void CCollsionMgr::CollisionRect(const OBJLIST& dstLst, const OBJLIST& srcLst)
+void CCollsionMgr::CollisionImpe(const OBJLIST& dstLst, const OBJLIST& srcLst)
 {
 	RECT rc = {};
 
@@ -23,8 +24,54 @@ void CCollsionMgr::CollisionRect(const OBJLIST& dstLst, const OBJLIST& srcLst)
 			// 두 사각형의 충돌을 검사하는 API 함수
 			if (IntersectRect(&rc, &(pDest->GetRect()), &(pSource->GetRect())))
 			{
-				pDest->SetDead(true);
-				pSource->SetDead(true);
+				pSource->SetDamage(10);
+
+				pSource->SetTime(GetTickCount()); //충돌확인 이전, 충돌되자마자 시간값 얻어오기
+
+				pSource->SetGraceChk(true); //충돌했다고 알려준다.
+			}
+		}
+	}
+}
+
+void CCollsionMgr::CollisionShelf(const OBJLIST & dstLst, const OBJLIST & srcLst)
+{
+	RECT rc = {};
+
+	float fJumpForce = 13.f;
+	float fJumpAcc = 0.f;
+	float fChangeY = 0.f;
+	bool bShelfChk = true;
+
+	for (auto& pDest : dstLst)
+	{
+		for (auto& pSource : srcLst)
+		{
+			// BOOL IntersectRect(RECT* pOut, const RECT* pIn1, const RECT* pIn2)
+			// 두 사각형의 충돌을 검사하는 API 함수
+			if (IntersectRect(&rc, &(pDest->GetRect()), &(pSource->GetRect())))
+			{
+				bShelfChk = true;
+
+					if (dynamic_cast<CPlayer*>(pSource)->bIsJumpChk())
+					{
+						dynamic_cast<CPlayer*>(pSource)->IsJump();
+							if(pSource->GetInfo().fY > pDest->GetInfo().fY)
+								pSource->SetY(pDest->GetInfo().fY - (pSource->GetInfo().fCY*0.5f));
+					}
+					else
+					{
+						pSource->SetY(pDest->GetInfo().fY - (pSource->GetInfo().fCY*0.5f));
+					}
+			}
+			else
+			{
+				if (bShelfChk && pSource->GetInfo().fY > pDest->GetInfo().fY)
+				{
+					dynamic_cast<CPlayer*>(pSource)->SetDownChk(true);
+				}
+
+				bShelfChk = false;
 			}
 		}
 	}

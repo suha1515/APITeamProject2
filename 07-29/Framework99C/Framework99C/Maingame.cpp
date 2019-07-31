@@ -103,6 +103,7 @@ void CMaingame::Update()
 	m_SpawnManager->SpwanHangFloor();
 	CStageManager::GetInstance()->StageProgress += (-1*CScrollMgr::m_fScrollX);
 	cout << CStageManager::GetInstance()->StageProgress << endl;
+
 	//m_SpawnManager->SpawnJelly();
 	CKeyMgr::GetInstance()->Update();
 	CObjectMgr::GetInstance()->Update();

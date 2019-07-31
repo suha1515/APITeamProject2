@@ -20,9 +20,7 @@ void BitManager::Initialize()
 	Push_BG(L"texture//stage1//스테이지1_배경.bmp", 2000, 500);
 	Push_BG(L"texture//stage2배경2.bmp", 2000, 500);
 	Push_BG(L"texture//stage2배경1.bmp", 2000, 500);
-	
 
-	
 	
 	Push_Obj(L"texture//연습용쿠키.bmp", 3192, 288, 11);
 	

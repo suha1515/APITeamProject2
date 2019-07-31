@@ -13,6 +13,12 @@ public:
 	virtual int Update() override;
 	virtual void Render(HDC hDC) override;
 
+	void SetShelfChk(bool bShelf);
+	bool bIsJumpChk();
+	float IsJump();
+	void IsDown();
+	void SetDownChk(bool bDown);
+
 private:
 	virtual void Release() override;
 
@@ -25,7 +31,6 @@ private:
 private:
 	void KeyInput();
 	bool IsGround();
-	void IsJump();
 
 private:		
 	float		m_fPosinX; // 포신의 끝점 X
@@ -38,5 +43,12 @@ private:
 	float		m_fJumpForce;	// 점프 힘(v)
 	float		m_fJumpAcc;		// 점프 가속도(t)
 	
+	int			m_iJumpCount; //점프 가능 횟수
+
+	DWORD TimeOld;
+	DWORD TimeCur;
+	
+	bool bShelfDownChk;
+	bool bShelfChk;
 };
 

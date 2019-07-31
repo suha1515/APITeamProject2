@@ -40,6 +40,36 @@ void CGameObject::SetDead(bool bIsDead)
 	m_bIsDead = bIsDead;
 }
 
+void CGameObject::SetY(float fY)
+{
+	m_tInfo.fY = fY;
+}
+
+void CGameObject::SetDamage(int dmg)
+{
+	m_tInfo.iHealth -= dmg;
+}
+
+void CGameObject::SetHealth(int iHealth)
+{
+	m_tInfo.iHealth = iHealth;
+}
+
+void CGameObject::SetGraceChk(bool bCollision)
+{
+	m_tInfo.bGraceChk = bCollision;
+}
+
+void CGameObject::SetTime(DWORD dwTime)
+{
+	m_tInfo.dwOldTime = dwTime;
+}
+
+DWORD CGameObject::GetTime()
+{
+	return m_tInfo.dwOldTime;
+}
+
 void CGameObject::UpdateRect()
 {
 	m_tRect.left = static_cast<LONG>(m_tInfo.fX - m_tInfo.fCX * 0.5f);

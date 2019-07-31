@@ -55,10 +55,10 @@ void CFloor::Render(HDC hDC)
 	switch (m_FloorType)
 	{
 	case STAGE1_BOTTOM:
-		BMP->PopS_Obj(1, m_tRect.left, m_tRect.top);
+		BMP->PopS_Obj(0, m_tRect.left, m_tRect.top);
 		break;
 	case STAGE1_HANG:
-		BMP->PopS_Obj(13, m_tRect.left, m_tRect.top);
+		BMP->PopS_Obj(12, m_tRect.left, m_tRect.top);
 		break;
 	case STAGE2_BOTTOM:
 		BMP->PopS_Obj(14, m_tRect.left, m_tRect.top);

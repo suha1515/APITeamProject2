@@ -101,11 +101,19 @@ void CObjectMgr::Update()
 		}
 	}
 
-	//CCollsionMgr::CollisionRect(m_ObjLst[OBJECT_MONSTER], m_ObjLst[OBJLECT_BULLET]);
-	CCollsionMgr::CollisionRectEX(m_ObjLst[OBJECT_MONSTER], m_ObjLst[OBJECT_PLAYER]);
-	CCollsionMgr::CollisionSphere(m_ObjLst[OBJECT_MONSTER], m_ObjLst[OBJLECT_BULLET]);
-	CCollsionMgr::CollisionSphere(m_ObjLst[OBJECT_MONSTER], m_ObjLst[OBJECT_SHIELD]);
-	//CCollsionMgr::CollisionSphere(m_ObjLst[OBJECT_MONSTER], m_ObjLst[OBJECT_MOUSE]);
+	//플레이어 충돌 시 무적 2초!
+	if (m_ObjLst[OBJECT_PLAYER].empty())
+		return;
+	else
+	{
+		if (!m_ObjLst[OBJECT_PLAYER].front()->GetInfo().bGraceChk)
+			CCollsionMgr::CollisionImpe(m_ObjLst[OBJECT_OBSTACLE], m_ObjLst[OBJECT_PLAYER]);
+
+		if (GetTickCount() - m_ObjLst[OBJECT_PLAYER].front()->GetTime() >= 2000 && m_ObjLst[OBJECT_PLAYER].front()->GetInfo().bGraceChk)
+			m_ObjLst[OBJECT_PLAYER].front()->SetGraceChk(false);
+	}
+
+	CCollsionMgr::CollisionShelf(m_ObjLst[OBJECT_FLOOR], m_ObjLst[OBJECT_PLAYER]);
 }
 
 void CObjectMgr::Render(HDC hDC)
