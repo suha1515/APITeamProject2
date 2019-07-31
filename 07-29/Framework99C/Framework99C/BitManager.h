@@ -23,7 +23,7 @@ public:
 	//(예시) x를 증가시키면 오른쪽으로 가는 느낌
 	//(예시2) y를 증가시키면 밑으로 가는 느낌 
 	//단, WINCX,WINCY보다 배경그림이 더 커야한다.
-	void Manual_BackGround(int index, int frame = 0, int frameMax =0 );
+	void Manual_BackGround(int index, int nX, int nY,int frame = 0, int frameMax =0 );
 
 	//비트맵의 배경을 지우는 색상값 설정함수이다.(Init에서 호출한다)
 	void SET_RGB(int R, int G, int B);

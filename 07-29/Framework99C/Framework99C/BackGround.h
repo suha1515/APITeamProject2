@@ -21,5 +21,6 @@ private:
 
 private:
 	list<LINE_INFO*>	m_LineLst;
+
 };
 

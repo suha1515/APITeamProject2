@@ -53,27 +53,45 @@ void CPlayer::Render(HDC hDC)
 	LineTo(hDC, m_tRect.left, m_tRect.top);
 
 
-	BMP->PopA_Player(3, 0, 0, this, 0);
 
 	if (GetAsyncKeyState(VK_SPACE))
 	{
-		BMP->PopA_Player(1, 20, 287, this, 90);
+		BMP->PopA_Player(1, 20, 287, this, 90); // 점프
 	}
 	else if(GetAsyncKeyState(VK_CONTROL))
 	{
-		BMP->PopA_Player(2, 20, 305, this, 200);
+		BMP->PopA_Player(2, 20, 305, this, 200); // 슬라이드
 	}
 	else  
 	{
-		BMP->PopA_Player(0, 20, 287, this, 100);
+		BMP->PopA_Player(0, 20, 287, this, 100); // 달리기
 	}
+	// BMP->PopA_Player(3, 20, 287, this, 100); // 충돌했을때
+
+
+	// 체력바 테스트
+	// m_Hp 수정하면 체력 다는 정도 조절 가능
+	curtime = clock(); 
+	if (curtime - oldtime > 100)
+	{
+		m_Hp += 2;
+		oldtime = clock();
+	}
+	BMP->Manual_BackGround(4, 100, 21, 0, 0);
+	BMP->Manual_BackGround(3, 134, 30, m_Hp, 0);
+
+	
+	
+
+
 
 	DeleteObject(SelectObject(hDC, hOldPen));
-	//BMP->PopA_BG(2, 0,60, this, 70);
 
 
 
-	BMP->PopA_Once(0, 0, 60, this, 150);
+	
+
+
 
 }
 

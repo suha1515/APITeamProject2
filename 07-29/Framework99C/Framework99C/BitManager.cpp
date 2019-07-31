@@ -15,25 +15,17 @@ void BitManager::Initialize()
 
 
 	//Back 추가 
-	Push_BG(L"texture//background.bmp", 1000, 1000);  //처음 세팅	
-	Push_BG(L"texture//stage2배경2.bmp", 2000, 500);
-	Push_BG(L"texture//stage2배경1.bmp", 2000, 500);
+	Push_BG(L"texture//background.bmp", 1000, 1000);  //처음 세팅	0
+	Push_BG(L"texture//stage2배경2.bmp", 2000, 500); //1
+	Push_BG(L"texture//stage2배경1.bmp", 2000, 500); //2
+	Push_BG(L"texture//체력바.bmp", 700, 20); //3
+	Push_BG(L"texture//체력.bmp",34, 36); //4
 	
 	
 
-
-	
-	
 	
 
-	Push_Obj(L"texture//stage1//스테이지1_바닥.bmp", 100, 100);					 //0
-	Push_Obj(L"texture//stage1//장애물//가시.bmp", 63, 99);						//1
-	Push_Obj(L"texture//stage1//장애물//포크.bmp", 80, 113);						//2
-	Push_Obj(L"texture//stage1//장애물//애니메이션_가시.bmp", 324, 131,4);	//3
-
-	
-
-	Push_Obj(L"texture//연습용쿠키.bmp", 3192, 288, 11);
+	Push_Obj(L"texture//연.bmp", 3192, 288, 11);
 	
 	
 	Push_Obj(L"texture//stage1//스테이지1_바닥.bmp", 100, 100);
@@ -63,10 +55,12 @@ void BitManager::Initialize()
 
 	//플레이어 추가
 	
-	Push_Player(L"texture//Run.bmp", 449, 125, 4);
-	Push_Player(L"texture//Jump.bmp", 762, 145, 6);
-	Push_Player(L"texture//Slide.bmp", 300, 107, 2);  // 플레이어 슬라이딩
-	Push_Player(L"texture//체력바.bmp", 760, 20,1);
+	Push_Player(L"texture//Run.bmp", 449, 125, 4);       // 0
+	Push_Player(L"texture//1단점프.bmp", 265, 145, 2);  // 1
+	Push_Player(L"texture//Slide.bmp", 300, 107, 2);  // 2
+	Push_Player(L"texture//2단점프.bmp", 890, 145, 7);	  //3
+	Push_Player(L"texture//충돌.bmp", 145, 145, 1);// 4
+
 	
 
 
@@ -90,9 +84,9 @@ void BitManager::Auto_BackGround_H(int index, int speed)
 	BG.at(index)->Out_BackGround_H(speed);
 }
 
-void BitManager::Manual_BackGround(int index, int x, int y)
+void BitManager::Manual_BackGround(int index, int nX, int nY,int x, int y)
 {
-	BG.at(index)->Out_BackGround(x, y);
+	BG.at(index)->Out_BackGround(nX, nY, x, y);
 }
 
 void BitManager::SET_RGB(int R, int G, int B)
