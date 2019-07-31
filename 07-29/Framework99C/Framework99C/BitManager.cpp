@@ -68,7 +68,7 @@ void BitManager::Initialize()
 	// 아이템 추가
 	//이펙트 추가
 	//기타추가
-
+	
 
 
 }
@@ -129,6 +129,10 @@ void BitManager::Push_Player(int ID, int Width, int Height, int MaxFraim)
 	Player.back()->SetUp(ID, Width, Height, MaxFraim);
 }
 
+void BitManager::Push_Number(int ID, int Width, int Height, int MaxFraim)
+{
+}
+
 void BitManager::Push_BG(const wstring & Path, int Width, int Height, int MaxFraim)
 {
 	BG.push_back(new CBit);
@@ -161,6 +165,12 @@ void BitManager::Push_Player(const wstring & Path, int Width, int Height, int Ma
 	Player.back()->SetUp(Path, Width, Height, MaxFraim);
 }
 
+void BitManager::Push_Number(const wstring & Path, int Width, int Height, int MaxFraim)
+{
+	Number.push_back(new CBit);
+	Player.back()->SetUp(Path, Width, Height, MaxFraim);
+}
+
 vector<CBit*>& BitManager::Pop_Back()
 {
 	return BG;
@@ -186,6 +196,11 @@ vector<CBit*>& BitManager::Pop_Player()
 	return Player;
 }
 
+vector<CBit*>& BitManager::Pop_Number()
+{
+	return Number;
+}
+
 void BitManager::PopM_BG(int index, int x, int y, int Frame_Index, int FrameMax)
 {
 	BG.at(index)->Output(BackDC, x, y, Frame_Index, FrameMax);
@@ -209,6 +224,11 @@ void BitManager::PopM_Effect(int index, int x, int y, int Frame_Index, int Frame
 void BitManager::PopM_Player(int index, int x, int y, int Frame_Index, int FrameMax)
 {
 	Player.at(index)->Output(BackDC, x, y, Frame_Index, FrameMax);
+}
+
+void BitManager::PopM_Number(int index, int x, int y, int Frame_Index, int FrameMax)
+{
+	Number.at(index)->Output(BackDC, x, y, Frame_Index, FrameMax);
 }
 
 void BitManager::PopA_BG(int index, int x, int y, CGameObject *co, clock_t time)
@@ -247,6 +267,13 @@ void BitManager::PopA_Once(int index2, int x, int y, CGameObject * co, clock_t t
 	Obj.at(index2)->Output(BackDC, x, y, frame, Obj.at(index2)->GetFrame());
 }
 
+void BitManager::PopA_Number(int index, int x, int y, CGameObject * co, clock_t time)
+{
+	int frame = co->IndexTimerOnce(Obj.at(index)->GetFrame(), time);
+	Number.at(index)->Output(BackDC, x, y, frame, Obj.at(index)->GetFrame());
+
+}
+
 
 void BitManager::PopS_BG(int index, int x, int y)
 {
@@ -271,4 +298,9 @@ void BitManager::PopS_Effect(int index, int x, int y)
 void BitManager::PopS_Player(int index, int x, int y)
 {
 	Player.at(index)->Output(BackDC, x, y);
+}
+
+void BitManager::PopS_Number(int index, int x, int y)
+{
+	Number.at(index)->Output(BackDC, x, y);
 }
