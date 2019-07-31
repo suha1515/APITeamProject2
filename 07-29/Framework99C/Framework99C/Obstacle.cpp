@@ -56,6 +56,35 @@ void CObstacle::Initialize()
 		m_tInfo.fCX = 59;
 		m_tInfo.fCY = 193;
 		break;
+		//스테이지2
+	case OBSTACLE_PORTION:
+		m_tInfo.fCX = 122;
+		m_tInfo.fCY = 251;
+		break;
+	case OBSTACLE_PORTION2:
+		m_tInfo.fCX = 122;
+		m_tInfo.fCY = 251;
+		break;
+	case OBSTACLE_SKULL:
+		m_tInfo.fCX = 104;
+		m_tInfo.fCY = 135;
+		break;
+	case OBSTACLE_ONION:
+		m_tInfo.fCX = 170;
+		m_tInfo.fCY = 475;
+		break;
+	case OBSTACLE_FROG:
+		m_tInfo.fCX = 170;
+		m_tInfo.fCY = 475;
+		break;
+	case OBSTACLE_TRAP:
+		m_tInfo.fCX = 692/4;
+		m_tInfo.fCY = 138;
+		break;
+	case OBSTACLE_TRAP2:
+		m_tInfo.fCX = 850/4;
+		m_tInfo.fCY = 290;
+		break;
 	default:
 		break;
 	}
@@ -113,6 +142,38 @@ void CObstacle::Render(HDC hDC)
 	case OBSTACLE_LONGFORK:
 		BMP->PopS_Obj(9, m_tRect.left, m_tRect.top);
 		break;
+		//스테이지2
+	case OBSTACLE_PORTION:
+		BMP->PopS_Obj(16, m_tRect.left, m_tRect.top);
+		break;
+	case OBSTACLE_PORTION2:
+		BMP->PopS_Obj(17, m_tRect.left, m_tRect.top);
+		break;
+	case OBSTACLE_SKULL:
+		BMP->PopS_Obj(18, m_tRect.left, m_tRect.top);
+		break;
+	case OBSTACLE_ONION:
+		BMP->PopS_Obj(19, m_tRect.left, m_tRect.top);
+		break;
+	case OBSTACLE_FROG:
+		BMP->PopS_Obj(20, m_tRect.left, m_tRect.top);
+		break;
+	case OBSTACLE_TRAP:
+		if (!m_IsActive)
+		{
+			BMP->PopS_Obj(22, m_tRect.left, m_tRect.top);
+		}
+		else
+			BMP->PopA_Once(21, m_tRect.left, m_tRect.top, this, 70);
+		break;
+	case OBSTACLE_TRAP2:
+		if (!m_IsActive)
+		{
+			BMP->PopS_Obj(24, m_tRect.left, m_tRect.top);
+		}
+		else
+			BMP->PopA_Once(23, m_tRect.left, m_tRect.top, this, 70);
+		break;
 	default:
 		break;
 	}
@@ -135,7 +196,7 @@ void CObstacle::Move()
 	
 	if (m_ObsType == OBSTACLE_TYPE::OBSTACLE_FORK1&&m_IsFall)
 	{
-		if (m_tInfo.fY <= 70.0f)
+		if (m_tInfo.fY <= 40.0f)
 		{
 			m_tInfo.fY += CScrollMgr::m_fScrollY;
 		}
@@ -143,7 +204,22 @@ void CObstacle::Move()
 	
 	if (m_ObsType == OBSTACLE_TYPE::OBSTACLE_FORK2&&m_IsFall)
 	{
-		if (m_tInfo.fY <= 315.0f)
+		if (m_tInfo.fY <= 300.0f)
+		{
+			m_tInfo.fY += CScrollMgr::m_fScrollY;
+		}
+	}
+	if (m_ObsType == OBSTACLE_SKULL&&m_IsFall)
+	{
+		if (m_tInfo.fY <= 355.0f)
+		{
+			m_tInfo.fY += CScrollMgr::m_fScrollY;
+		}
+	}
+
+	if ((m_ObsType == OBSTACLE_FROG||m_ObsType==OBSTACLE_ONION)&&m_IsFall)
+	{
+		if (m_tInfo.fY <= 70.0f)
 		{
 			m_tInfo.fY += CScrollMgr::m_fScrollY;
 		}

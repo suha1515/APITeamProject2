@@ -47,6 +47,7 @@ using namespace std;
 #include "ObjectMgr.h"
 #include "ScrollMgr.h"
 #include "BitManager.h"
+#include "StageManager.h"
 
 
 #pragma comment(linker,"/entry:wWinMainCRTStartup /subsystem:console")

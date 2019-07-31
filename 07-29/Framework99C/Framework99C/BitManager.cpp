@@ -15,24 +15,15 @@ void BitManager::Initialize()
 
 
 	//Back 추가 
-	Push_BG(L"texture//background.bmp", 1000, 1000);  //처음 세팅	
+	//Push_BG(L"texture//background.bmp", 1000, 1000);  //처음 세팅	
+	Push_BG(L"texture//stage1//스테이지1_배경2.bmp", 2000, 500);
+	Push_BG(L"texture//stage1//스테이지1_배경.bmp", 2000, 500);
 	Push_BG(L"texture//stage2배경2.bmp", 2000, 500);
 	Push_BG(L"texture//stage2배경1.bmp", 2000, 500);
 	
-	
-
 
 	
 	
-	
-
-	Push_Obj(L"texture//stage1//스테이지1_바닥.bmp", 100, 100);					 //0
-	Push_Obj(L"texture//stage1//장애물//가시.bmp", 63, 99);						//1
-	Push_Obj(L"texture//stage1//장애물//포크.bmp", 80, 113);						//2
-	Push_Obj(L"texture//stage1//장애물//애니메이션_가시.bmp", 324, 131,4);	//3
-
-	
-
 	Push_Obj(L"texture//연습용쿠키.bmp", 3192, 288, 11);
 	
 	
@@ -44,13 +35,25 @@ void BitManager::Initialize()
 	Push_Obj(L"texture//stage1//장애물//포크2.bmp", 106, 193);		//Y값 315 ,	-100	6
 	Push_Obj(L"texture//stage1//장애물//포크3.bmp", 71, 216);		//Y값 300 ,	-120	7
 	Push_Obj(L"texture//stage1//장애물//포크4.bmp", 86, 482);		//Y값  70 , -300	8
-	Push_Obj(L"texture//stage1//장애물//긴포크.bmp", 59, 193);		//Y값 315 , -100	9
+	Push_Obj(L"texture//stage1//장애물//긴포크.bmp", 59, 193);		//Y값 315 , -100	9dk
 	Push_Obj(L"texture//stage1//장애물//애니메이션_가시.bmp", 324, 131,4);//345			10
 	Push_Obj(L"texture//stage1//장애물//정지_가시.bmp", 81, 131);		  //345			11
 	Push_Obj(L"texture//stage1//장애물//애니메이션_가시2.bmp", 435, 190, 4);//			12	
 
 	Push_Obj(L"texture//stage1//스테이지1_접시.bmp", 129, 52);				//	y200	13
 
+	//스테이지2
+	Push_Obj(L"texture//stage2//스테이지2_바닥.bmp", 100, 100);				//14		
+	Push_Obj(L"texture//stage2//스테이지2_선반.bmp", 129, 52);				//15		y 250
+	Push_Obj(L"texture//stage2//스테이지2_포션병1.bmp", 122,251);			//16		  295	
+	Push_Obj(L"texture//stage2//스테이지2_포션병2.bmp", 122, 251);			//17		  295
+	Push_Obj(L"texture//stage2//스테이지2_해골.bmp", 104, 135);				//18		  355
+	Push_Obj(L"texture//stage2//스테이지2_양파.bmp", 170, 475);				//19		  70	
+	Push_Obj(L"texture//stage2//스테이지2_개구리.bmp", 170, 475);			//20		  70
+	Push_Obj(L"texture//stage2//스테이지2_덫.bmp", 692,138 ,4);				//21		  355
+	Push_Obj(L"texture//stage2//스테이지2_덫정지.bmp", 174, 138);			//22		  355	
+	Push_Obj(L"texture//stage2//스테이지2_덫2.bmp", 850, 290,5);			//23		  275			
+	Push_Obj(L"texture//stage2//스테이지2_덫2정지.bmp", 170, 290);			//24		  275
 	//아이템&젤리
 	Push_Item(L"texture//stage1//젤리//파란_젤리.bmp", 20, 25);		//	370 y 기본값 	 0 
 	Push_Item(L"texture//stage1//젤리//노랑_곰.bmp", 55, 51);		//	370				 1

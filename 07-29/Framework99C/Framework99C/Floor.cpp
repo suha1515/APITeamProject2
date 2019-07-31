@@ -16,10 +16,18 @@ void CFloor::Initialize()
 	switch (m_FloorType)
 	{
 	case STAGE1_BOTTOM:
-		m_tInfo.fCX = 124;
-		m_tInfo.fCY = 120;
+		m_tInfo.fCX = 100;
+		m_tInfo.fCY = 100;
 		break;
 	case STAGE1_HANG:
+		m_tInfo.fCX = 129;
+		m_tInfo.fCY = 52;
+		break;
+	case STAGE2_BOTTOM:
+		m_tInfo.fCX = 100;
+		m_tInfo.fCY = 100;
+		break;
+	case STAGE2_HANG:
 		m_tInfo.fCX = 129;
 		m_tInfo.fCY = 52;
 		break;
@@ -33,9 +41,11 @@ int CFloor::Update()
 	if (m_bIsDead)
 		return DEAD_OBJ;
 	CGameObject::UpdateRect();
+
+
 	Move();
 	IsOutofRange();
-	
+
 
 	return NO_EVENT;
 }
@@ -49,6 +59,12 @@ void CFloor::Render(HDC hDC)
 		break;
 	case STAGE1_HANG:
 		BMP->PopS_Obj(13, m_tRect.left, m_tRect.top);
+		break;
+	case STAGE2_BOTTOM:
+		BMP->PopS_Obj(14, m_tRect.left, m_tRect.top);
+		break;
+	case STAGE2_HANG:
+		BMP->PopS_Obj(15, m_tRect.left, m_tRect.top);
 		break;
 	default:
 		break;

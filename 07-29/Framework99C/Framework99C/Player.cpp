@@ -42,15 +42,8 @@ void CPlayer::Render(HDC hDC)
 	
 //	Rectangle(hDC, 100, 100, 300, 300);
 
-	BMP->PopA_Once(0,0,60, this, 150);
-	HPEN hNewPen = CreatePen(PS_SOLID, 1, RGB(0, 255, 0));
-	HPEN hOldPen = (HPEN)SelectObject(hDC, hNewPen);
-
-	MoveToEx(hDC, m_tRect.left, m_tRect.top, nullptr);
-	LineTo(hDC, m_tRect.right, m_tRect.top);
-	LineTo(hDC, m_tRect.right, m_tRect.bottom);
-	LineTo(hDC, m_tRect.left, m_tRect.bottom);
-	LineTo(hDC, m_tRect.left, m_tRect.top);
+	//BMP->PopA_Once(0,0,60, this, 150);
+	
 
 
 	BMP->PopA_Player(3, 0, 0, this, 0);
@@ -68,13 +61,17 @@ void CPlayer::Render(HDC hDC)
 		BMP->PopA_Player(0, 20, 287, this, 100);
 	}
 
-	DeleteObject(SelectObject(hDC, hOldPen));
+	
 	//BMP->PopA_BG(2, 0,60, this, 70);
+	HPEN hNewPen = CreatePen(PS_SOLID, 1, RGB(0, 255, 0));
+	HPEN hOldPen = (HPEN)SelectObject(hDC, hNewPen);
 
-
-
-	BMP->PopA_Once(0, 0, 60, this, 150);
-
+	MoveToEx(hDC, m_tRect.left, m_tRect.top, nullptr);
+	LineTo(hDC, m_tRect.right, m_tRect.top);
+	LineTo(hDC, m_tRect.right, m_tRect.bottom);
+	LineTo(hDC, m_tRect.left, m_tRect.bottom);
+	LineTo(hDC, m_tRect.left, m_tRect.top);
+	DeleteObject(SelectObject(hDC, hOldPen));
 }
 
 void CPlayer::Release()
