@@ -23,11 +23,13 @@ void BitManager::Initialize()
 	
 	
 
+
 	
 
 	Push_Obj(L"texture//연.bmp", 3192, 288, 11);
 	
 	
+
 	Push_Obj(L"texture//stage1//스테이지1_바닥.bmp", 100, 100);
 	Push_Obj(L"texture//stage1//장애물//송곳.bmp", 63, 99);			//Y값 365			2
 	Push_Obj(L"texture//stage1//장애물//송곳2.bmp", 63, 99);		//Y값 365			3

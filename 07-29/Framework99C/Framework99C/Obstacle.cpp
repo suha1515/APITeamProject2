@@ -79,39 +79,39 @@ void CObstacle::Render(HDC hDC)
 	switch (m_ObsType)
 	{
 	case OBSTACLE_GIMLET:
-		BMP->PopS_Obj(2, m_tRect.left, m_tRect.top);
+		BMP->PopS_Obj(1, m_tRect.left, m_tRect.top);
 		break;
 	case OBSTACLE_GIMLET2:
-			BMP->PopS_Obj(3, m_tRect.left, m_tRect.top);
+			BMP->PopS_Obj(2, m_tRect.left, m_tRect.top);
 		break;
 	case OBSTACLE_GIMLETS:
 		if (!m_IsActive)
 		{
-			BMP->PopS_Obj(11, m_tRect.left, m_tRect.top);
+			BMP->PopS_Obj(10, m_tRect.left, m_tRect.top);
 		}
 		else
-		 BMP->PopA_Once(10, m_tRect.left, m_tRect.top, this, 70);
+		 BMP->PopA_Once(9, m_tRect.left, m_tRect.top, this, 70);
 		break;
 	case OBSTACLE_GIMLETS2:
-		BMP->PopA_Once(11, m_tRect.left, m_tRect.top, this, 150);
+		BMP->PopA_Once(10, m_tRect.left, m_tRect.top, this, 150);
 		break;
 	case OBSTACLE_FORK:
-		BMP->PopS_Obj(4, m_tRect.left, m_tRect.top);
+		BMP->PopS_Obj(3, m_tRect.left, m_tRect.top);
 		break;
 	case OBSTACLE_FORK1:
-		BMP->PopS_Obj(5, m_tRect.left, m_tRect.top);
+		BMP->PopS_Obj(4, m_tRect.left, m_tRect.top);
 		break;
 	case OBSTACLE_FORK2:
-		BMP->PopS_Obj(6, m_tRect.left, m_tRect.top);
+		BMP->PopS_Obj(5, m_tRect.left, m_tRect.top);
 		break;
 	case OBSTACLE_FORK3:
-		BMP->PopS_Obj(7, m_tRect.left, m_tRect.top);
+		BMP->PopS_Obj(6, m_tRect.left, m_tRect.top);
 		break;
 	case OBSTACLE_FORK4:
-		BMP->PopS_Obj(8, m_tRect.left, m_tRect.top);
+		BMP->PopS_Obj(7, m_tRect.left, m_tRect.top);
 		break;
 	case OBSTACLE_LONGFORK:
-		BMP->PopS_Obj(9, m_tRect.left, m_tRect.top);
+		BMP->PopS_Obj(8, m_tRect.left, m_tRect.top);
 		break;
 	default:
 		break;
