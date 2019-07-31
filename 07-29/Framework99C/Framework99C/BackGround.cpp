@@ -37,6 +37,7 @@ void CBackGround::Render(HDC hDC)
 	BMP->Auto_BackGround_W(2, 3);
 
 
+
 }
 
 void CBackGround::Release()

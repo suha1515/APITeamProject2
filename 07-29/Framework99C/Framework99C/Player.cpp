@@ -85,18 +85,34 @@ void CPlayer::Render(HDC hDC)
 	if (CKeyMgr::GetInstance()->KeyPressing(KEY_SPACE))
 	{
 		BMP->PopA_Player(1, m_tRect.left -20, m_tRect.top - 23, this, 90);
+
 		m_tInfo.fCY = 100.f;
 	}
 	else if(CKeyMgr::GetInstance()->KeyPressing(KEY_CTRL))
 	{
 		BMP->PopA_Player(2, m_tRect.left- 70, m_tRect.top - 30, this, 200);
+
 		m_tInfo.fCY = 50;
+
 	}
 	else  //IDLE
 	{
 		BMP->PopA_Player(0, m_tRect.left - 30, m_tRect.top-23, this, 100);
 		m_tInfo.fCY = 100.f;
 	}
+	// BMP->PopA_Player(3, 20, 287, this, 100); // 충돌했을때
+
+
+	// 체력바 테스트
+	// m_Hp 수정하면 체력 다는 정도 조절 가능
+	curtime = clock(); 
+	if (curtime - oldtime > 100)
+	{
+		m_Hp += 2;
+		oldtime = clock();
+	}
+	BMP->Manual_BackGround(4, 100, 21, 0, 0);
+	BMP->Manual_BackGround(3, 134, 30, m_Hp, 0);
 
 	//BMP->PopA_Once(1, m_tRect.left + 5, m_tRect.top - 23, this, 90);
 }
@@ -105,6 +121,7 @@ void CPlayer::SetShelfChk(bool bShelf)
 {
 	bShelfChk = bShelf;
 }
+
 
 bool CPlayer::bIsJumpChk()
 {
