@@ -70,11 +70,11 @@ void CBit::Out_BackGround_H(int speed) // 스크롤
 	
 }
 
-void CBit::Out_BackGround(int x, int y)
+void CBit::Out_BackGround(int nX, int nY, int x, int y)
 {
-	RECT	rc = { 0, 0,m_nWidth,m_nHeight };
-	BitBlt(BackDC, 0, 0, WINCX, WINCY, m_MemDC, x, y, SRCCOPY);
-	
+	//RECT	rc = { 0, 0,m_nWidth,m_nHeight };
+	//BitBlt(BackDC, 0, 0, WINCX, WINCY, m_MemDC, x, y, SRCCOPY);
+	GdiTransparentBlt(BackDC, nX, nY, m_nWidth, m_nHeight, m_MemDC, x, y, m_nWidth, m_nHeight, RGB(R, G, B)); // 색지우기
 
 
 }

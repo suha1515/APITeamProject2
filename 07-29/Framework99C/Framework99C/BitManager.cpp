@@ -15,6 +15,7 @@ void BitManager::Initialize()
 
 
 	//Back 추가 
+
 	//Push_BG(L"texture//background.bmp", 1000, 1000);  //처음 세팅	
 	Push_BG(L"texture//stage1//스테이지1_배경2.bmp", 2000, 500);
 	Push_BG(L"texture//stage1//스테이지1_배경.bmp", 2000, 500);
@@ -50,6 +51,14 @@ void BitManager::Initialize()
 	Push_Obj(L"texture//stage2//스테이지2_덫정지.bmp", 174, 138);			//21		  355	
 	Push_Obj(L"texture//stage2//스테이지2_덫2.bmp", 850, 290,5);			//22		  275			
 	Push_Obj(L"texture//stage2//스테이지2_덫2정지.bmp", 170, 290);			//23		  275
+
+	Push_BG(L"texture//background.bmp", 1000, 1000);  //처음 세팅	0
+	Push_BG(L"texture//stage2배경2.bmp", 2000, 500); //1
+	Push_BG(L"texture//stage2배경1.bmp", 2000, 500); //2
+	Push_BG(L"texture//체력바.bmp", 700, 20); //3
+	Push_BG(L"texture//체력.bmp",34, 36); //4
+	
+	
 	//아이템&젤리
 	Push_Item(L"texture//stage1//젤리//파란_젤리.bmp", 20, 25);		//	370 y 기본값 	 0 
 	Push_Item(L"texture//stage1//젤리//노랑_곰.bmp", 55, 51);		//	370				 1
@@ -62,10 +71,12 @@ void BitManager::Initialize()
 
 	//플레이어 추가
 	
-	Push_Player(L"texture//Run.bmp", 449, 125, 4);
-	Push_Player(L"texture//Jump.bmp", 762, 145, 6);
-	Push_Player(L"texture//Slide.bmp", 300, 107, 2);  // 플레이어 슬라이딩
-	Push_Player(L"texture//체력바.bmp", 760, 20,1);
+	Push_Player(L"texture//Run.bmp", 449, 125, 4);       // 0
+	Push_Player(L"texture//1단점프.bmp", 265, 145, 2);  // 1
+	Push_Player(L"texture//Slide.bmp", 300, 107, 2);  // 2
+	Push_Player(L"texture//2단점프.bmp", 890, 145, 7);	  //3
+	Push_Player(L"texture//충돌.bmp", 145, 145, 1);// 4
+
 	
 
 
@@ -73,7 +84,7 @@ void BitManager::Initialize()
 	// 아이템 추가
 	//이펙트 추가
 	//기타추가
-
+	
 
 
 }
@@ -89,9 +100,9 @@ void BitManager::Auto_BackGround_H(int index, int speed)
 	BG.at(index)->Out_BackGround_H(speed);
 }
 
-void BitManager::Manual_BackGround(int index, int x, int y)
+void BitManager::Manual_BackGround(int index, int nX, int nY,int x, int y)
 {
-	BG.at(index)->Out_BackGround(x, y);
+	BG.at(index)->Out_BackGround(nX, nY, x, y);
 }
 
 void BitManager::SET_RGB(int R, int G, int B)
@@ -134,6 +145,10 @@ void BitManager::Push_Player(int ID, int Width, int Height, int MaxFraim)
 	Player.back()->SetUp(ID, Width, Height, MaxFraim);
 }
 
+void BitManager::Push_Number(int ID, int Width, int Height, int MaxFraim)
+{
+}
+
 void BitManager::Push_BG(const wstring & Path, int Width, int Height, int MaxFraim)
 {
 	BG.push_back(new CBit);
@@ -166,6 +181,12 @@ void BitManager::Push_Player(const wstring & Path, int Width, int Height, int Ma
 	Player.back()->SetUp(Path, Width, Height, MaxFraim);
 }
 
+void BitManager::Push_Number(const wstring & Path, int Width, int Height, int MaxFraim)
+{
+	Number.push_back(new CBit);
+	Player.back()->SetUp(Path, Width, Height, MaxFraim);
+}
+
 vector<CBit*>& BitManager::Pop_Back()
 {
 	return BG;
@@ -191,6 +212,11 @@ vector<CBit*>& BitManager::Pop_Player()
 	return Player;
 }
 
+vector<CBit*>& BitManager::Pop_Number()
+{
+	return Number;
+}
+
 void BitManager::PopM_BG(int index, int x, int y, int Frame_Index, int FrameMax)
 {
 	BG.at(index)->Output(BackDC, x, y, Frame_Index, FrameMax);
@@ -214,6 +240,11 @@ void BitManager::PopM_Effect(int index, int x, int y, int Frame_Index, int Frame
 void BitManager::PopM_Player(int index, int x, int y, int Frame_Index, int FrameMax)
 {
 	Player.at(index)->Output(BackDC, x, y, Frame_Index, FrameMax);
+}
+
+void BitManager::PopM_Number(int index, int x, int y, int Frame_Index, int FrameMax)
+{
+	Number.at(index)->Output(BackDC, x, y, Frame_Index, FrameMax);
 }
 
 void BitManager::PopA_BG(int index, int x, int y, CGameObject *co, clock_t time)
@@ -252,6 +283,13 @@ void BitManager::PopA_Once(int index2, int x, int y, CGameObject * co, clock_t t
 	Obj.at(index2)->Output(BackDC, x, y, frame, Obj.at(index2)->GetFrame());
 }
 
+void BitManager::PopA_Number(int index, int x, int y, CGameObject * co, clock_t time)
+{
+	int frame = co->IndexTimerOnce(Obj.at(index)->GetFrame(), time);
+	Number.at(index)->Output(BackDC, x, y, frame, Obj.at(index)->GetFrame());
+
+}
+
 
 void BitManager::PopS_BG(int index, int x, int y)
 {
@@ -276,4 +314,9 @@ void BitManager::PopS_Effect(int index, int x, int y)
 void BitManager::PopS_Player(int index, int x, int y)
 {
 	Player.at(index)->Output(BackDC, x, y);
+}
+
+void BitManager::PopS_Number(int index, int x, int y)
+{
+	Number.at(index)->Output(BackDC, x, y);
 }

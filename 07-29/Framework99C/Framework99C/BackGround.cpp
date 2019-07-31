@@ -117,6 +117,7 @@ void CBackGround::SetAlphaBlend(int alphaValue)
 	AlphaBlend(BackDC, 0, 0, WINCX, WINCY, AlphaDC, 0, 0, WINCX, WINCY, bf);
 	
 	ReleaseDC(g_hWnd, hDC);
+
 }
 
 void CBackGround::Release()

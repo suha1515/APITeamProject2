@@ -19,7 +19,7 @@ public:
 
 	void Out_BackGround_W(HDC hDC, int speed = 3);
 	void Out_BackGround_H(int speed = 3);
-	void Out_BackGround(int x, int y);
+	void Out_BackGround(int nX, int nY,int x, int y);
 
 private:
 

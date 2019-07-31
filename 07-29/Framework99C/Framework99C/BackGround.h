@@ -35,5 +35,6 @@ private:
 
 	int alphaValue;
 	float m_WaitTime = 0.0f;
+
 };
 
