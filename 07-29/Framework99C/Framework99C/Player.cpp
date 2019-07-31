@@ -63,19 +63,22 @@ int CPlayer::Update()
 	//콘솔창에 플레이어 체력 확인
 	//cout << m_tInfo.iHealth << endl;
 	//system("cls");
-
 	return NO_EVENT;
 }
 
 void CPlayer::Render(HDC hDC)
 {
 	CGameObject::UpdateRect();
-	//Rectangle(hDC, m_tRect.left - CScrollMgr::m_fScrollX,
-	//	m_tRect.top,
-	//	m_tRect.right - CScrollMgr::m_fScrollX,
-	//	m_tRect.bottom);
 
-	//BMP->PopA_Player(3, 0, 0, this, 0);
+	BMP->PopA_Once(0,0,60, this, 150);
+	HPEN hNewPen = CreatePen(PS_SOLID, 1, RGB(0, 255, 0));
+	HPEN hOldPen = (HPEN)SelectObject(hDC, hNewPen);
+
+	MoveToEx(hDC, m_tRect.left, m_tRect.top, nullptr);
+	LineTo(hDC, m_tRect.right, m_tRect.top);
+	LineTo(hDC, m_tRect.right, m_tRect.bottom);
+	LineTo(hDC, m_tRect.left, m_tRect.bottom);
+	LineTo(hDC, m_tRect.left, m_tRect.top);
 
 	HPEN hNewPen = CreatePen(PS_SOLID, 1, RGB(0, 255, 0));
 	HPEN hOldPen = (HPEN)SelectObject(hDC, hNewPen);
@@ -104,9 +107,7 @@ void CPlayer::Render(HDC hDC)
 		m_tInfo.fCY = 100.f;
 	}
 
-	//BMP->PopA_BG(2, 0,60, this, 70);
 	BMP->PopA_Once(1, m_tRect.left + 5, m_tRect.top - 23, this, 90);
-
 }
 
 void CPlayer::SetShelfChk(bool bShelf)

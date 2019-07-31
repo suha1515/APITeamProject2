@@ -36,14 +36,16 @@ void CMaingame::Initialize()
 	srand((unsigned)time(nullptr));
 
 	CGameObject* pGameObject = nullptr;
-	m_pPlayer = new CPlayer;
+	//m_pPlayer = new CPlayer;
 	// BackGround
 	pGameObject = CAbstractFactory<CBackGround>::CreateObject();
 	CObjectMgr::GetInstance()->AddObject(OBJECT_BACKGROUND, pGameObject);
 
 	// Player
 	pGameObject = CAbstractFactory<CPlayer>::CreateObject();
+	pGameObject->SetPos(100, 350);
 	CObjectMgr::GetInstance()->AddObject(OBJECT_PLAYER, pGameObject);	
+	
 	//6200
 	//pGameObject = CAbstractFactory<CFloor>::CreateObject();
 	//pGameObject->SetPos(900, 200);
