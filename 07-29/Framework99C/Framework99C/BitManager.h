@@ -17,13 +17,13 @@ public:
 
 	//배경 자동이동 게임에 대한 오토 함수, (배경 인덱스  , 배경돌리는 스피드)
 	void Auto_BackGround_W(int index = 0, int speed = 2);
-	void Auto_BackGround_H(int index = 0, int speed = 2);
+	void Auto_BackGround_H(int index = 0,int speed = 2);
 
 	//배경이동에 대한 수동 출력함수 배경그림의 좌표를 랜더좌표 0,0에 찍어주는 함수이다.
 	//(예시) x를 증가시키면 오른쪽으로 가는 느낌
 	//(예시2) y를 증가시키면 밑으로 가는 느낌 
 	//단, WINCX,WINCY보다 배경그림이 더 커야한다.
-	void Manual_BackGround(int index, int x, int y);
+	void Manual_BackGround(int index, int frame = 0, int frameMax =0 );
 
 	//비트맵의 배경을 지우는 색상값 설정함수이다.(Init에서 호출한다)
 	void SET_RGB(int R, int G, int B);

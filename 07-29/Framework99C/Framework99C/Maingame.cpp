@@ -107,6 +107,7 @@ void CMaingame::Render()
 	// 배경 스크롤 (W = 가로, H = 세로)
 
 
+
 	//키보드에 따라 배경 움직이기
 	/*if (GetAsyncKeyState(VK_RIGHT))
 		scr_x += 3;
@@ -114,7 +115,15 @@ void CMaingame::Render()
 
 	//모든 렌더는 BackDC에
 	CObjectMgr::GetInstance()->Render(BackDC);
-	//BMP->PopS_Obj(6, 800, -190);
+
+	
+	if (GetAsyncKeyState('A'))
+	{
+		test += 1;;
+	}
+
+	
+
 	//더블버퍼링
 	
 	BitBlt(m_hDC, 0, 0, WINCX, WINCY, BackDC, 0, 0, SRCCOPY);

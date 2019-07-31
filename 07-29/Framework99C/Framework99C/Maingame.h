@@ -24,6 +24,7 @@ private:
 	int scr_x = 0;
 	int scr_y = 0;
 
+	int test = 0;
 	CSpawnManager* m_SpawnManager;
 };
 

@@ -63,20 +63,30 @@ void CBit::Out_BackGround_H(int speed) // 스크롤
 {
 	BitBlt(BackDC, 0, 0, m_nWidth, count, m_MemDC, 0, m_nHeight - count, SRCCOPY);
 	BitBlt(BackDC, 0, count, m_nWidth, m_nHeight - count, m_MemDC, 0, 0, SRCCOPY);
+	
 	count += speed;
 	if (count > m_nHeight)
 		count = 0;
+	
 }
 
-void CBit::Out_BackGround(int x, int y) 
+void CBit::Out_BackGround(int x, int y)
 {
+	RECT	rc = { 0, 0,m_nWidth,m_nHeight };
 	BitBlt(BackDC, 0, 0, WINCX, WINCY, m_MemDC, x, y, SRCCOPY);
+	
+
+
 }
 
-void CBit::Out_BackGround_W(int speed)
+void CBit::Out_BackGround_W(HDC hDC,int speed)
 {
-	BitBlt(BackDC, 0, 0, m_nWidth - count, m_nHeight, m_MemDC, count, 0, SRCCOPY);
-	BitBlt(BackDC, m_nWidth - count, 0, m_nWidth, m_nHeight, m_MemDC, 0, 0, SRCCOPY);
+
+	/*BitBlt(BackDC, 0, 0, m_nWidth - count, m_nHeight, m_MemDC, count, 0, SRCCOPY);
+	BitBlt(BackDC, m_nWidth - count, 0, m_nWidth, m_nHeight, m_MemDC, 0, 0, SRCCOPY);*/
+	GdiTransparentBlt(hDC, 0, 0, m_nWidth-count, m_nHeight, m_MemDC, count, 0, m_nWidth-count, m_nHeight, RGB(R, G, B)); // 색지우기
+	GdiTransparentBlt(hDC, m_nWidth - count, 0, m_nWidth, m_nHeight, m_MemDC, 0, 0, m_nWidth, m_nHeight, RGB(R, G, B)); // 색지우기
+	
 	count += speed;
 	if (count > m_nWidth)
 		count = 0;

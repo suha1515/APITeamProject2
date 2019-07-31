@@ -17,7 +17,7 @@ public:
 	void Output(HDC hDC, int nX, int nY, int nFrame = 0, int nFrameMax = 1);
 public:
 
-	void Out_BackGround_W(int speed = 3);
+	void Out_BackGround_W(HDC hDC, int speed = 3);
 	void Out_BackGround_H(int speed = 3);
 	void Out_BackGround(int x, int y);
 

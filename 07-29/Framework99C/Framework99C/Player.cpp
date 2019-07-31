@@ -52,8 +52,29 @@ void CPlayer::Render(HDC hDC)
 	LineTo(hDC, m_tRect.left, m_tRect.bottom);
 	LineTo(hDC, m_tRect.left, m_tRect.top);
 
+
+	BMP->PopA_Player(3, 0, 0, this, 0);
+
+	if (GetAsyncKeyState(VK_SPACE))
+	{
+		BMP->PopA_Player(1, 20, 287, this, 90);
+	}
+	else if(GetAsyncKeyState(VK_CONTROL))
+	{
+		BMP->PopA_Player(2, 20, 305, this, 200);
+	}
+	else  
+	{
+		BMP->PopA_Player(0, 20, 287, this, 100);
+	}
+
 	DeleteObject(SelectObject(hDC, hOldPen));
 	//BMP->PopA_BG(2, 0,60, this, 70);
+
+
+
+	BMP->PopA_Once(0, 0, 60, this, 150);
+
 }
 
 void CPlayer::Release()
@@ -96,8 +117,7 @@ void CPlayer::KeyInput()
 		m_tInfo.fX +=m_fSpeed;
 		CScrollMgr::m_fScrollX -= m_fSpeed;
 	}
-	if (CKeyMgr::GetInstance()->KeyDown(KEY_SPACE))
-		m_bIsJump = true;
+	
 }
 
 bool CPlayer::IsGround()
