@@ -104,7 +104,7 @@ void CPlayer::Render(HDC hDC)
 		m_Hp += 2;
 		oldtime = clock();
 	}
-	BMP->Manual_BackGround(4, 100, 21, 0, 0);
+	//BMP->Manual_BackGround(4, 100, 21, 0, 0);
 	BMP->Manual_BackGround(3, 134, 30, m_Hp, 0);
 
 
