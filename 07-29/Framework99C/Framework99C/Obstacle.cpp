@@ -122,7 +122,7 @@ void CObstacle::Render(HDC hDC)
 		 BMP->PopA_Once(9, m_tRect.left, m_tRect.top, this, 70);
 		break;
 	case OBSTACLE_GIMLETS2:
-		BMP->PopA_Once(10, m_tRect.left, m_tRect.top, this, 150);
+		BMP->PopA_Once(11, m_tRect.left, m_tRect.top, this, 150);
 		break;
 	case OBSTACLE_FORK:
 		BMP->PopS_Obj(3, m_tRect.left, m_tRect.top);
@@ -144,35 +144,35 @@ void CObstacle::Render(HDC hDC)
 		break;
 		//스테이지2
 	case OBSTACLE_PORTION:
-		BMP->PopS_Obj(16, m_tRect.left, m_tRect.top);
+		BMP->PopS_Obj(15, m_tRect.left, m_tRect.top);
 		break;
 	case OBSTACLE_PORTION2:
-		BMP->PopS_Obj(17, m_tRect.left, m_tRect.top);
+		BMP->PopS_Obj(16, m_tRect.left, m_tRect.top);
 		break;
 	case OBSTACLE_SKULL:
-		BMP->PopS_Obj(18, m_tRect.left, m_tRect.top);
+		BMP->PopS_Obj(17, m_tRect.left, m_tRect.top);
 		break;
 	case OBSTACLE_ONION:
-		BMP->PopS_Obj(19, m_tRect.left, m_tRect.top);
+		BMP->PopS_Obj(18, m_tRect.left, m_tRect.top);
 		break;
 	case OBSTACLE_FROG:
-		BMP->PopS_Obj(20, m_tRect.left, m_tRect.top);
+		BMP->PopS_Obj(19, m_tRect.left, m_tRect.top);
 		break;
 	case OBSTACLE_TRAP:
 		if (!m_IsActive)
 		{
-			BMP->PopS_Obj(22, m_tRect.left, m_tRect.top);
+			BMP->PopS_Obj(21, m_tRect.left, m_tRect.top);
 		}
 		else
-			BMP->PopA_Once(21, m_tRect.left, m_tRect.top, this, 70);
+			BMP->PopA_Once(20, m_tRect.left, m_tRect.top, this, 70);
 		break;
 	case OBSTACLE_TRAP2:
 		if (!m_IsActive)
 		{
-			BMP->PopS_Obj(24, m_tRect.left, m_tRect.top);
+			BMP->PopS_Obj(23, m_tRect.left, m_tRect.top);
 		}
 		else
-			BMP->PopA_Once(23, m_tRect.left, m_tRect.top, this, 70);
+			BMP->PopA_Once(22, m_tRect.left, m_tRect.top, this, 70);
 		break;
 	default:
 		break;

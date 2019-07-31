@@ -73,16 +73,9 @@ void CPlayer::Render(HDC hDC)
 	//BMP->PopA_Once(0,0,60, this, 150);
 	
 
-	HPEN hNewPen = CreatePen(PS_SOLID, 1, RGB(0, 255, 0));
-	HPEN hOldPen = (HPEN)SelectObject(hDC, hNewPen);
 
-	MoveToEx(hDC, m_tRect.left, m_tRect.top, nullptr);
-	LineTo(hDC, m_tRect.right, m_tRect.top);
-	LineTo(hDC, m_tRect.right, m_tRect.bottom);
-	LineTo(hDC, m_tRect.left, m_tRect.bottom);
-	LineTo(hDC, m_tRect.left, m_tRect.top);
 
-	DeleteObject(SelectObject(hDC, hOldPen));
+	
 
 	if (CKeyMgr::GetInstance()->KeyPressing(KEY_SPACE))
 	{
@@ -100,6 +93,8 @@ void CPlayer::Render(HDC hDC)
 		m_tInfo.fCY = 100.f;
 	}
 
+	HPEN hNewPen = CreatePen(PS_SOLID, 1, RGB(0, 255, 0));
+	HPEN hOldPen = (HPEN)SelectObject(hDC, hNewPen);
 
 	
 	MoveToEx(hDC, m_tRect.left, m_tRect.top, nullptr);
@@ -109,7 +104,7 @@ void CPlayer::Render(HDC hDC)
 	LineTo(hDC, m_tRect.left, m_tRect.top);
 	DeleteObject(SelectObject(hDC, hOldPen));
 
-	BMP->PopA_Once(1, m_tRect.left + 5, m_tRect.top - 23, this, 90);
+	//BMP->PopA_Once(1, m_tRect.left + 5, m_tRect.top - 23, this, 90);
 }
 
 void CPlayer::SetShelfChk(bool bShelf)
