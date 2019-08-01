@@ -15,50 +15,32 @@ void BitManager::Initialize()
 
 
 	//Back 추가 
-
-	//Push_BG(L"texture//background.bmp", 1000, 1000);  //처음 세팅	
-	Push_BG(L"texture//stage1//스테이지1_배경2.bmp", 2000, 500);
-	Push_BG(L"texture//stage1//스테이지1_배경.bmp", 2000, 500);
-	Push_BG(L"texture//stage2배경2.bmp", 2000, 500);
-	Push_BG(L"texture//stage2배경1.bmp", 2000, 500);
-
-	
-	
-	Push_Obj(L"texture//stage1//스테이지1_바닥.bmp", 100, 100);						  //0
-	Push_Obj(L"texture//stage1//장애물//송곳.bmp", 63, 99);			//Y값 365			1
-	Push_Obj(L"texture//stage1//장애물//송곳2.bmp", 63, 99);		//Y값 365			2
-	Push_Obj(L"texture//stage1//장애물//포크.bmp", 80, 113);		//Y값 355			3
-	Push_Obj(L"texture//stage1//장애물//포크1.bmp", 134, 482);		//Y값  70 , -300	4
-	Push_Obj(L"texture//stage1//장애물//포크2.bmp", 106, 193);		//Y값 315 ,	-100	5
-	Push_Obj(L"texture//stage1//장애물//포크3.bmp", 71, 216);		//Y값 300 ,	-120	6
-	Push_Obj(L"texture//stage1//장애물//포크4.bmp", 86, 482);		//Y값  70 , -300	7
-	Push_Obj(L"texture//stage1//장애물//긴포크.bmp", 59, 193);		//Y값 315 , -100	8dk
-	Push_Obj(L"texture//stage1//장애물//애니메이션_가시.bmp", 324, 131,4);//345			9
-	Push_Obj(L"texture//stage1//장애물//정지_가시.bmp", 81, 131);		  //345			10
-	Push_Obj(L"texture//stage1//장애물//애니메이션_가시2.bmp", 435, 190, 4);//			11	
-
-	Push_Obj(L"texture//stage1//스테이지1_접시.bmp", 129, 52);				//	y200	12
-
-	//스테이지2
-	Push_Obj(L"texture//stage2//스테이지2_바닥.bmp", 100, 100);				//13		
-	Push_Obj(L"texture//stage2//스테이지2_선반.bmp", 129, 52);				//14		y 250
-	Push_Obj(L"texture//stage2//스테이지2_포션병1.bmp", 122,251);			//15		  295	
-	Push_Obj(L"texture//stage2//스테이지2_포션병2.bmp", 122, 251);			//16		  295
-	Push_Obj(L"texture//stage2//스테이지2_해골.bmp", 104, 135);				//17		  355
-	Push_Obj(L"texture//stage2//스테이지2_양파.bmp", 170, 475);				//18		  70	
-	Push_Obj(L"texture//stage2//스테이지2_개구리.bmp", 170, 475);			//19		  70
-	Push_Obj(L"texture//stage2//스테이지2_덫.bmp", 692,138 ,4);				//20		  355
-	Push_Obj(L"texture//stage2//스테이지2_덫정지.bmp", 174, 138);			//21		  355	
-	Push_Obj(L"texture//stage2//스테이지2_덫2.bmp", 850, 290,5);			//22		  275			
-	Push_Obj(L"texture//stage2//스테이지2_덫2정지.bmp", 170, 290);			//23		  275
-
 	Push_BG(L"texture//background.bmp", 1000, 1000);  //처음 세팅	0
 	Push_BG(L"texture//stage2배경2.bmp", 2000, 500); //1
 	Push_BG(L"texture//stage2배경1.bmp", 2000, 500); //2
 	Push_BG(L"texture//체력바.bmp", 700, 20); //3
 	Push_BG(L"texture//체력.bmp",34, 36); //4
+	Push_BG(L"texture//score2.bmp", 75, 25); // 5
 	
-	
+
+	Push_Obj(L"texture//연.bmp", 3192, 288, 11);
+
+	Push_Obj(L"texture//stage1//스테이지1_바닥.bmp", 100, 100);
+	Push_Obj(L"texture//stage1//장애물//송곳.bmp", 63, 99);			//Y값 365			2
+	Push_Obj(L"texture//stage1//장애물//송곳2.bmp", 63, 99);		//Y값 365			3
+	Push_Obj(L"texture//stage1//장애물//포크.bmp", 80, 113);		//Y값 355			4
+	Push_Obj(L"texture//stage1//장애물//포크1.bmp", 134, 482);		//Y값  70 , -300	5
+	Push_Obj(L"texture//stage1//장애물//포크2.bmp", 106, 193);		//Y값 315 ,	-100	6
+	Push_Obj(L"texture//stage1//장애물//포크3.bmp", 71, 216);		//Y값 300 ,	-120	7
+	Push_Obj(L"texture//stage1//장애물//포크4.bmp", 86, 482);		//Y값  70 , -300	8
+	Push_Obj(L"texture//stage1//장애물//긴포크.bmp", 59, 193);		//Y값 315 , -100	9
+	Push_Obj(L"texture//stage1//장애물//애니메이션_가시.bmp", 324, 131,4);//345			10
+	Push_Obj(L"texture//stage1//장애물//정지_가시.bmp", 81, 131);		  //345			11
+	Push_Obj(L"texture//stage1//장애물//애니메이션_가시2.bmp", 435, 190, 4);//			12	
+
+
+	Push_Obj(L"texture//stage1//스테이지1_접시.bmp", 129, 52);				//	y200	13
+
 	//아이템&젤리
 	Push_Item(L"texture//stage1//젤리//파란_젤리.bmp", 20, 25);		//	370 y 기본값 	 0 
 	Push_Item(L"texture//stage1//젤리//노랑_곰.bmp", 55, 51);		//	370				 1
@@ -72,15 +54,41 @@ void BitManager::Initialize()
 	//플레이어 추가
 	
 	Push_Player(L"texture//Run.bmp", 449, 125, 4);       // 0
-	Push_Player(L"texture//1단점프.bmp", 265, 145, 2);  // 1
+	Push_Player(L"texture//1단점프.bmp", 256, 145, 2);  // 1
 	Push_Player(L"texture//Slide.bmp", 300, 107, 2);  // 2
 	Push_Player(L"texture//2단점프.bmp", 890, 145, 7);	  //3
 	Push_Player(L"texture//충돌.bmp", 145, 145, 1);// 4
+	Push_Player(L"texture//0.bmp", 11, 19);
+
+
+	
+
 
 	// 이펙트 추가
 	// 아이템 추가
 	//이펙트 추가
 	//기타추가
+	Push_Number(L"texture//0.bmp", 17, 30);
+	Push_Number(L"texture//1.bmp", 17, 30);
+	Push_Number(L"texture//2.bmp", 17, 30);
+	Push_Number(L"texture//3.bmp", 17, 30);
+	Push_Number(L"texture//4.bmp", 17, 30);
+	Push_Number(L"texture//5.bmp", 17, 30);
+	Push_Number(L"texture//6.bmp", 17, 30);
+	Push_Number(L"texture//7.bmp", 17, 30);
+	Push_Number(L"texture//8.bmp", 17, 30);
+	Push_Number(L"texture//9.bmp", 17, 30);
+
+
+
+
+
+
+
+
+	
+
+
 }
 
 
@@ -97,6 +105,11 @@ void BitManager::Auto_BackGround_H(int index, int speed)
 void BitManager::Manual_BackGround(int index, int nX, int nY,int x, int y)
 {
 	BG.at(index)->Out_BackGround(nX, nY, x, y);
+}
+
+void BitManager::Manual_Number(int index, int nX, int nY, int x ,int y)
+{
+	Number.at(index)->Out_BackGround(nX, nY, x, y);
 }
 
 void BitManager::SET_RGB(int R, int G, int B)
@@ -178,7 +191,7 @@ void BitManager::Push_Player(const wstring & Path, int Width, int Height, int Ma
 void BitManager::Push_Number(const wstring & Path, int Width, int Height, int MaxFraim)
 {
 	Number.push_back(new CBit);
-	Player.back()->SetUp(Path, Width, Height, MaxFraim);
+	Number.back()->SetUp(Path, Width, Height, MaxFraim);
 }
 
 vector<CBit*>& BitManager::Pop_Back()

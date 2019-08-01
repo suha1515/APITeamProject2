@@ -23,7 +23,7 @@ void CPlayer::Initialize()
 	m_tInfo.fY = 360.f;
 	m_tInfo.fCX = 70.f;
 	m_tInfo.fCY = 100.f;
-	m_tInfo.iHealth = 100; //플레이어 체력!!! 0이면 플레이어가 죽는걸로 체크돼 프로그램이 다운돼서 체력을 만땅 늘렸습니다.
+	m_tInfo.iHealth = 9999; //플레이어 체력!!! 0이면 플레이어가 죽는걸로 체크돼 프로그램이 다운돼서 체력을 만땅 늘렸습니다.
 
 	m_tHitBox.heigth = 70.f;
 	m_tHitBox.width = 40.f;
@@ -41,6 +41,8 @@ void CPlayer::Initialize()
 	m_fJumpForce = 13.0f;
 
 	m_iJumpCount = 2;
+
+	score =0;
 }
 
 int CPlayer::Update()
@@ -50,6 +52,7 @@ int CPlayer::Update()
 	IsDown();
 	IsCollide();
 
+
 	if (m_tInfo.iHealth <= 0) //플레이어 피가 0이면 사망
 		m_bIsDead = true;
 
@@ -57,6 +60,7 @@ int CPlayer::Update()
 		return DEAD_OBJ;
 
 	//★플레이어 체력 다는 부분입니다!!!!!!★
+
 	TimeCur = GetTickCount();
 	if (TimeCur - TimeOld >= 1000) //플레이어 체력이 1초에 1씩 깎입니다.
 	{
@@ -64,39 +68,49 @@ int CPlayer::Update()
 		TimeOld = TimeCur;
 	}
 	CGameObject::UpdateHitBox();
+
+
 	//콘솔창에 플레이어 체력 확인
 	//cout << m_tInfo.iHealth << endl;
 	//system("cls");
 	return NO_EVENT;
+	
 }
 
 void CPlayer::Render(HDC hDC)
 {
 	CGameObject::UpdateRect();
-	//BMP->PopA_Once(0,0,60, this, 150);
-	
+
+
+	BMP->PopA_Once(0,0,60, this, 150);
+	HPEN hNewPen = CreatePen(PS_SOLID, 1, RGB(0, 255, 0));
+	HPEN hOldPen = (HPEN)SelectObject(hDC, hNewPen);
+
+	MoveToEx(hDC, m_tRect.left, m_tRect.top, nullptr);
+	LineTo(hDC, m_tRect.right, m_tRect.top);
+	LineTo(hDC, m_tRect.right, m_tRect.bottom);
+	LineTo(hDC, m_tRect.left, m_tRect.bottom);
+	LineTo(hDC, m_tRect.left, m_tRect.top);
+
+
+	DeleteObject(SelectObject(hDC, hOldPen));
 
 
 	m_tInfo.fCY = 100.f;
 
 	if (CKeyMgr::GetInstance()->KeyPressing(KEY_SPACE))
 	{
-		switch (m_iJumpCount) //점프 가능 횟수가 1이거나 0일 경우
-		{
-		case 1:
-			BMP->PopA_Player(1, m_tRect.left - 20, m_tRect.top - 23, this, 90);
-			break;
 
-		case 0:
-			BMP->PopA_Player(3, m_tRect.left - 20, m_tRect.top - 23, this, 90);
-			break;
-		}
+		BMP->PopA_Player(1, m_tRect.left - 30, m_tRect.top - 35, this, 40);
 		m_tInfo.fCY = 100.f;
+		
+
 	}
 	else if(CKeyMgr::GetInstance()->KeyPressing(KEY_CTRL))
 	{
-		BMP->PopA_Player(2, m_tRect.left- 70, m_tRect.top - 30, this, 200);
 
+
+		BMP->PopA_Player(2, m_tRect.left- 60, m_tRect.top - 30, this, 60);
 		m_tInfo.fCY = 50;
 
 	}
@@ -107,26 +121,43 @@ void CPlayer::Render(HDC hDC)
 	else
 	{
 		BMP->PopA_Player(0, m_tRect.left - 30, m_tRect.top - 23, this, 100);
+	else  //IDLE
+	{
+
+		BMP->PopA_Player(0, m_tRect.left - 30, m_tRect.top-23, this, 80);
+		m_tInfo.fCY = 100.f;
 	}
 	// BMP->PopA_Player(3, 20, 287, this, 100); // 충돌했을때
 
-
-	// 체력바 테스트
-	// m_Hp 수정하면 체력 다는 정도 조절 가능
-	curtime = clock(); 
-	if (curtime - oldtime > 1000)
+	BMP->PopS_BG(5, 240, 93); // score 출력
+	// 점수판 
+	int iTemp = 0;
+	for (int i = 0; i < 10; i++)
 	{
-		m_tInfo.iHealth += 2;
+		score += 10;
+		iTemp = (int)(score / powf(10, i)) % 10;
+
+		BMP->PopS_Number(iTemp, 500 - (20 * i) , 90);
+
+	
+		}
+
+
+	// 체력바 
+//	 m_Hp 수정하면 체력 다는 정도 조절 가능
+	curtime = clock();
+	if (curtime - oldtime > 500)
+	{
+		m_Hp += 1;
 		oldtime = clock();
 	}
-
-	//BMP->Manual_BackGround(4, 100, 21, 0, 0);
-	BMP->Manual_BackGround(3, 134, 30, m_tInfo.iHealth, 0);
-
+	BMP->Manual_BackGround(4, 100, 21, 0, 0);
+	BMP->Manual_BackGround(3, 134, 30, m_Hp, 0);
 
 
-	HPEN hNewPen = CreatePen(PS_SOLID, 1, RGB(0, 255, 0));
-	HPEN hOldPen = (HPEN)SelectObject(hDC, hNewPen);
+
+	DeleteObject(SelectObject(hDC, hOldPen));
+
 
 	MoveToEx(hDC, m_tRect.left, m_tRect.top, nullptr);
 	LineTo(hDC, m_tRect.right, m_tRect.top);
@@ -145,7 +176,9 @@ void CPlayer::Render(HDC hDC)
 
 	DeleteObject(SelectObject(hDC, hOldPen));
 
-	//BMP->PopA_Once(1, m_tRect.left + 5, m_tRect.top - 23, this, 90);
+
+
+	BMP->PopA_Once(1, m_tRect.left + 5, m_tRect.top - 23, this, 90);
 }
 
 void CPlayer::SetShelfChk(bool bShelf)

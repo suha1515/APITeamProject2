@@ -45,6 +45,10 @@ private:
 	float		m_fJumpForce;	// 점프 힘(v)
 	float		m_fJumpAcc;		// 점프 가속도(t)
 
+	int			m_Hp = 100;
+	int			score;
+	float			pow;
+
 	clock_t curtime;
 	clock_t oldtime;
 	

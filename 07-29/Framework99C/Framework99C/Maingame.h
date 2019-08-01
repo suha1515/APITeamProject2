@@ -1,6 +1,7 @@
 #pragma once
 
 class CGameObject;
+class UIManager;
 class CMaingame
 {
 public:
@@ -21,10 +22,10 @@ private:
 	HBITMAP m_back;
 	CGameObject* m_pPlayer;
 	
-	int scr_x = 0;
-	int scr_y = 0;
+
 
 	int test = 0;
 	CSpawnManager* m_SpawnManager;
+
 };
 
