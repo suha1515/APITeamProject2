@@ -120,9 +120,7 @@ void CPlayer::Render(HDC hDC)
 	}
 	else
 	{
-		BMP->PopA_Player(0, m_tRect.left - 30, m_tRect.top - 23, this, 100);
-	else  //IDLE
-	{
+
 
 		BMP->PopA_Player(0, m_tRect.left - 30, m_tRect.top-23, this, 80);
 		m_tInfo.fCY = 100.f;

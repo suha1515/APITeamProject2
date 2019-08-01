@@ -3,14 +3,8 @@
 #include "GameObject.h"
 #include "Player.h"
 
-CCollsionMgr::CCollsionMgr()
-{
-}
-
-
-CCollsionMgr::~CCollsionMgr()
-{
-}
+DEFINE_SINGLE_TONE(CCollsionMgr)
+void CCollsionMgr::Initialize(){}
 
 void CCollsionMgr::CollisionImpe(const OBJLIST& dstLst, const OBJLIST& srcLst)
 {
@@ -132,7 +126,7 @@ void CCollsionMgr::CollisionSphere(const OBJLIST& dstLst, const OBJLIST& srcLst)
 CGameObject * CCollsionMgr::CollisionRectReturn(const CGameObject * pDst, OBJECT_TYPE type)
 {
 	RECT dstRect = pDst->GetRect();
-	OBJLIST& objlst = CObjectMgr::GetInstance()->GetObjectList(type);
+	OBJLIST objlst = CObjectMgr::GetInstance()->GetObjectList(type);
 	OBJLIST::iterator iter_begin = objlst.begin();
 	OBJLIST::iterator iter_end = objlst.end();
 
