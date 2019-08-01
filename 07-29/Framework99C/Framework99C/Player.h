@@ -30,9 +30,7 @@ private:
 
 private:
 	void KeyInput();
-	void IsCollide();
 	bool IsGround();
-	
 
 private:		
 	float		m_fPosinX; // 포신의 끝점 X

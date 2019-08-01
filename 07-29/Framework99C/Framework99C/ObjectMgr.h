@@ -18,7 +18,7 @@ public:
 	CGameObject* GetMouse() const;
 	CGameObject* GetBackGround() const;
 	CGameObject* GetNearTarget(CGameObject* pSrc, OBJECT_TYPE eType);
-	const OBJLIST& GetObjectList(OBJECT_TYPE type);
+	const OBJLIST* GetObjectList(OBJECT_TYPE type);
 
 public:
 	void AddObject(OBJECT_TYPE eType, CGameObject* pObject);

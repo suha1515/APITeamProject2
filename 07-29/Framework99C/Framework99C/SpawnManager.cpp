@@ -731,10 +731,10 @@ m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, 295,TEMP+ 9700, OBSTACLE_PORT
 }
 void CSpawnManager::SpawnFloor()
 {	
-	const OBJLIST object = CObjectMgr::GetInstance()->GetObjectList(OBJECT_TYPE::OBJECT_FLOOR);
-	OBJLIST::const_iterator iter_begin = object.begin();
-	OBJLIST::const_iterator iter_end = object.end();
-	if (object.size() < 35)
+	const OBJLIST* object = CObjectMgr::GetInstance()->GetObjectList(OBJECT_TYPE::OBJECT_FLOOR);
+	OBJLIST::const_iterator iter_begin = object->begin();
+	OBJLIST::const_iterator iter_end = object->end();
+	if (object->size() < 35)
 	{
 		if (iter_begin == iter_end)
 		{
@@ -755,7 +755,7 @@ void CSpawnManager::SpawnFloor()
 		else
 		{
 			CGameObject* pGameObject = CAbstractFactory<CFloor>::CreateObject();
-			pGameObject->SetPos(object.back()->GetInfo().fX + 100, 470);
+			pGameObject->SetPos(object->back()->GetInfo().fX + 100, 470);
 			if (CStageManager::GetInstance()->CurrentScene == STAGE1)
 			{
 				dynamic_cast<CFloor*>(pGameObject)->SetType(STAGE1_BOTTOM);

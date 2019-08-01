@@ -7,7 +7,6 @@ public:
 
 public:
 	const INFO& GetInfo() const;
-	const RECT& GetHitBox() const;
 	const RECT& GetRect() const;
 
 public:
@@ -47,12 +46,11 @@ protected:
 	// 
 protected:
 	void UpdateRect();
-	void UpdateHitBox();
+
 protected:
 	INFO	m_tInfo;
 	RECT	m_tRect;
-	HITBOX	m_tHitBox;
-	RECT    m_tHitRect;
+	RECT	m_tHitBot;
 
 	float	m_fSpeed;
 	float	m_fAngle;

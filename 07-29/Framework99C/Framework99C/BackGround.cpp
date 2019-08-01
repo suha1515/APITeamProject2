@@ -53,6 +53,7 @@ void CBackGround::Render(HDC hDC)
 		BMP->Auto_BackGround_W(3, 2);
 	}
 	
+	
 	if (CStageManager::GetInstance()->IsSceneChange)
 	{
 		if (!m_ReverseAlpha)
@@ -73,7 +74,7 @@ void CBackGround::Render(HDC hDC)
 				alphaValue = min(255, alphaValue);
 			}
 		}
-		else
+		if (m_ReverseAlpha)
 		{
 			alphaValue--;
 			alphaValue = max(0, alphaValue);

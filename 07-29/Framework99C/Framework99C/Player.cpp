@@ -25,9 +25,6 @@ void CPlayer::Initialize()
 	m_tInfo.fCY = 100.f;
 	m_tInfo.iHealth = 9999; //플레이어 체력!!! 0이면 플레이어가 죽는걸로 체크돼 프로그램이 다운돼서 체력을 만땅 늘렸습니다.
 
-	m_tHitBox.heigth = 70.f;
-	m_tHitBox.width = 40.f;
-
 	m_fSpeed = 5.f;
 	m_fAngle = 90.f;
 	m_fPosinLength = 100.f;
@@ -50,7 +47,6 @@ int CPlayer::Update()
 	KeyInput();
 	IsJump();
 	IsDown();
-	IsCollide();
 
 
 	if (m_tInfo.iHealth <= 0) //플레이어 피가 0이면 사망
@@ -67,8 +63,11 @@ int CPlayer::Update()
 		SetDamage(1);
 		TimeOld = TimeCur;
 	}
+<<<<<<< HEAD
 	CGameObject::UpdateHitBox();
 
+=======
+>>>>>>> parent of a726ede... 08-0122
 
 	//콘솔창에 플레이어 체력 확인
 	//cout << m_tInfo.iHealth << endl;
@@ -81,6 +80,7 @@ void CPlayer::Render(HDC hDC)
 {
 	CGameObject::UpdateRect();
 
+<<<<<<< HEAD
 
 	BMP->PopA_Once(0,0,60, this, 150);
 	HPEN hNewPen = CreatePen(PS_SOLID, 1, RGB(0, 255, 0));
@@ -94,9 +94,12 @@ void CPlayer::Render(HDC hDC)
 
 
 	DeleteObject(SelectObject(hDC, hOldPen));
+=======
+	//BMP->PopA_Once(0,0,60, this, 150);
+	
+>>>>>>> parent of a726ede... 08-0122
 
 
-	m_tInfo.fCY = 100.f;
 
 	if (CKeyMgr::GetInstance()->KeyPressing(KEY_SPACE))
 	{
@@ -115,7 +118,10 @@ void CPlayer::Render(HDC hDC)
 
 	}
 	else if(m_tInfo.bGraceChk)
+			BMP->PopA_Player(4, m_tRect.left - 40, m_tRect.top - 45, this, 90);
+	else  //IDLE
 	{
+<<<<<<< HEAD
 		BMP->PopA_Player(4, m_tRect.left - 40, m_tRect.top - 45, this, 90);
 	}
 	else
@@ -123,6 +129,9 @@ void CPlayer::Render(HDC hDC)
 
 
 		BMP->PopA_Player(0, m_tRect.left - 30, m_tRect.top-23, this, 80);
+=======
+		BMP->PopA_Player(0, m_tRect.left - 30, m_tRect.top-23, this, 100);
+>>>>>>> parent of a726ede... 08-0122
 		m_tInfo.fCY = 100.f;
 	}
 	// BMP->PopA_Player(3, 20, 287, this, 100); // 충돌했을때
@@ -157,21 +166,12 @@ void CPlayer::Render(HDC hDC)
 	DeleteObject(SelectObject(hDC, hOldPen));
 
 
+	
 	MoveToEx(hDC, m_tRect.left, m_tRect.top, nullptr);
 	LineTo(hDC, m_tRect.right, m_tRect.top);
 	LineTo(hDC, m_tRect.right, m_tRect.bottom);
 	LineTo(hDC, m_tRect.left, m_tRect.bottom);
 	LineTo(hDC, m_tRect.left, m_tRect.top);
-
-	hNewPen = CreatePen(PS_SOLID, 1, RGB(255,0, 0));
-	hOldPen = (HPEN)SelectObject(hDC, hNewPen);
-
-	MoveToEx(hDC,m_tHitRect.left, m_tHitRect.top, nullptr);
-	 LineTo(hDC, m_tHitRect.right,m_tHitRect.top);
-	 LineTo(hDC, m_tHitRect.right,m_tHitRect.bottom);
-	 LineTo(hDC, m_tHitRect.left, m_tHitRect.bottom);
-	 LineTo(hDC, m_tHitRect.left, m_tHitRect.top);
-
 	DeleteObject(SelectObject(hDC, hOldPen));
 
 
@@ -239,16 +239,6 @@ void CPlayer::KeyInput()
 			--m_iJumpCount; //점프 누를 때마다 점프 가능 횟수 감소
 			m_fJumpAcc = 0.f; //가속도 초기화!
 		}
-	}
-}
-
-void CPlayer::IsCollide()
-{
-	
-	CGameObject* pOBstacle = CCollsionMgr::GetInstance()->CollisionRectReturn(this, OBJECT_OBSTACLE);
-	if (pOBstacle)
-	{
-		
 	}
 }
 

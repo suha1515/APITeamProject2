@@ -123,6 +123,7 @@ void CCollsionMgr::CollisionSphere(const OBJLIST& dstLst, const OBJLIST& srcLst)
 	}
 }
 
+<<<<<<< HEAD
 CGameObject * CCollsionMgr::CollisionRectReturn(const CGameObject * pDst, OBJECT_TYPE type)
 {
 	RECT dstRect = pDst->GetRect();
@@ -147,6 +148,8 @@ CGameObject * CCollsionMgr::CollisionRectReturn(const CGameObject * pDst, OBJECT
 	return nullptr;
 }
 
+=======
+>>>>>>> parent of a726ede... 08-0122
 bool CCollsionMgr::CheckRect(
 	const CGameObject* pDest, const CGameObject* pSource, 
 	float* pMoveX, float* pMoveY)

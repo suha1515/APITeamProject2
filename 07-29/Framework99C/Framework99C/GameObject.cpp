@@ -18,11 +18,6 @@ const INFO & CGameObject::GetInfo() const
 	return m_tInfo;
 }
 
-const RECT & CGameObject::GetHitBox() const
-{
-	return m_tHitRect;
-}
-
 const RECT & CGameObject::GetRect() const
 {
 	// TODO: 여기에 반환 구문을 삽입합니다.
@@ -81,13 +76,6 @@ void CGameObject::UpdateRect()
 	m_tRect.top = static_cast<LONG>(m_tInfo.fY - m_tInfo.fCY * 0.5f);
 	m_tRect.right = static_cast<LONG>(m_tInfo.fX + m_tInfo.fCX * 0.5f);
 	m_tRect.bottom = static_cast<LONG>(m_tInfo.fY + m_tInfo.fCY * 0.5f);
-}
-void CGameObject::UpdateHitBox()
-{
-	m_tHitRect.left = static_cast<LONG>(m_tInfo.fX - m_tHitBox.width*0.5f);
-	m_tHitRect.top = static_cast<LONG> (m_tInfo.fY -  m_tHitBox.heigth*0.5f);
-	m_tHitRect.right = static_cast<LONG>(m_tInfo.fX + m_tHitBox.width*0.5f);
-	m_tHitRect.bottom = static_cast<LONG>(m_tInfo.fY + m_tHitBox.heigth*0.5f);
 }
 int CGameObject::IndexTimer(int frame, clock_t time)
 {

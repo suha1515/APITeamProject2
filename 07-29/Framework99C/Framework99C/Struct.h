@@ -73,11 +73,5 @@ typedef struct tagSpawn_Jelly_Info
 	JELLY_TYPE m_JellyType;
 
 }SPAWN_JELLY_INFO;
-
-typedef struct tagHitBox
-{
-	float width;
-	float heigth;
-}HITBOX;
 #define __STRUCT_H__
 #endif
