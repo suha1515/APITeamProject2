@@ -20,15 +20,10 @@ void BitManager::Initialize()
 	Push_BG(L"texture//stage2배경1.bmp", 2000, 500); //2
 	Push_BG(L"texture//체력바.bmp", 700, 20); //3
 	Push_BG(L"texture//체력.bmp",34, 36); //4
-	
-	
-
-
+	Push_BG(L"texture//score2.bmp", 75, 25); // 5
 	
 
 	Push_Obj(L"texture//연.bmp", 3192, 288, 11);
-	
-	
 
 	Push_Obj(L"texture//stage1//스테이지1_바닥.bmp", 100, 100);
 	Push_Obj(L"texture//stage1//장애물//송곳.bmp", 63, 99);			//Y값 365			2
@@ -42,6 +37,7 @@ void BitManager::Initialize()
 	Push_Obj(L"texture//stage1//장애물//애니메이션_가시.bmp", 324, 131,4);//345			10
 	Push_Obj(L"texture//stage1//장애물//정지_가시.bmp", 81, 131);		  //345			11
 	Push_Obj(L"texture//stage1//장애물//애니메이션_가시2.bmp", 435, 190, 4);//			12	
+
 
 	Push_Obj(L"texture//stage1//스테이지1_접시.bmp", 129, 52);				//	y200	13
 
@@ -58,15 +54,41 @@ void BitManager::Initialize()
 	//플레이어 추가
 	
 	Push_Player(L"texture//Run.bmp", 449, 125, 4);       // 0
-	Push_Player(L"texture//1단점프.bmp", 265, 145, 2);  // 1
+	Push_Player(L"texture//1단점프.bmp", 256, 145, 2);  // 1
 	Push_Player(L"texture//Slide.bmp", 300, 107, 2);  // 2
 	Push_Player(L"texture//2단점프.bmp", 890, 145, 7);	  //3
 	Push_Player(L"texture//충돌.bmp", 145, 145, 1);// 4
+	Push_Player(L"texture//0.bmp", 11, 19);
+
+
+	
+
 
 	// 이펙트 추가
 	// 아이템 추가
 	//이펙트 추가
 	//기타추가
+	Push_Number(L"texture//0.bmp", 17, 30);
+	Push_Number(L"texture//1.bmp", 17, 30);
+	Push_Number(L"texture//2.bmp", 17, 30);
+	Push_Number(L"texture//3.bmp", 17, 30);
+	Push_Number(L"texture//4.bmp", 17, 30);
+	Push_Number(L"texture//5.bmp", 17, 30);
+	Push_Number(L"texture//6.bmp", 17, 30);
+	Push_Number(L"texture//7.bmp", 17, 30);
+	Push_Number(L"texture//8.bmp", 17, 30);
+	Push_Number(L"texture//9.bmp", 17, 30);
+
+
+
+
+
+
+
+
+	
+
+
 }
 
 
@@ -83,6 +105,11 @@ void BitManager::Auto_BackGround_H(int index, int speed)
 void BitManager::Manual_BackGround(int index, int nX, int nY,int x, int y)
 {
 	BG.at(index)->Out_BackGround(nX, nY, x, y);
+}
+
+void BitManager::Manual_Number(int index, int nX, int nY, int x ,int y)
+{
+	Number.at(index)->Out_BackGround(nX, nY, x, y);
 }
 
 void BitManager::SET_RGB(int R, int G, int B)
@@ -164,7 +191,7 @@ void BitManager::Push_Player(const wstring & Path, int Width, int Height, int Ma
 void BitManager::Push_Number(const wstring & Path, int Width, int Height, int MaxFraim)
 {
 	Number.push_back(new CBit);
-	Player.back()->SetUp(Path, Width, Height, MaxFraim);
+	Number.back()->SetUp(Path, Width, Height, MaxFraim);
 }
 
 vector<CBit*>& BitManager::Pop_Back()

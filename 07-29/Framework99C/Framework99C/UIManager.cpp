@@ -1,11 +1,27 @@
 #include "stdafx.h"
 #include "UIManager.h"
 #include "Center.h"
+#include "Bit.h"
+#include "BitManager.h"
+#include "Player.h"
 
 
-void UIManager::Update(HDC hDC)
+
+void UIManager::Initialize()
 {
-	HP_Bar(hDC);
+
+}
+
+void UIManager::Update()
+{
+
+}
+
+void UIManager::Render(HDC hDC)
+{
+	
+
+	
 }
 
 void UIManager::HP_Bar(HDC hDC)

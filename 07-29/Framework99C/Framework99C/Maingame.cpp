@@ -11,6 +11,7 @@
 #include"Obstacle.h"
 #include "Jelly.h"
 
+
 CMaingame::CMaingame()	
 {
 	
@@ -31,6 +32,7 @@ void CMaingame::Initialize()
 	SelectObject(BackDC, m_back);
 	BMP->Initialize();
 	
+
 	m_SpawnManager = new CSpawnManager;
 	m_SpawnManager->Initialize();
 	srand((unsigned)time(nullptr));
@@ -117,10 +119,6 @@ void CMaingame::Render()
 	CObjectMgr::GetInstance()->Render(BackDC);
 
 	
-	if (GetAsyncKeyState('A'))
-	{
-		test += 1;;
-	}
 
 	
 

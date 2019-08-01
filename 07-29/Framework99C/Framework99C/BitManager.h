@@ -24,6 +24,7 @@ public:
 	//(예시2) y를 증가시키면 밑으로 가는 느낌 
 	//단, WINCX,WINCY보다 배경그림이 더 커야한다.
 	void Manual_BackGround(int index, int nX, int nY,int frame = 0, int frameMax =0 );
+	void Manual_Number(int index, int nX, int nY, int frame = 0, int frameMax = 0);
 
 	//비트맵의 배경을 지우는 색상값 설정함수이다.(Init에서 호출한다)
 	void SET_RGB(int R, int G, int B);
@@ -52,6 +53,7 @@ public:
 	vector<CBit*>& Pop_Eff();
 	vector<CBit*>& Pop_Player();
 	vector<CBit*>& Pop_Number();
+	
 
 	//단일 그림을 출력한다. 인덱스에 해당하는 그림을  좌표 (x,y)에 출력한다.
 	//0729 부로 단일함수도 배경을 지운다. RGB 설정은 BIT.h 멤버변수 초기화에서 한다.
