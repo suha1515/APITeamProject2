@@ -9,7 +9,11 @@
 
 // 전역 변수:
 HWND g_hWnd;
+HDC g_hDC;
 HDC BackDC;
+
+float g_DeltaTime;
+
 HINSTANCE hInst;                                // 현재 인스턴스입니다.
 WCHAR szTitle[MAX_LOADSTRING];                  // 제목 표시줄 텍스트입니다.
 WCHAR szWindowClass[MAX_LOADSTRING];            // 기본 창 클래스 이름입니다.
@@ -63,6 +67,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 
 		if (dwCurTime - dwOldTime >= 10) // 0.01초 간격으로 진행.
 		{
+			g_DeltaTime = (int(dwCurTime - dwOldTime)) / 1000.f;
 			mainGame.Update();
 			mainGame.Render();
 

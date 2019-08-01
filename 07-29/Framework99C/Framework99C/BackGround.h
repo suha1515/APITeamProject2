@@ -16,11 +16,25 @@ public:
 	virtual int Update() override;
 	virtual void Render(HDC hDC) override;
 
+	void SetAlphaBlend(int alphaValue=0);
 private:
 	virtual void Release() override;
 
+
 private:
 	list<LINE_INFO*>	m_LineLst;
+
+	HDC AlphaDC;
+	HBITMAP TempDC;
+	HBITMAP OldTempDC;
+
+	bool m_ReverseAlpha = false;
+
+	Scene m_PrevScene;
+	Scene m_CurScene;
+
+	int alphaValue;
+	float m_WaitTime = 0.0f;
 
 };
 

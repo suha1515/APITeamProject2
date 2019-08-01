@@ -50,6 +50,7 @@ protected:
 protected:
 	INFO	m_tInfo;
 	RECT	m_tRect;
+	RECT	m_tHitBot;
 
 	float	m_fSpeed;
 	float	m_fAngle;

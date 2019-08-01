@@ -19,25 +19,25 @@ void CSpawnManager::Initialize()
 	// 스폰순서.. 바보코딩임..
 
 	//스테이지 1 장애물
-	m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, 365, 1000, OBSTACLE_TYPE::OBSTACLE_GIMLET2));
-	m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, 365, 1500, OBSTACLE_TYPE::OBSTACLE_GIMLET2));
-	m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, 315, 2010, OBSTACLE_TYPE::OBSTACLE_FORK2));
+	m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, 375, 1000, OBSTACLE_TYPE::OBSTACLE_GIMLET2));
+	m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, 375, 1500, OBSTACLE_TYPE::OBSTACLE_GIMLET2));
+	m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, 325, 2010, OBSTACLE_TYPE::OBSTACLE_FORK2));
 	m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, 70,  2500, OBSTACLE_TYPE::OBSTACLE_FORK1));
-	m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, 365, 3010, OBSTACLE_TYPE::OBSTACLE_GIMLET));
+	m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, 375, 3010, OBSTACLE_TYPE::OBSTACLE_GIMLET));
 												 
-	m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, 315, 3470, OBSTACLE_TYPE::OBSTACLE_FORK2));
+	m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, 325, 3470, OBSTACLE_TYPE::OBSTACLE_FORK2));
 												 
 	m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, 70, 4000, OBSTACLE_TYPE::OBSTACLE_FORK1));
 	m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, 70, 4200, OBSTACLE_TYPE::OBSTACLE_FORK1));
 	m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, 70, 4400, OBSTACLE_TYPE::OBSTACLE_FORK1));
 	m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, 70, 4600, OBSTACLE_TYPE::OBSTACLE_FORK1));
 												
-	m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, 365, 5000, OBSTACLE_TYPE::OBSTACLE_GIMLET2));
-	m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, 365, 5500, OBSTACLE_TYPE::OBSTACLE_GIMLET2));
+	m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, 375, 5000, OBSTACLE_TYPE::OBSTACLE_GIMLET2));
+	m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, 375, 5500, OBSTACLE_TYPE::OBSTACLE_GIMLET2));
 												 
 	m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, -100, 6000, OBSTACLE_TYPE::OBSTACLE_FORK2,OBSTACLE_MOVETYPE::FALLING));
 	m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, -300, 6400, OBSTACLE_TYPE::OBSTACLE_FORK1, OBSTACLE_MOVETYPE::UPTODOWN));
-	m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200,  365, 6880, OBSTACLE_TYPE::OBSTACLE_GIMLET));
+	m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200,  375, 6880, OBSTACLE_TYPE::OBSTACLE_GIMLET));
 	m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, -100, 7290, OBSTACLE_TYPE::OBSTACLE_FORK2, OBSTACLE_MOVETYPE::FALLING));
 												
 	m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, -300, 7700, OBSTACLE_TYPE::OBSTACLE_FORK1, OBSTACLE_MOVETYPE::UPTODOWN));
@@ -45,9 +45,9 @@ void CSpawnManager::Initialize()
 	m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, -300, 8300, OBSTACLE_TYPE::OBSTACLE_FORK1, OBSTACLE_MOVETYPE::UPTODOWN));
 
 	m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, -100, 8700, OBSTACLE_TYPE::OBSTACLE_FORK2, OBSTACLE_MOVETYPE::FALLING));
-	m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, 345, 9100, OBSTACLE_TYPE::OBSTACLE_GIMLETS, OBSTACLE_MOVETYPE::ANIMATION));
-	m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, 345, 9600, OBSTACLE_TYPE::OBSTACLE_GIMLETS, OBSTACLE_MOVETYPE::ANIMATION));
-	m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, 345, 9900, OBSTACLE_TYPE::OBSTACLE_GIMLETS, OBSTACLE_MOVETYPE::ANIMATION));
+	m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, 355, 9100, OBSTACLE_TYPE::OBSTACLE_GIMLETS, OBSTACLE_MOVETYPE::ANIMATION));
+	m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, 355, 9600, OBSTACLE_TYPE::OBSTACLE_GIMLETS, OBSTACLE_MOVETYPE::ANIMATION));
+	m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, 355, 9900, OBSTACLE_TYPE::OBSTACLE_GIMLETS, OBSTACLE_MOVETYPE::ANIMATION));
 
 	//스테이지 1 접시
 	m_FloorList.push_back(SPAWN_FLOOR_INFO(1200, 200, 5230, STAGE1_HANG));
@@ -522,6 +522,211 @@ void CSpawnManager::Initialize()
 	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 325, 9880, BLUE_BEAN));
 	m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 325, 9900, BLUE_BEAN));
 
+	//STAGE 2 15000
+	
+//젤리
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 500, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 530, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 560, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 590, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 620, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 650, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 680, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 710, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 740, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 770, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 800, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 830, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 860, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 890, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 910, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 940, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 970, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 1000, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 1030, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 1060, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 1090, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 1120, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 1150, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 1180, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 1210, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 1240, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 1270, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 1300, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 1330, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 1360, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 1390, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 1420, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 1450, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 1480, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 1510, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 1540, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 1570, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 1600, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 1630, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 1660, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 1690, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 1720, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 1750, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 1780, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 1810, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 1840, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 1870, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 1900, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 1930, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 1960, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 1990, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 2020, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 2050, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 2080, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 2110, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 2140, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 2170, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 2200, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 2230, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 2260, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 2290, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 2320, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 2350, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 2380, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 2410, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 2440, BLUE_BEAN));
+
+//선반위 젤리
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 170,TEMP+ 1100, PINK_BEAR));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 170,TEMP+ 1180, YELLOW_BEAR));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 170,TEMP+ 1260, PINK_BEAR));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 170,TEMP+ 1340, YELLOW_BEAR));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 170,TEMP+ 1420, PINK_BEAR));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 170,TEMP+ 1500, YELLOW_BEAR));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 170,TEMP+ 1580, PINK_BEAR));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 170,TEMP+ 1660, YELLOW_BEAR));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 170,TEMP+ 1740, PINK_BEAR));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 170,TEMP+ 1820, YELLOW_BEAR));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 170,TEMP+ 1900, PINK_BEAR));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 170,TEMP+ 1980, YELLOW_BEAR));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 170,TEMP+ 2060, PINK_BEAR));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 170,TEMP+ 2140, YELLOW_BEAR));
+
+
+
+//스테이지2 선반
+m_FloorList.push_back(SPAWN_FLOOR_INFO(1200, 250, TEMP+1000, STAGE2_HANG));
+m_FloorList.push_back(SPAWN_FLOOR_INFO(1200, 250, TEMP+1130, STAGE2_HANG));
+m_FloorList.push_back(SPAWN_FLOOR_INFO(1200, 250, TEMP+1260, STAGE2_HANG));
+m_FloorList.push_back(SPAWN_FLOOR_INFO(1200, 250, TEMP+1390, STAGE2_HANG));
+m_FloorList.push_back(SPAWN_FLOOR_INFO(1200, 250, TEMP+1520, STAGE2_HANG));
+m_FloorList.push_back(SPAWN_FLOOR_INFO(1200, 250, TEMP+1650, STAGE2_HANG));
+m_FloorList.push_back(SPAWN_FLOOR_INFO(1200, 250, TEMP+1780, STAGE2_HANG));
+m_FloorList.push_back(SPAWN_FLOOR_INFO(1200, 250, TEMP+1910, STAGE2_HANG));
+m_FloorList.push_back(SPAWN_FLOOR_INFO(1200, 250, TEMP+2040, STAGE2_HANG));
+m_FloorList.push_back(SPAWN_FLOOR_INFO(1200, 250, TEMP+2170, STAGE2_HANG));
+
+//선반2 더위에
+m_FloorList.push_back(SPAWN_FLOOR_INFO(1200, 150,TEMP+2570, STAGE2_HANG));
+m_FloorList.push_back(SPAWN_FLOOR_INFO(1200, 150,TEMP+2700, STAGE2_HANG));
+m_FloorList.push_back(SPAWN_FLOOR_INFO(1200, 150,TEMP+2830, STAGE2_HANG));
+m_FloorList.push_back(SPAWN_FLOOR_INFO(1200, 150,TEMP+2960, STAGE2_HANG));
+
+//선반2 아래에 가시들
+m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, 295,TEMP+2570, OBSTACLE_PORTION, STOP));
+m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, 295,TEMP+2700, OBSTACLE_PORTION2, STOP));
+m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, 295,TEMP+2830, OBSTACLE_PORTION, STOP));
+m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, 295,TEMP+2960, OBSTACLE_PORTION2, STOP));
+
+//선반 2 위에 곰젤리
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 70,TEMP+2630, PINK_BEAR));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 70,TEMP+2710, YELLOW_BEAR));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 70,TEMP+2790, PINK_BEAR));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 70,TEMP+2870, YELLOW_BEAR));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 70,TEMP+2950, PINK_BEAR));
+
+
+//선반3 다시아래
+m_FloorList.push_back(SPAWN_FLOOR_INFO(1200, 250,TEMP+3270, STAGE2_HANG));
+m_FloorList.push_back(SPAWN_FLOOR_INFO(1200, 250,TEMP+3400, STAGE2_HANG));
+m_FloorList.push_back(SPAWN_FLOOR_INFO(1200, 250,TEMP+3530, STAGE2_HANG));
+m_FloorList.push_back(SPAWN_FLOOR_INFO(1200, 250,TEMP+3660, STAGE2_HANG));
+
+//선반3 위 곰젤리
+
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 170,TEMP+ 3350, PINK_BEAR));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 170,TEMP+ 3430, YELLOW_BEAR));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 170,TEMP+ 3510, PINK_BEAR));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 170,TEMP+ 3590, YELLOW_BEAR));
+
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+3270, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+3300, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+3330, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+3360, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+3390, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+3410, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+3440, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+3470, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+3500, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+3530, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+3560, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+3590, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+3620, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+3650, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+3680, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+3710, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+3740, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+3770, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+3800, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+3830, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+3870, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+3900, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+3930, BLUE_BEAN));
+
+
+//장애물들
+m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, 70, TEMP+ 4000, OBSTACLE_FROG, STOP));
+m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, 295,TEMP+ 4400, OBSTACLE_PORTION, STOP));
+m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, 70, TEMP+ 4800, OBSTACLE_ONION, STOP));
+m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, 295,TEMP+ 5200, OBSTACLE_PORTION, STOP));
+m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, 70, TEMP+ 5600, OBSTACLE_ONION, STOP));
+m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, 295,TEMP+ 6000, OBSTACLE_PORTION, STOP));
+m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, 70, TEMP+ 6400, OBSTACLE_ONION, STOP));
+m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, 70, TEMP+ 6600, OBSTACLE_ONION, STOP));
+
+//장애물들 사이 젤리..
+
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 4000, PINK_BEAR));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 4080, YELLOW_BEAR));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 4160, PINK_BEAR));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 305,TEMP+ 4240, YELLOW_BEAR));
+
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 215,TEMP+ 4320, PINK_BEAR));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 125,TEMP+ 4360, YELLOW_BEAR));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 125,TEMP+ 4400, PINK_BEAR));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 215,TEMP+ 4480, YELLOW_BEAR));
+
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 305,TEMP+ 4560, PINK_BEAR));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 4640, YELLOW_BEAR));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 4720, PINK_BEAR));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 4800, YELLOW_BEAR));
+
+
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 6770, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 7000, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 7030, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 7060, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 7090, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 7120, BLUE_BEAN));
+m_JellyList.push_back(SPAWN_JELLY_INFO(1200, 375,TEMP+ 7150, BLUE_BEAN));
+
+
+m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, -100,TEMP+ 7300, OBSTACLE_SKULL, FALLING));
+m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, 355, TEMP+ 7700, OBSTACLE_TRAP, ANIMATION));
+m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, 355, TEMP+ 8100, OBSTACLE_TRAP, ANIMATION));
+m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, -200,TEMP+ 8500, OBSTACLE_FROG, UPTODOWN));
+m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, -200,TEMP+ 8700, OBSTACLE_ONION, UPTODOWN));
+m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, -200,TEMP+ 8900, OBSTACLE_FROG, UPTODOWN));
+
+m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, 355,TEMP+ 9300, OBSTACLE_SKULL, STOP));
+m_ObstacleList.push_back(SPAWN_OBSTACLE_INFO(1200, 295,TEMP+ 9700, OBSTACLE_PORTION, STOP));
+
 
 }
 void CSpawnManager::SpawnFloor()
@@ -529,13 +734,21 @@ void CSpawnManager::SpawnFloor()
 	const OBJLIST* object = CObjectMgr::GetInstance()->GetObjectList(OBJECT_TYPE::OBJECT_FLOOR);
 	OBJLIST::const_iterator iter_begin = object->begin();
 	OBJLIST::const_iterator iter_end = object->end();
-	if (object->size() < 20)
+	if (object->size() < 35)
 	{
 		if (iter_begin == iter_end)
 		{
 			CGameObject* pGameObject = CAbstractFactory<CFloor>::CreateObject();
 			pGameObject->SetPos(50, 470);
-			dynamic_cast<CFloor*>(pGameObject)->SetType(STAGE1_BOTTOM);
+			if (CStageManager::GetInstance()->CurrentScene == STAGE1)
+			{
+				dynamic_cast<CFloor*>(pGameObject)->SetType(STAGE1_BOTTOM);
+			}
+			else if (CStageManager::GetInstance()->CurrentScene == STAGE2)
+			{
+				dynamic_cast<CFloor*>(pGameObject)->SetType(STAGE2_BOTTOM);
+			}
+			
 			CObjectMgr::GetInstance()->AddObject(OBJECT_FLOOR, pGameObject);
 			
 		}
@@ -543,7 +756,14 @@ void CSpawnManager::SpawnFloor()
 		{
 			CGameObject* pGameObject = CAbstractFactory<CFloor>::CreateObject();
 			pGameObject->SetPos(object->back()->GetInfo().fX + 100, 470);
-			dynamic_cast<CFloor*>(pGameObject)->SetType(STAGE1_BOTTOM);
+			if (CStageManager::GetInstance()->CurrentScene == STAGE1)
+			{
+				dynamic_cast<CFloor*>(pGameObject)->SetType(STAGE1_BOTTOM);
+			}
+			else if (CStageManager::GetInstance()->CurrentScene == STAGE2)
+			{
+				dynamic_cast<CFloor*>(pGameObject)->SetType(STAGE2_BOTTOM);
+			}
 			CObjectMgr::GetInstance()->AddObject(OBJECT_FLOOR, pGameObject);
 			
 		}
@@ -557,7 +777,7 @@ void CSpawnManager::SpwanHangFloor()
 	list<SPAWN_FLOOR_INFO>::iterator iter_end = m_FloorList.end();
 	for (; iter_begin != iter_end;)
 	{
-		if (m_StageDist>iter_begin->spawn_Time)
+		if (CStageManager::GetInstance()->StageProgress>iter_begin->spawn_Time)
 		{
 			CGameObject * pGameObject = CAbstractFactory<CFloor>::CreateObject();
 			pGameObject->SetPos(iter_begin->pos_X, iter_begin->pos_Y);
@@ -577,7 +797,7 @@ void CSpawnManager::SpawnJelly()
 	list<SPAWN_JELLY_INFO>::iterator iter_end = m_JellyList.end();
 	for (; iter_begin != iter_end;)
 	{
-		if (m_StageDist>iter_begin->spawn_Time)
+		if (CStageManager::GetInstance()->StageProgress>iter_begin->spawn_Time)
 		{
 			CGameObject * pGameObject = CAbstractFactory<CJelly>::CreateObject();
 			pGameObject->SetPos(iter_begin->pos_X, iter_begin->pos_Y);
@@ -597,7 +817,7 @@ void CSpawnManager::SpawnObstacle()
 	list<SPAWN_OBSTACLE_INFO>::iterator iter_end = m_ObstacleList.end();
 	for (; iter_begin != iter_end;)
 	{
-		if (m_StageDist>iter_begin->spawn_Time)
+		if (CStageManager::GetInstance()->StageProgress>iter_begin->spawn_Time)
 		{
 			CGameObject * pGameObject = CAbstractFactory<CObstacle>::CreateObject();
 			pGameObject->SetPos(iter_begin->pos_X, iter_begin->pos_Y);
